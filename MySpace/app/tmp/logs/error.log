@@ -1,0 +1,379 @@
+2014-11-30 21:04:49 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Posts\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Posts\\index.ctp',
+)
+Request URL: /prototype/MySpace/posts/index
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-11-30 21:10:51 Error: [MissingActionException] Action PostsController::view() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'view',
+)
+Request URL: /prototype/MySpace/posts/view/1
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-11-30 21:19:11 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Posts\view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Posts\\view.ctp',
+)
+Request URL: /prototype/MySpace/posts/view/2
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-08 13:54:56 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /prototype/MySpace/index
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-08 13:55:04 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Pages\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Pages\\index.ctp',
+)
+Request URL: /prototype/MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('index')
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render('index', NULL)
+#2 C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#3 [internal function]: PagesController->display('index')
+#4 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-08 13:58:18 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Pages\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Pages\\index.ctp',
+)
+Request URL: /prototype/MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('index')
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render('index', NULL)
+#2 C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#3 [internal function]: PagesController->display('index')
+#4 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-08 14:04:40 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /prototype/MySpace/index
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-08 16:38:05 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-08 16:44:05 Error: [ReflectionException] Class UsersController does not have a constructor, so you cannot pass any constructor arguments
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(241): ReflectionClass->newInstance(Object(CakeRequest), Object(CakeResponse))
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(156): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#2 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-12-08 16:44:33 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-08 16:46:06 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 29]
+2014-12-08 16:46:06 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\pro...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\pro...', 29, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\pro...', 29, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-08 16:46:15 Error: Fatal Error (1): Call to a member function setFlash() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 29]
+2014-12-08 16:46:15 Error: [FatalErrorException] Call to a member function setFlash() on a non-object
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 29)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 29, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 29, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:01:45 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\login.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\login.ctp',
+)
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:03:21 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\login.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\login.ctp',
+)
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:07:01 Error: Fatal Error (1): Call to undefined method UsersController::Auth() in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 22]
+2014-12-11 00:07:01 Error: [FatalErrorException] Call to undefined method UsersController::Auth()
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:07:50 Error: Fatal Error (1): Call to undefined method UsersController::Auth() in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 22]
+2014-12-11 00:07:50 Error: [FatalErrorException] Call to undefined method UsersController::Auth()
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\pro...', 22, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:20:38 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Pages\indexds.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Pages\\indexds.ctp',
+)
+Request URL: /prototype/MySpace/pages/indexds
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('indexds')
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render('indexds', NULL)
+#2 C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php(68): Controller->render('indexds')
+#3 [internal function]: PagesController->display('indexds')
+#4 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-11 00:22:31 Error: Fatal Error (1): Call to a member function create() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 37]
+2014-12-11 00:22:31 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:26:34 Error: Fatal Error (1): Call to a member function create() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 37]
+2014-12-11 00:26:34 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 37, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:26:48 Error: Fatal Error (1): Class 'SimplePasswordHasher' not found in [C:\wamp\www\prototype\MySpace\app\Model\User.php, line 44]
+2014-12-11 00:26:48 Error: [FatalErrorException] Class 'SimplePasswordHasher' not found
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:27:07 Error: Fatal Error (1): Class 'SimplePasswordHasher' not found in [C:\wamp\www\prototype\MySpace\app\Model\User.php, line 44]
+2014-12-11 00:27:07 Error: [FatalErrorException] Class 'SimplePasswordHasher' not found
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:27:49 Error: Fatal Error (1): Class 'SimplePasswordHasher' not found in [C:\wamp\www\prototype\MySpace\app\Model\User.php, line 44]
+2014-12-11 00:27:49 Error: [FatalErrorException] Class 'SimplePasswordHasher' not found
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:28:28 Error: Fatal Error (1): Class 'SimplePasswordHasher' not found in [C:\wamp\www\prototype\MySpace\app\Model\User.php, line 44]
+2014-12-11 00:28:28 Error: [FatalErrorException] Class 'SimplePasswordHasher' not found
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'SimplePa...', 'C:\\wamp\\www\\pro...', 44, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:28:55 Error: Fatal Error (1): Call to a member function allow() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php, line 80]
+2014-12-11 00:28:55 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /prototype/MySpace/pages
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 80)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 80, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 80, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:38:26 Error: Fatal Error (1): Call to a member function login() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 22]
+2014-12-11 00:38:26 Error: [FatalErrorException] Call to a member function login() on a non-object
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 22)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 22, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 22, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:42:39 Error: Fatal Error (1): Call to a member function getDataSource() on a non-object in [C:\wamp\www\prototype\MySpace\app\Controller\UsersController.php, line 26]
+2014-12-11 00:42:39 Error: [FatalErrorException] Call to a member function getDataSource() on a non-object
+Request URL: /prototype/MySpace/users/login
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 26)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 26, Array)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\pro...', 26, Array)
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 00:48:40 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Pages\s_d_f.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Pages\\s_d_f.ctp',
+)
+Request URL: /prototype/MySpace/pages/SDF
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('SDF')
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render('SDF', NULL)
+#2 C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php(68): Controller->render('SDF')
+#3 [internal function]: PagesController->display('SDF')
+#4 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-11 00:48:45 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Pages\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Pages\\register.ctp',
+)
+Request URL: /prototype/MySpace/pages/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('register')
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render('register', NULL)
+#2 C:\wamp\www\prototype\MySpace\app\Controller\PagesController.php(68): Controller->render('register')
+#3 [internal function]: PagesController->display('register')
+#4 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-11 00:49:22 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /prototype/MySpace/user/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 00:50:17 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:51:11 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:57:46 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:58:32 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 00:58:58 Error: [MissingViewException] View file "C:\wamp\www\prototype\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\prototype\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /prototype/MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\prototype\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\prototype\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

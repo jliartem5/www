@@ -70,7 +70,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'prototype',
+		'database' => 'stock',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

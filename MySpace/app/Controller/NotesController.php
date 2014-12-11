@@ -16,4 +16,12 @@ class NotesController extends AppController{
     public function index(){
         
     }
+    
+    public function save(){
+        
+    }
+    
+    public function delete(){
+        
+    }
 }

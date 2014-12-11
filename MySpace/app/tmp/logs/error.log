@@ -377,3 +377,358 @@ Stack Trace:
 #3 C:\wamp\www\prototype\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #4 C:\wamp\www\prototype\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2014-12-11 11:09:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:09:24 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 La table 'prototype.users' n'existe pas
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\Database\Mysql.php(339): DboSource->_execute('SHOW FULL COLUM...')
+#2 C:\wamp\www\MySpace\lib\Cake\Model\Model.php(1372): Mysql->describe(Object(User))
+#3 C:\wamp\www\MySpace\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#4 C:\wamp\www\MySpace\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#5 C:\wamp\www\MySpace\app\View\Pages\index.ctp(3): FormHelper->create('User', Array)
+#6 C:\wamp\www\MySpace\lib\Cake\View\View.php(948): include('C:\\wamp\\www\\MyS...')
+#7 C:\wamp\www\MySpace\lib\Cake\View\View.php(910): View->_evaluate('C:\\wamp\\www\\MyS...', Array)
+#8 C:\wamp\www\MySpace\lib\Cake\View\View.php(471): View->_render('C:\\wamp\\www\\MyS...')
+#9 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render('index', NULL)
+#10 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#11 [internal function]: PagesController->display('index')
+#12 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#13 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#14 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#15 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-12-11 11:09:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:34:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:34:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:34:53 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 11:34:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:35:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:35:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 11:36:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:07:09 Error: [Exception] Serialization of 'Closure' is not allowed
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Cache\Engine\FileEngine.php(128): serialize(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Cache\Cache.php(312): FileEngine->write('cake_toolbar_ca...', Array, 14400)
+#2 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(501): Cache::write('toolbar_cache6b...', Array, 'debug_kit')
+#3 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(330): ToolbarComponent->_saveState(Object(PagesController), Array)
+#4 [internal function]: ToolbarComponent->beforeRender(Object(PagesController))
+#5 C:\wamp\www\MySpace\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 C:\wamp\www\MySpace\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(927): CakeEventManager->dispatch(Object(CakeEvent))
+#9 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#10 [internal function]: PagesController->display('index')
+#11 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#12 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#14 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-12-11 12:07:28 Error: [Exception] Serialization of 'Closure' is not allowed
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Cache\Engine\FileEngine.php(128): serialize(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Cache\Cache.php(312): FileEngine->write('cake_toolbar_ca...', Array, 14400)
+#2 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(501): Cache::write('toolbar_cache6b...', Array, 'debug_kit')
+#3 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(330): ToolbarComponent->_saveState(Object(PagesController), Array)
+#4 [internal function]: ToolbarComponent->beforeRender(Object(PagesController))
+#5 C:\wamp\www\MySpace\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 C:\wamp\www\MySpace\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(927): CakeEventManager->dispatch(Object(CakeEvent))
+#9 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#10 [internal function]: PagesController->display('index')
+#11 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#12 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#14 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-12-11 12:07:38 Error: [Exception] Serialization of 'Closure' is not allowed
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Cache\Engine\FileEngine.php(128): serialize(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Cache\Cache.php(312): FileEngine->write('cake_toolbar_ca...', Array, 14400)
+#2 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(501): Cache::write('toolbar_cache6b...', Array, 'debug_kit')
+#3 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(330): ToolbarComponent->_saveState(Object(PagesController), Array)
+#4 [internal function]: ToolbarComponent->beforeRender(Object(PagesController))
+#5 C:\wamp\www\MySpace\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 C:\wamp\www\MySpace\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(927): CakeEventManager->dispatch(Object(CakeEvent))
+#9 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#10 [internal function]: PagesController->display('index')
+#11 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#12 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#14 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-12-11 12:07:40 Error: [Exception] Serialization of 'Closure' is not allowed
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Cache\Engine\FileEngine.php(128): serialize(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Cache\Cache.php(312): FileEngine->write('cake_toolbar_ca...', Array, 14400)
+#2 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(501): Cache::write('toolbar_cache6b...', Array, 'debug_kit')
+#3 C:\wamp\www\MySpace\app\Plugin\DebugKit\Controller\Component\ToolbarComponent.php(330): ToolbarComponent->_saveState(Object(PagesController), Array)
+#4 [internal function]: ToolbarComponent->beforeRender(Object(PagesController))
+#5 C:\wamp\www\MySpace\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 C:\wamp\www\MySpace\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(927): CakeEventManager->dispatch(Object(CakeEvent))
+#9 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index')
+#10 [internal function]: PagesController->display('index')
+#11 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#12 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#14 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-12-11 12:09:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:10:16 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [C:\wamp\www\MySpace\app\View\Pages\index.ctp, line 14]
+2014-12-11 12:10:16 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\MyS...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\MyS...', 14, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\MyS...', 14, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 12:10:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:10:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:10:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:12:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:12:25 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Pages\index\home.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Pages\\index\\home.ctp',
+)
+Request URL: /MySpace/pages/index/home
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('index/home')
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render('index/home', NULL)
+#2 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index/home')
+#3 [internal function]: PagesController->display('index', 'home')
+#4 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-11 12:12:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:12:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:09 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Pages\index\home.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Pages\\index\\home.ctp',
+)
+Request URL: /MySpace/pages/index/home
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName('index/home')
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render('index/home', NULL)
+#2 C:\wamp\www\MySpace\app\Controller\PagesController.php(68): Controller->render('index/home')
+#3 [internal function]: PagesController->display('index', 'home')
+#4 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-12-11 12:13:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 12:13:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -46,12 +46,16 @@ class AppController extends Controller {
             ),
             'authError' => 'Impossible de se connecter',
             'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'pages', 'action' => 'index', 'home')
+            'logoutRedirect' => array('controller' => 'pages', 'action' => 'index')
         ),
         'Session'
     );
 
     public function beforeFilter() {
-        
+    }
+    
+    public function beforeRender() {
+        $this->set('Auth', $this->Auth);
+        $this->set('LoggedUser', $this->Auth->user());
     }
 }

@@ -12,5 +12,11 @@
  * @author jian
  */
 class UserConfig extends AppModel{
-    //put your code here
+    
+    public function genereSimpleUserConfig($user_id){
+        return array(
+            'last_modif_date'=> (new DateTime())->format('Y-m-d H:i:s'),
+            'user_id'=>$user_id
+        );
+    }
 }

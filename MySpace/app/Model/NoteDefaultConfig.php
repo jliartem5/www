@@ -11,5 +11,35 @@
  *
  * @author jian
  */
-class NoteDefaultConfig extends AppModel{
+App::import('Model','NoteElement');
+class NoteDefaultConfig extends AppModel {
+
+    public $name = 'NoteDefaultConfig';
+
+    /**
+     * Generer la configuration par default pour le nouveau utilisateur
+     */
+    public function genereSimpleNoteConfig($user_id) {
+
+        $default_config = array(
+            //Price
+            NoteElement::createNumericElement(array(
+                'name' => "Price",
+                'value' => 0,
+                'user_id' => $user_id
+            ))['NoteDefaultConfig'],
+            //Raison
+            NoteElement::createTextElement(array(
+                'name' => 'Why this position ?',
+                'user_id' => $user_id
+            ))['NoteDefaultConfig'],
+            //Date
+            NoteElement::createDateElement(array(
+                'name' => 'Position date',
+                'user_id' => $user_id
+            ))['NoteDefaultConfig']
+        );
+
+        return $default_config;
+    }
 }

@@ -732,3 +732,2253 @@ Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
 Stack Trace:
 #0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-12-11 16:58:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 16:58:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 16:58:34 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 16:58:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 16:58:57 Error: Fatal Error (1): Call to undefined method UsersController::getDateSource() in [C:\wamp\www\MySpace\app\Controller\UsersController.php, line 51]
+2014-12-11 16:58:57 Error: [FatalErrorException] Call to undefined method UsersController::getDateSource()
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 16:58:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 17:05:56 Error: Fatal Error (1): Call to undefined method UsersController::getDateSource() in [C:\wamp\www\MySpace\app\Controller\UsersController.php, line 51]
+2014-12-11 17:05:56 Error: [FatalErrorException] Call to undefined method UsersController::getDateSource()
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 51, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 17:05:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 17:08:14 Error: Fatal Error (1): Maximum function nesting level of '100' reached, aborting! in [C:\wamp\www\MySpace\app\Controller\Component\ElementComponent.php, line 60]
+2014-12-11 17:08:14 Error: [FatalErrorException] Maximum function nesting level of '100' reached, aborting!
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum functio...', 'C:\\wamp\\www\\MyS...', 60)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum functio...', 'C:\\wamp\\www\\MyS...', 60, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum functio...', 'C:\\wamp\\www\\MyS...', 60, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-11 17:08:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 17:18:15 Error: [Exception] user_id OR note_id must set
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\Controller\Component\ElementComponent.php(37): ElementComponent::checkLegibility(Array)
+#1 C:\wamp\www\MySpace\app\Controller\Component\ElementComponent.php(61): ElementComponent::createCommunElement('NUMERIC', Array)
+#2 C:\wamp\www\MySpace\app\Controller\Component\NoteComponent.php(28): ElementComponent::createNumericElement(Array)
+#3 C:\wamp\www\MySpace\app\Controller\UsersController.php(56): NoteComponent->genereSimpleNoteConfig('3')
+#4 [internal function]: UsersController->register()
+#5 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-12-11 17:18:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 17:21:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-11 17:21:04 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-11 17:21:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:26:46 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:26:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:26:58 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /MySpace/users/
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-12-12 11:26:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:27:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:27:09 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:27:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:28:13 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:28:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:30:34 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:30:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:41:56 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:41:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:42:12 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:42:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:45:17 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:45:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:46:20 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:46:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:50:19 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:50:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:50:34 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:50:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:53:35 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:53:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:54:25 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:54:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:55:02 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:55:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 11:58:27 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 11:58:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:09:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:09:41 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:09:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:10:58 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:10:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:24:20 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:24:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:25:36 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:25:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:27:55 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:27:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:28:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:28:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:36:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:36:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:36:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:37:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:43:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:43:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:50:32 Error: [MissingComponentException] Component class NoteComponent could not be found.
+Exception Attributes: array (
+  'class' => 'NoteComponent',
+  'plugin' => false,
+)
+Request URL: /MySpace/users/logout
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Controller\ComponentCollection.php(53): ComponentCollection->load('Note', Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(643): ComponentCollection->init(Object(UsersController))
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(186): Controller->constructClasses()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:50:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:50:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:50:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:50:39 Error: [MissingComponentException] Component class NoteComponent could not be found.
+Exception Attributes: array (
+  'class' => 'NoteComponent',
+  'plugin' => false,
+)
+Request URL: /MySpace/users/logout
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Controller\ComponentCollection.php(53): ComponentCollection->load('Note', Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(643): ComponentCollection->init(Object(UsersController))
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(186): Controller->constructClasses()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:50:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:51:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:51:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:51:06 Error: Fatal Error (1): Call to a member function createNumericElement() on a non-object in [C:\wamp\www\MySpace\app\Model\NoteDefaultConfig.php, line 27]
+2014-12-12 14:51:06 Error: [FatalErrorException] Call to a member function createNumericElement() on a non-object
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:51:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:51:53 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:51:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:52:03 Error: Fatal Error (1): Call to a member function createNumericElement() on a non-object in [C:\wamp\www\MySpace\app\Model\NoteDefaultConfig.php, line 27]
+2014-12-12 14:52:03 Error: [FatalErrorException] Call to a member function createNumericElement() on a non-object
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:52:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:54:06 Error: Fatal Error (1): Class 'NoteElement' not found in [C:\wamp\www\MySpace\app\Model\NoteDefaultConfig.php, line 27]
+2014-12-12 14:54:06 Error: [FatalErrorException] Class 'NoteElement' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'NoteElem...', 'C:\\wamp\\www\\MyS...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'NoteElem...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'NoteElem...', 'C:\\wamp\\www\\MyS...', 27, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:54:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:54:57 Error: Fatal Error (1): Class 'ElementComponent' not found in [C:\wamp\www\MySpace\app\Model\NoteElement.php, line 54]
+2014-12-12 14:54:57 Error: [FatalErrorException] Class 'ElementComponent' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 54, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 54, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:54:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:55:57 Error: Fatal Error (1): Class 'ElementComponent' not found in [C:\wamp\www\MySpace\app\Model\NoteElement.php, line 30]
+2014-12-12 14:55:57 Error: [FatalErrorException] Class 'ElementComponent' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 30, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'ElementC...', 'C:\\wamp\\www\\MyS...', 30, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:55:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:56:27 Error: Fatal Error (1): Call to undefined method NoteElement::createDateElement() in [C:\wamp\www\MySpace\app\Model\NoteDefaultConfig.php, line 37]
+2014-12-12 14:56:27 Error: [FatalErrorException] Call to undefined method NoteElement::createDateElement()
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 37)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 37, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 37, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 14:56:27 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 14:58:01 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 14:58:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:03:05 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 15:03:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:03:51 Error: Fatal Error (1): Call to a member function DateTimeNow() on a non-object in [C:\wamp\www\MySpace\app\Model\UserConfig.php, line 18]
+2014-12-12 15:03:51 Error: [FatalErrorException] Call to a member function DateTimeNow() on a non-object
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:03:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:04:18 Error: Fatal Error (1): Call to a member function DateTimeNow() on a non-object in [C:\wamp\www\MySpace\app\Model\UserConfig.php, line 18]
+2014-12-12 15:04:18 Error: [FatalErrorException] Call to a member function DateTimeNow() on a non-object
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:04:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:06:07 Error: Fatal Error (1): Call to a member function DateTimeNow() on a non-object in [C:\wamp\www\MySpace\app\Model\UserConfig.php, line 18]
+2014-12-12 15:06:07 Error: [FatalErrorException] Call to a member function DateTimeNow() on a non-object
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 18, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:06:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:09:12 Error: Fatal Error (1): Class 'Utility' not found in [C:\wamp\www\MySpace\app\Model\AppModel.php, line 36]
+2014-12-12 15:09:12 Error: [FatalErrorException] Class 'Utility' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 36)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 36, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 36, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:09:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:10:09 Error: Fatal Error (1): Class 'Utility' not found in [C:\wamp\www\MySpace\app\Model\AppModel.php, line 39]
+2014-12-12 15:10:09 Error: [FatalErrorException] Class 'Utility' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:10:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:11:24 Error: Fatal Error (1): Class 'Utility' not found in [C:\wamp\www\MySpace\app\Model\AppModel.php, line 39]
+2014-12-12 15:11:24 Error: [FatalErrorException] Class 'Utility' not found
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Utility'...', 'C:\\wamp\\www\\MyS...', 39, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-12 15:11:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:13:11 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Users\register.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Users\\register.ctp',
+)
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-12 15:13:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:19:27 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'saveAssociation' à la ligne 1
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('saveAssociation', Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('saveAssociation', Array, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(609): DboSource->fetchAll('saveAssociation', Array, Array)
+#4 C:\wamp\www\MySpace\lib\Cake\Model\Model.php(808): DboSource->query('saveAssociation', Array, Object(User))
+#5 C:\wamp\www\MySpace\app\Controller\UsersController.php(58): Model->__call('saveAssociation', Array)
+#6 C:\wamp\www\MySpace\app\Controller\UsersController.php(58): User->saveAssociation(Array)
+#7 [internal function]: UsersController->register()
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-12-12 15:19:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:19:54 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'saveAssociation' à la ligne 1
+Request URL: /MySpace/users/register
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('saveAssociation', Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('saveAssociation', Array, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Model\Datasource\DboSource.php(609): DboSource->fetchAll('saveAssociation', Array, Array)
+#4 C:\wamp\www\MySpace\lib\Cake\Model\Model.php(808): DboSource->query('saveAssociation', Array, Object(User))
+#5 C:\wamp\www\MySpace\app\Controller\UsersController.php(58): Model->__call('saveAssociation', Array)
+#6 C:\wamp\www\MySpace\app\Controller\UsersController.php(58): User->saveAssociation(Array)
+#7 [internal function]: UsersController->register()
+#8 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-12-12 15:19:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-12 15:22:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:31:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:32:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:32:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:32:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:32:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:34:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:34:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:45:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:45:53 Error: [MissingControllerException] Controller class NoteController could not be found.
+Exception Attributes: array (
+  'class' => 'NoteController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/note/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:45:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 18:46:02 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Notes\write.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Notes\\write.ctp',
+)
+Request URL: /MySpace/notes/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-14 18:46:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:00:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:00:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:07 Error: [MissingControllerException] Controller class NoteController could not be found.
+Exception Attributes: array (
+  'class' => 'NoteController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/note/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:08 Error: [MissingControllerException] Controller class NoteController could not be found.
+Exception Attributes: array (
+  'class' => 'NoteController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/note/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:10 Error: [MissingControllerException] Controller class NoteController could not be found.
+Exception Attributes: array (
+  'class' => 'NoteController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/note/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:01:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:03:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:03:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:04:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:05:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:06:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:06:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:06:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:06:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:06:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:07:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:08:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:09:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:10:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:11:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:11:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:13:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:15:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:40:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:41:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:52:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:53:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:53:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 19:53:27 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:14 Error: [MissingControllerException] Controller class PoController could not be found.
+Exception Attributes: array (
+  'class' => 'PoController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/po
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:35:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:36:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:36:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:36:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:36:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:36:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:37:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:46:43 Error: Fatal Error (1): Class 'FormHelper' not found in [C:\wamp\www\MySpace\app\View\Helper\ElementHelper.php, line 15]
+2014-12-14 23:46:44 Error: [FatalErrorException] Class 'FormHelper' not found
+Request URL: /MySpace/notes/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'FormHelp...', 'C:\\wamp\\www\\MyS...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'FormHelp...', 'C:\\wamp\\www\\MyS...', 15, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'FormHelp...', 'C:\\wamp\\www\\MyS...', 15, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-14 23:46:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:47:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:47:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:47:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:59:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-14 23:59:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:01:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:02:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:02:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:07:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:09:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:11:10 Error: Fatal Error (1): Call to undefined method View::input() in [C:\wamp\www\MySpace\app\View\Elements\TextElement.ctp, line 3]
+2014-12-15 00:11:10 Error: [FatalErrorException] Call to undefined method View::input()
+Request URL: /MySpace/notes/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-15 00:11:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:11:20 Error: Fatal Error (1): Call to undefined method View::input() in [C:\wamp\www\MySpace\app\View\Elements\TextElement.ctp, line 3]
+2014-12-15 00:11:20 Error: [FatalErrorException] Call to undefined method View::input()
+Request URL: /MySpace/notes/write
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 3, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-15 00:11:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:11:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:13:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:13:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:14:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:15:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:16:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:16:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:17:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:20:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:20:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:21:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:22:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:24:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:24:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:24:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:24:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:25:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:26:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:27:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:27:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:27:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:27:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:27:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:38:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:38:12 Error: Fatal Error (1): Call to a member function create() on a non-object in [C:\wamp\www\MySpace\app\Controller\NotesController.php, line 36]
+2014-12-15 00:38:12 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 36)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 36, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\MyS...', 36, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-15 00:38:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:38:36 Error: Fatal Error (1): Call to undefined method SessionComponent::flash() in [C:\wamp\www\MySpace\app\Controller\NotesController.php, line 41]
+2014-12-15 00:38:36 Error: [FatalErrorException] Call to undefined method SessionComponent::flash()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 41, Array)
+#2 C:\wamp\www\MySpace\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\MyS...', 41, Array)
+#3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-15 00:38:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:39:48 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Notes\save.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Notes\\save.ctp',
+)
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-15 00:39:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:40:20 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Notes\save.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Notes\\save.ctp',
+)
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-15 00:40:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:41:49 Error: [MissingViewException] View file "C:\wamp\www\MySpace\app\View\Notes\save.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\MySpace\\app\\View\\Notes\\save.ctp',
+)
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 C:\wamp\www\MySpace\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\MySpace\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wamp\www\MySpace\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#4 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-15 00:41:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:42:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:43:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:44:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:48:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:50:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:51:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:53:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:54:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:54:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-15 00:55:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => 'DebugKit',
+)
+Request URL: /MySpace/debug_kit/js/js_debug_toolbar.js
+Stack Trace:
+#0 C:\wamp\www\MySpace\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

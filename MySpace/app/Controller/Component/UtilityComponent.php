@@ -7,10 +7,12 @@
  */
 
 /**
- * Description of NoteHelper
+ * Description of UtilityComponent
  *
  * @author jian
  */
-class NoteHelper extends AppHelper{
-    //put your code here
+class UtilityComponent extends Component{
+    public function DateTimeNow(){
+        return (new DateTime())->format('Y-m-d H:i:s');
+    }
 }

@@ -31,7 +31,6 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-
     public $components = array(
         'DebugKit.Toolbar',
         'Auth' => array(
@@ -48,7 +47,8 @@ class AppController extends Controller {
             'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'pages', 'action' => 'index')
         ),
-        'Session'
+        'Session',
+        'Utility'
     );
 
     public function beforeFilter() {
@@ -56,6 +56,5 @@ class AppController extends Controller {
     
     public function beforeRender() {
         $this->set('Auth', $this->Auth);
-        $this->set('LoggedUser', $this->Auth->user());
     }
 }

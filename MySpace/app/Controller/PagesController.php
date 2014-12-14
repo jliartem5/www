@@ -73,11 +73,12 @@ class PagesController extends AppController {
             throw new NotFoundException();
         }
     }
+    
 
     public function beforeFilter() {
         parent::beforeFilter();
         // Permet aux utilisateurs de s'enregistrer et de se déconnecter
-        $this->Auth->allow('display', 'index', 'home');
+        $this->Auth->allow('display', 'index');
     }
 
 }

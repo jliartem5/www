@@ -11,6 +11,16 @@
  *
  * @author jian
  */
-class ElementHelper extends AppHelper{
-    //put your code here
+App::uses('FormHelper', 'View/Helper');
+class ElementHelper extends FormHelper{
+    public function generateMultiElement($elementConfig){
+        $result = '';
+        foreach($elementConfig as $config){
+            $elementName = ucfirst($config['type']).'Element';
+            $ElementID = $config['user_id'];
+            unset($config['user_id']);
+            $result .= $this->_View->element($elementName, array('Form'=>$this, 'Config'=>$config, 'ElementID'=>$ElementID));
+        }
+        return $result;
+    }
 }

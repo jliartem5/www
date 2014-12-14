@@ -8,7 +8,7 @@ echo $this->Session->flash();
 ?>
 <?php
 if ($Auth->loggedIn()) {
-    print_r($Auth->user());
+    debug($Auth->user());
     echo $this->Form->create('User', array('action' => 'logout'));
     echo $this->Form->end('Logout');
 }
@@ -22,3 +22,6 @@ echo $this->Form->end('Connect');
 echo $this->Session->flash();
 ?>
 <h1>Note</h1>
+<?php
+    
+?>

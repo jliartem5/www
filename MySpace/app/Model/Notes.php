@@ -11,10 +11,12 @@
  *
  * @author jian
  */
-class Notes extends AppModel{
+class Notes extends AppModel {
+
     public $hasMany = array(
-        'note_element'=>array(
-            'className'=>'NoteElement'
+        'note_element' => array(
+            'className' => 'NoteElement'
         )
     );
+
 }

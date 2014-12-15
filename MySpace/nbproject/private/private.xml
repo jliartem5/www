@@ -6,12 +6,14 @@
             <file>file:/C:/wamp/www/MySpace/app/View/Helper/ElementHelper.php</file>
             <file>file:/C:/wamp/www/MySpace/app/Controller/NotesController.php</file>
             <file>file:/C:/wamp/www/MySpace/app/Model/Notes.php</file>
-            <file>file:/C:/wamp/www/MySpace/app/View/Pages/index.ctp</file>
-            <file>file:/C:/wamp/www/MySpace/app/Controller/AppController.php</file>
+            <file>file:/C:/wamp/www/MySpace/app/webroot/js/Element.js</file>
+            <file>file:/C:/wamp/www/MySpace/app/Model/User.php</file>
+            <file>file:/C:/wamp/www/MySpace/app/Model/NoteElement.php</file>
             <file>file:/C:/wamp/www/MySpace/app/View/Elements/DateElement.ctp</file>
             <file>file:/C:/wamp/www/MySpace/app/View/Elements/TextElement.ctp</file>
             <file>file:/C:/wamp/www/MySpace/app/View/Elements/NumericElement.ctp</file>
             <file>file:/C:/wamp/www/MySpace/app/View/Notes/write.ctp</file>
+            <file>file:/C:/wamp/www/MySpace/app/Controller/UsersController.php</file>
         </group>
     </open-files>
 </project-private>

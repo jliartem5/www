@@ -11,9 +11,11 @@
  *
  * @author jian
  */
+App::uses('ElementHelper', 'View/Helper');
+
 class NotesController extends AppController {
 
-    public $uses = array('User', 'Notes');
+    public $uses = array('User', 'Notes', 'NoteElement', 'NoteDefaultConfig');
 
     public function beforeFilter() {
         parent::beforeFilter();
@@ -34,12 +36,35 @@ class NotesController extends AppController {
     public function save() {
         if ($this->request->is('post')) {
             $this->Notes->create();
-            $note_saved = $this->Notes->save(array(
-                'user_id' => $this->Auth->user()['id']
-            ));
+            $note_data = array(
+                'Note' => array('user_id' => $this->Auth->user()['id']),
+                'NoteElement' => array()
+            );
+            $ds = $this->Notes->getdatasource();
+            $note_saved = $this->Notes->save($note_data['Note']);
             if ($note_saved) {
-                debug($this->request->data);
-                $this->Session->setFlash('Note saved');
+                $default_config_ids = array();
+                
+                foreach ($this->request->data['notes'] as $decriptedID => $value) {
+                    if (is_numeric($decriptedID)) {
+                        $default_config_ids[] = ElementHelper::descriptData($decriptedID);
+                    }
+                }
+                //Default element
+                $default_config = $this->NoteDefaultConfig->find('all', array('conditions' => 'id IN (' . implode($default_config_ids, ',') . ')'));
+
+                foreach ($default_config as $config) {
+                    unset($config['NoteDefaultConfig']['id']);
+                    unset($config['NoteDefaultConfig']['user_id']);
+                    $config['NoteDefaultConfig']['note_id'] = $this->Notes->getInsertID();
+                    $note_data['NoteElement'][] = array('NoteElement' => $config['NoteDefaultConfig']);
+                }
+                $element_saved = $this->NoteElement->saveMany($note_data['NoteElement']);
+                if ($element_saved) {
+                    $this->Session->setFlash('Note saved');
+                }
+            } else {
+                
             }
         }
     }

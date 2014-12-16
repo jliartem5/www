@@ -44,7 +44,7 @@ class NotesController extends AppController {
             $note_saved = $this->Notes->save($note_data['Note']);
             if ($note_saved) {
                 $default_config_ids = array();
-                
+
                 foreach ($this->request->data['notes'] as $decriptedID => $value) {
                     if (is_numeric($decriptedID)) {
                         $default_config_ids[] = ElementHelper::descriptData($decriptedID);
@@ -71,6 +71,15 @@ class NotesController extends AppController {
 
     public function delete() {
         
+    }
+
+    public function element($type) {
+        $this->layout = 'ajax';
+        if (strlen($type) > 0) {
+            $helper = new ElementHelper(new View());
+            $html = $helper->generateElement($type);
+            $this->set('html', $html);
+        }
     }
 
 }

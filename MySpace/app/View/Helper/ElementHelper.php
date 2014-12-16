@@ -30,7 +30,7 @@ class ElementHelper extends FormHelper {
     public static function descriptData($cipher) {
         return Security::rijndael(hex2bin($cipher), Configure::read('Security.cipherSeed'), 'decrypt');
     }
- 
+
     public function generateMultiElement($elementConfig) {
         $result = '';
         foreach ($elementConfig as $config) {
@@ -41,6 +41,20 @@ class ElementHelper extends FormHelper {
             $result .= $this->_View->element($elementName, array('Form' => $this, 'Config' => $config, 'ElementID' => $ElementID));
         }
         return $result;
+    }
+
+    public function generateElement($type) {
+        $possible = "0123456789abcdfghjkmnpqrstvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $elementName = ucfirst($type) . 'Element';
+        $config = array(
+            'id' => substr(str_shuffle($possible), 0, 32),
+            'type' => $type
+        );
+        if ($this->_View->elementExists($elementName)) {
+            return $this->_View->element($elementName, array('Form' => $this, 'Config' => $config));
+        }else{
+            return 'Error';
+        }
     }
 
 }

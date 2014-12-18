@@ -29,6 +29,10 @@ class NoteElement extends AppModel {
     private static function createCommunElement($type, $options) {
         NoteElement::checkLegibility($options);
 
+        if (!isset($options['user_id']) && !isset($options['note_id'])) {
+            throw new Exception('user_id OR note_id must set');
+        }
+        
         $element_model = 'NoteElement';
         if (isset($options['user_id'])) {
             $element_model = 'NoteDefaultConfig';
@@ -37,7 +41,7 @@ class NoteElement extends AppModel {
 
         return array(
             $element_model => array(
-                "nom" => isset($options['nom']) ? $options['nom'] . '' : '-',
+                "label" => isset($options['label']) ? $options['label'] . '' : '-',
                 'type' => $type,
                 'value' => isset($options['value']) ? $options['value'] . '' : '',
                 'position' => isset($options['position']) ? $options['position'] : 1,
@@ -53,19 +57,21 @@ class NoteElement extends AppModel {
     public static function createNumericElement($options = array()) {
         return NoteElement::createCommunElement('NUMERIC', $options);
     }
-    public static function createDateElement($options = array()){
+
+    public static function createDateElement($options = array()) {
         return NoteElement::createCommunElement('Date', $options);
     }
-    
-    public static function createComboElement($options = array()){
+
+    public static function createComboElement($options = array()) {
+        
+    }
+
+    public static function createImageElement() {
+        
+    }
+
+    public static function createRichtextElement() {
         
     }
     
-    public static function createImageElement(){
-        
-    }
-    
-    public static function createRichTextElement(){
-        
-    }
 }

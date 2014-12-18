@@ -1,5 +1,7 @@
 <div class="element">
     <?php
-        echo $this->Form->input($Config['id'], $Config);
+        $FRONT['type']='text';
+        echo $this->Form->input($ID, $FRONT);
+        echo $this->Form->input('__'.$ID, array('type'=>'hidden', 'value'=>$BACK['config']));
     ?>
 </div>

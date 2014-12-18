@@ -4956,3 +4956,31 @@ Stack Trace:
 #3 C:\wamp\www\MySpace\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-12-18 01:10:57 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /MySpace/pages/index
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(3539): ConnectionManager::getDataSource('default')
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(3566): Model->setSource('users')
+#5 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(1369): Model->getDataSource()
+#6 /Users/jianli/Documents/www/MySpace/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /Users/jianli/Documents/www/MySpace/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /Users/jianli/Documents/www/MySpace/app/View/Pages/index.ctp(3): FormHelper->create('User', Array)
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(948): include('/Users/jianli/D...')
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(910): View->_evaluate('/Users/jianli/D...', Array)
+#11 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(471): View->_render('/Users/jianli/D...')
+#12 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(954): View->render('index', NULL)
+#13 /Users/jianli/Documents/www/MySpace/app/Controller/PagesController.php(68): Controller->render('index')
+#14 [internal function]: PagesController->display('index')
+#15 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#16 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#17 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#18 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#19 {main}

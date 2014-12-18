@@ -12,6 +12,7 @@
  * @author jian
  */
 App::uses('FormHelper', 'View/Helper');
+App::uses('AppHelper', 'View/Helper');
 
 class ElementHelper extends FormHelper {
 
@@ -22,37 +23,50 @@ class ElementHelper extends FormHelper {
         ElementHelper::$Key = Configure::read('Security.cipherSeed');
     }
 
-    public static function encrypeData($id) {
-        $re = bin2hex(Security::rijndael($id, Configure::read('Security.cipherSeed'), 'encrypt'));
-        return $re;
-    }
+    //Parametres des elements:
+    //$HELPER; $ID; $FRONT; $BACK;
+    public function generateDefaultElement($elementConfig = null) {
+        if ($elementConfig == null) {
+            $elementConfig = $this->User->findById($this->Auth->user()['id'])['note_default_config'];
+        }
 
-    public static function descriptData($cipher) {
-        return Security::rijndael(hex2bin($cipher), Configure::read('Security.cipherSeed'), 'decrypt');
-    }
-
-    public function generateMultiElement($elementConfig) {
         $result = '';
         foreach ($elementConfig as $config) {
             $elementName = ucfirst($config['type']) . 'Element';
-            $ElementID = $config['id'];
-            $config['id'] = ElementHelper::encrypeData($config['id']);
-            unset($config['user_id']);
-            $result .= $this->_View->element($elementName, array('Form' => $this, 'Config' => $config, 'ElementID' => $ElementID));
+            $ElementID = AppHelper::encrypeData($config['id']);
+            $front = array('label' => $config['label'], 'value' => $config['value']);
+            unset($config['id']);
+            unset($config['value']);
+            $back = array('config' => AppHelper::encrypeData(json_encode($config)));
+
+            $result .= $this->_View->element($elementName, array(
+                'Helper' => $this,
+                'FRONT' => $front,
+                'BACK' => $back,
+                'ID' => $ElementID));
         }
         return $result;
     }
 
-    public function generateElement($type) {
-        $possible = "0123456789abcdfghjkmnpqrstvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public function generateNewElement($type, $label = '', $value = '') {
         $elementName = ucfirst($type) . 'Element';
+
+        $id = AppHelper::encrypeData(uniqid());
+        $front = array('label' => $label, 'value' => $value);
         $config = array(
-            'id' => substr(str_shuffle($possible), 0, 32),
-            'type' => $type
+            'type' => $type,
+            'label' => $label,
+            'position' => 1
         );
+        $back = array('config' => AppHelper::encrypeData(json_encode($config)));
+
         if ($this->_View->elementExists($elementName)) {
-            return $this->_View->element($elementName, array('Form' => $this, 'Config' => $config));
-        }else{
+            return $this->_View->element($elementName, array(
+                        'Helper' => $this,
+                        'ID' => $id,
+                        'FRONT' => $front,
+                        'BACK' => $back));
+        } else {
             return 'Error';
         }
     }

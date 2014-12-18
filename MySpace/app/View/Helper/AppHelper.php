@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application level View Helper
  *
@@ -18,16 +19,25 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('Helper', 'View');
 
 /**
  * Application helper
  *
- * Add your application-wide methods in the class below, your helpers
+ * Add your application-w·ide methods in the class below, your helpers
  * will inherit them.
  *
  * @package       app.View.Helper
  */
 class AppHelper extends Helper {
+
+    public static function encrypeData($id) {
+        $re = bin2hex(Security::rijndael($id, Configure::read('Security.cipherSeed'), 'encrypt'));
+        return $re;
+    }
+
+    public static function descriptData($cipher) {
+        return Security::rijndael(hex2bin($cipher), Configure::read('Security.cipherSeed'), 'decrypt');
+    }
+
 }

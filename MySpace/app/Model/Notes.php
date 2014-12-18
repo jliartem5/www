@@ -18,5 +18,10 @@ class Notes extends AppModel {
             'className' => 'NoteElement'
         )
     );
+    public $belongsTo = array(
+        'user' => array(
+            'className' => 'User'
+        )
+    );
 
 }

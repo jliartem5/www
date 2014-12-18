@@ -22,6 +22,9 @@ class User extends AppModel {
     public $hasMany = array(
         'note_default_config' => array(
             'className' => 'NoteDefaultConfig'
+        ),
+        'note'=>array(
+            'className'=>'Note'
         )
     );
     public $validate = array(

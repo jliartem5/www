@@ -5,7 +5,7 @@ echo $this->Form->input('select_element', array('options' => array(
         'Text', 'Numeric', 'Date'
 )));
 echo $this->Form->create('notes', array('controller' => 'notes', 'action' => 'save'));
-echo $this->Element->generateDefaultElement($DefaultConfig);
+echo $this->Element->generateDefaultElement($DefaultConfig, 'edit');
 ?>
 <div id="custom_elements"></div>
 <?php

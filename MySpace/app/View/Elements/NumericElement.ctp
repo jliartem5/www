@@ -1,4 +1,4 @@
-<div class="element">
+<div class="element element_edit">
     <?php
         $FRONT['type']='numeric';
         echo $this->Form->input($ID, $FRONT);

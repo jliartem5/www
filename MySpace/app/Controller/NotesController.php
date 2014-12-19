@@ -86,22 +86,30 @@ class NotesController extends AppController {
     public function view($key){
         $key = UtilityComponent::descriptData($key);
         
-        $all_notes = $this->Auth->user('Notes');
+        $all_notes = $this->Auth->user()['Notes'];
         if(key_exists($key, $all_notes)){
             $note_complete = $this->Note->find('all', array(
                 'conditions'=>array('id'=>$key)));
             $this->set('note', $note_complete);
         }
+    }
+    
+    public function template_edit(){
+        $default_template_element = $this->Auth->user()['NoteDefaultConifg'];
+        $this->set('elements', $default_template_element);
+    }
+    
+    public function save_template(){
         
     }
 
-    public function element($type) {
+    public function element($type, $mode) {
         $this->layout = 'ajax';
         if (strlen($type) > 0) {
             $helper = new ElementHelper(new View());
-            $html = $helper->generateNewElement($type);
+            $html = $helper->generateNewElement($type, $mode);
             $this->set('html', $html);
         }
     }
-
+    
 }

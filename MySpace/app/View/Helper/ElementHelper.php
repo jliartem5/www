@@ -25,7 +25,7 @@ class ElementHelper extends FormHelper {
 
     //Parametres des elements:
     //$HELPER; $ID; $FRONT; $BACK;
-    public function generateDefaultElement($elementConfig = null) {
+    public function generateDefaultElement($mode, $elementConfig = null) {
         if ($elementConfig == null) {
             $elementConfig = $this->User->findById($this->Auth->user()['id'])['note_default_config'];
         }
@@ -43,12 +43,13 @@ class ElementHelper extends FormHelper {
                 'Helper' => $this,
                 'FRONT' => $front,
                 'BACK' => $back,
-                'ID' => $ElementID));
+                'ID' => $ElementID,
+                'MODE'=>$mode));
         }
         return $result;
     }
 
-    public function generateNewElement($type, $label = '', $value = '') {
+    public function generateNewElement($type,$mode, $label = '', $value = '') {
         $elementName = ucfirst($type) . 'Element';
 
         $id = AppHelper::encrypeData(uniqid());
@@ -65,7 +66,8 @@ class ElementHelper extends FormHelper {
                         'Helper' => $this,
                         'ID' => $id,
                         'FRONT' => $front,
-                        'BACK' => $back));
+                        'BACK' => $back,
+                        'MODE'=>$mode));
         } else {
             return 'Error';
         }

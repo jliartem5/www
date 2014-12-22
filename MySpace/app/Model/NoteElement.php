@@ -38,13 +38,20 @@ class NoteElement extends AppModel {
             $element_model = 'NoteDefaultConfig';
         }
         $foreign_field = $element_model == 'NoteElement' ? 'note_id' : 'user_id';
-
+        
+        $default_gridster_position = array(
+            'data-row'=>'1',
+            'data-col'=>'1',
+            'data-sizex'=>'1',
+            'data-sizey'=>'1'
+        );
+                
         return array(
             $element_model => array(
                 "label" => isset($options['label']) ? $options['label'] . '' : '-',
                 'type' => $type,
                 'value' => isset($options['value']) ? $options['value'] . '' : '',
-                'position' => isset($options['position']) ? $options['position'] : 1,
+                'position' => isset($options['position']) ? json_encode($options['position']) : json_encode($default_gridster_position),
                 $foreign_field => $options[$foreign_field]
             )
         );

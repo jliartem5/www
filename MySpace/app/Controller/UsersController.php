@@ -56,7 +56,7 @@ class UsersController extends AppController {
                 if ($this->User->save($this->request->data)) {
                     $user_id = $this->User->getInsertID();
 
-
+                    
                     $default_config = $this->NoteDefaultConfig->genereSimpleNoteConfig($user_id);
                     if ($this->UserConfig->save($this->UserConfig->genereSimpleUserConfig($user_id)) &&
                             $this->NoteDefaultConfig->saveMany($default_config)) {

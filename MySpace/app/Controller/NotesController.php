@@ -26,9 +26,10 @@ class NotesController extends AppController {
     }
 
     public function index() {
-        $note_list = $this->Notes->find('all', array('conditions' => array(
-                'user_id' => $this->Auth->user()['id']
-        )));
+        $note_list = $this->Notes->find('threaded', array('conditions' => array(
+                'user_id' => $this->Auth->user()['id']),
+            'fields' => array('id', 'create_date', 'last_modif_date'),
+            'recursive' => 0));
         $this->set('notes', $note_list);
     }
 
@@ -86,44 +87,54 @@ class NotesController extends AppController {
     public function view($key) {
         $key = UtilityComponent::descriptData($key);
 
-        $all_notes = $this->Auth->user()['Notes'];
-        if (key_exists($key, $all_notes)) {
-            $note_complete = $this->Note->find('all', array(
-                'conditions' => array('id' => $key)));
-            $this->set('note', $note_complete);
-        }
+        $note_complete = $this->Notes->find('threaded', array(
+            'conditions' => array('Notes.id' => $key)
+        ));
+
+        $this->set('note', $note_complete);
     }
 
     public function template_edit() {
         if ($this->request->is('post')) {
-            $this->autoRender = false;//on desactive la fonctionnalité View
-             
+            $this->autoRender = false; //on desactive la fonctionnalité View
+
             $user_id = $this->Auth->user()['id'];
-            $clear = $this->NoteDefaultConfig->delete(array('constraints' => array('user_id' => $user_id)));
+            $clear = $this->NoteDefaultConfig->deleteAll(array('user_id' => $user_id), true);
+
             if ($clear) {
                 $template_configs = array();
-                foreach ($this->request->data as $id=>$element_config) {
-                    unset($element_config['id']);
-                    $element_config['user_id'] = $user_id;
-                    $template_configs[] = $element_config;
+                foreach ($this->request->data as $id => $element_data) {
+                    unset($element_data['id']);
+                    $config = json_decode(ElementHelper::descriptData($element_data['config']), true);
+                    $config['position'] = json_encode($element_data['position'], true);
+                    $config['label'] = $element_data['label'];
+                    $config['value'] = $element_data['value'];
+                    $config['user_id'] = $user_id;
+
+                    $template_configs[] = $config;
                 }
+
                 $saveResult = $this->NoteDefaultConfig->saveMany($template_configs);
-                if($saveResult){
+                if ($saveResult) {
                     return 'Template saved';
                 }
+            } else {
+                return 'Cannot clear old templat';
             }
         } else {
-            $default_template_element = $this->Auth->user()['NoteDefaultConifg'];
+            $default_template_element = $this->NoteDefaultConfig->find('all', array('conditions' => array(
+                    'user_id' => $this->Auth->user()['id']
+            )));
             $this->set('elements', $default_template_element);
         }
     }
 
+    //generer un element et retourner code html
     public function element($type, $mode) {
-        $this->layout = 'ajax';
+        $this->autoRender = false;
         if (strlen($type) > 0) {
             $helper = new ElementHelper(new View());
-            $html = $helper->generateNewElement($type, $mode);
-            $this->set('html', $html);
+            return $helper->generateNewElement($type, $mode);
         }
     }
 

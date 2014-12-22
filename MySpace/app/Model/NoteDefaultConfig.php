@@ -11,7 +11,8 @@
  *
  * @author jian
  */
-App::import('Model','NoteElement');
+App::import('Model', 'NoteElement');
+
 class NoteDefaultConfig extends AppModel {
 
     public $name = 'NoteDefaultConfig';
@@ -21,25 +22,51 @@ class NoteDefaultConfig extends AppModel {
      */
     public function genereSimpleNoteConfig($user_id) {
 
+        $default_gridster_position = array(
+            'data-row' => '1',
+            'data-col' => '1',
+            'data-sizex' => '1',
+            'data-sizey' => '1'
+        );
+
         $default_config = array(
             //Price
             NoteElement::createNumericElement(array(
-                'name' => "Price",
+                'label' => "Price",
                 'value' => 0,
-                'user_id' => $user_id
+                'user_id' => $user_id,
+                'position' => array(
+                    'data-row' => '1',
+                    'data-col' => '1',
+                    'data-sizex' => '1',
+                    'data-sizey' => '1'
+                )
             ))['NoteDefaultConfig'],
             //Raison
             NoteElement::createTextElement(array(
-                'name' => 'Why this position ?',
-                'user_id' => $user_id
+                'label' => 'Why this position ?',
+                'user_id' => $user_id,
+                'position' => array(
+                    'data-row' => '2',
+                    'data-col' => '1',
+                    'data-sizex' => '4',
+                    'data-sizey' => '4'
+                )
             ))['NoteDefaultConfig'],
             //Date
             NoteElement::createDateElement(array(
-                'name' => 'Position date',
-                'user_id' => $user_id
+                'label' => 'Position date',
+                'user_id' => $user_id,
+                'position' => array(
+                    'data-row' => '1',
+                    'data-col' => '4',
+                    'data-sizex' => '1',
+                    'data-sizey' => '1'
+                )
             ))['NoteDefaultConfig']
         );
 
         return $default_config;
     }
+
 }

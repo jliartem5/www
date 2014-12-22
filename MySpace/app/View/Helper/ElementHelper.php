@@ -17,6 +17,10 @@ App::uses('AppHelper', 'View/Helper');
 class ElementHelper extends FormHelper {
 
     public static $Key = '';
+    public static $MODE_EDIT = 'edit';
+    public static $MODE_SHOW = 'show';
+    public static $MODE_PREVIEW = 'preview';
+    public static $MODE_RAW = 'raw';
 
     public function __construct(\View $View, $settings = array()) {
         parent::__construct($View, $settings);
@@ -25,31 +29,35 @@ class ElementHelper extends FormHelper {
 
     //Parametres des elements:
     //$HELPER; $ID; $FRONT; $BACK;
-    public function generateDefaultElement($mode, $elementConfig = null) {
+    public function generateElements($elementConfig, $mode) {
         if ($elementConfig == null) {
             $elementConfig = $this->User->findById($this->Auth->user()['id'])['note_default_config'];
         }
 
         $result = '';
         foreach ($elementConfig as $config) {
-            $elementName = ucfirst($config['type']) . 'Element';
-            $ElementID = AppHelper::encrypeData($config['id']);
-            $front = array('label' => $config['label'], 'value' => $config['value']);
-            unset($config['id']);
-            unset($config['value']);
-            $back = array('config' => AppHelper::encrypeData(json_encode($config)));
-
-            $result .= $this->_View->element($elementName, array(
-                'Helper' => $this,
-                'FRONT' => $front,
-                'BACK' => $back,
-                'ID' => $ElementID,
-                'MODE'=>$mode));
+            $result.= $this->generateElement($config, $mode);
         }
         return $result;
     }
 
-    public function generateNewElement($type,$mode, $label = '', $value = '') {
+    public function generateElement($config, $mode) {
+        $elementName = ucfirst($config['type']) . 'Element';
+        $ElementID = AppHelper::encrypeData($config['id']);
+        $front = array('label' => $config['label'], 'value' => $config['value']);
+        unset($config['id']);
+        unset($config['value']);
+        $back = array('config' => AppHelper::encrypeData(json_encode($config)));
+
+        return $this->_View->element($elementName, array(
+                    'Helper' => $this,
+                    'FRONT' => $front,
+                    'BACK' => $back,
+                    'ID' => $ElementID,
+                    'MODE' => $mode));
+    }
+
+    public function generateNewElement($type, $mode, $label = '', $value = '') {
         $elementName = ucfirst($type) . 'Element';
 
         $id = AppHelper::encrypeData(uniqid());
@@ -67,7 +75,7 @@ class ElementHelper extends FormHelper {
                         'ID' => $id,
                         'FRONT' => $front,
                         'BACK' => $back,
-                        'MODE'=>$mode));
+                        'MODE' => $mode));
         } else {
             return 'Error';
         }

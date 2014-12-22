@@ -16,8 +16,8 @@ class UtilityComponent extends Component{
         return (new DateTime())->format('Y-m-d H:i:s');
     }
     
-    public static function encrypeData($id) {
-        $re = bin2hex(Security::rijndael($id, Configure::read('Security.cipherSeed'), 'encrypt'));
+    public static function encrypeData($data) {
+        $re = bin2hex(Security::rijndael($data, Configure::read('Security.cipherSeed'), 'encrypt'));
         return $re;
     }
 

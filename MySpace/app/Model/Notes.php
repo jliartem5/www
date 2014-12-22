@@ -24,4 +24,13 @@ class Notes extends AppModel {
         )
     );
 
+    public function afterFind($results, $primary = false) {
+        foreach ($results as $key => $val) {
+            if (isset($val['Notes']['id'])) {
+                $results[$key]['Notes']['id'] = UtilityComponent::encrypeData($results[$key]['Notes']['id']);
+            }
+        }
+        return $results;
+    }
+
 }

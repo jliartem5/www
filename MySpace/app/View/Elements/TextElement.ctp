@@ -22,15 +22,18 @@ if (!isset($MODE)) {
     endif;
     if ($MODE == 'preview'):
 
-        echo 'Title:';
+        echo $FRONT['label']. ':</br>';
         echo 'Your text here';
         $BACK['id'] = $ID;
+        $f = json_encode($FRONT);
+        $b = json_encode($BACK);
         $element_config_data = json_encode(array_merge($BACK, $FRONT));
+        
         ?>
         <script>
             (function () {
-                var element_data = '<?php echo str_replace($element_config_data, "'", '"'); ?>';
-                $('#<?php echo $ID; ?>').data('config', element_data);
+                var element_data = JSON.parse('<?php echo $element_config_data; ?>');
+                $('#<?php echo $ID; ?>').data('elementData', element_data);
             })();
         </script>
         <?php

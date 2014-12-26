@@ -15,7 +15,7 @@ class User extends AppModel {
 
     public $name = 'User';
     public $hasOne = array(
-        'config' => array(
+        'user_config' => array(
             'className' => 'UserConfig'
         )
     );

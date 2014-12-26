@@ -20,8 +20,8 @@ if (!isset($MODE)) {
         </script>
         <?php
     endif;
-    if ($MODE == 'show'):
-        echo $FRONT['label'] . ':';
+    if ($MODE == 'view'):
+        echo $FRONT['label'] . ':</br>';
         echo $FRONT['value'];
     endif;
     if ($MODE == 'raw'):

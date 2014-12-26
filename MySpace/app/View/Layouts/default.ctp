@@ -31,6 +31,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css('cake.generic.css');
         echo $this->Html->css('plugins/jquery.datetimepicker.css');
         echo $this->Html->script('jquery-1.11.1.min.js');
+        echo $this->Html->script('plugins/angular.min.js');
         echo $this->Html->script('Element.js');
         echo $this->Html->script('plugins/jquery.datetimepicker.js');
         echo $this->fetch('meta');
@@ -38,13 +39,22 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->fetch('script');
         ?>
     </head>
-    <body>
+    <body class="white">
         <div id="container">
             <div id="header">
-                <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+                <div class="header-left">
+                    <div>Add</div>
+                    <div>Edit</div>
+                </div>
+                <div class="header-middle">
+                    <span>Info </span>
+                    Gopro +4.65(<span style="color: green">5.77%</span>)
+                </div>
+                <div class="header-right">
+                    
+                </div>
             </div>
             <div id="content">
-
                 <?php echo $this->Session->flash(); ?>
 
                 <?php echo $this->fetch('content'); ?>

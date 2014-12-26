@@ -1,3 +1,8 @@
+
+/**
+    Note page
+    
+*/
 .gridster * {
   margin:0;
   padding:0;
@@ -8,11 +13,6 @@ ul {
 }
 
 
-/*/
-/* demo
-/*/
-
-
 body {
     font-size: 16px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -20,13 +20,15 @@ body {
     margin: 30px 40px;
 }
 
+body.white{
+    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #d1d1d1),color-stop(100%, #f5f5f5));
+    background-image:-webkit-linear-gradient(top, #d1d1d1,#f5f5f5);
+    background-color: #d1d1d1;
+}
+
 .controls {
     margin-bottom: 20px;
 }
-
-/*/
-/* gridster
-/*/
 
 .gridster ul {
     background-color: #EFEFEF;

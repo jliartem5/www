@@ -18,7 +18,7 @@ class ElementHelper extends FormHelper {
 
     public static $Key = '';
     public static $MODE_EDIT = 'edit';
-    public static $MODE_SHOW = 'show';
+    public static $MODE_VIEW = 'view';
     public static $MODE_PREVIEW = 'preview';
     public static $MODE_RAW = 'raw';
 

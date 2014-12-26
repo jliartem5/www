@@ -76,7 +76,7 @@ $this->start('footer');
             $('#template_grid li').each(function (index, item) {
                 var $element_config_data = $(item).find('.element_preview:first').data('elementData');
                 $element_config_data['position'] = {
-                    'data-row': $(item).attr('data-row'),
+                    'data-row': $(item).attr('data-rowa'),
                     'data-col': $(item).attr('data-col'),
                     'data-sizex': $(item).attr('data-sizex'),
                     'data-sizey': $(item).attr('data-sizey')

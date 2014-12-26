@@ -12,8 +12,8 @@ if (!isset($MODE)) {
         echo $this->Form->input($ID, $FRONT);
         echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
     endif;
-    if ($MODE == 'show'):
-        echo $FRONT['label'] . ':';
+    if ($MODE == 'view'):
+        echo $FRONT['label'] . ':</br>';
         echo $FRONT['value'];
     endif;
     if ($MODE == 'raw'):

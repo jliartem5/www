@@ -87,9 +87,7 @@ class NotesController extends AppController {
     public function view($key) {
         $key = UtilityComponent::descriptData($key);
 
-        $note_complete = $this->Notes->find('threaded', array(
-            'conditions' => array('Notes.id' => $key)
-        ));
+        $note_complete = $this->Notes->findById($key);
 
         $this->set('note', $note_complete);
     }

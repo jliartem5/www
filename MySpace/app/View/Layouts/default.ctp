@@ -29,42 +29,52 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
         echo $this->Html->css('styles');
         echo $this->Html->css('cake.generic.css');
-        echo $this->Html->css('plugins/jquery.datetimepicker.css');
         echo $this->Html->script('jquery-1.11.1.min.js');
-        echo $this->Html->script('plugins/angular.min.js');
-        echo $this->Html->script('Element.js');
+        echo $this->Html->script('plugins/angular.js');
+        echo $this->Html->css('plugins/jquery.datetimepicker.css');
+        echo $this->Html->script('Journal.js');
         echo $this->Html->script('plugins/jquery.datetimepicker.js');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
         ?>
     </head>
-    <body class="white">
-        <div id="container">
-            <div id="header">
+    <body class="white" ng-app="Journal">
+        <div id="container" ng-controller="JournalCtrl">
+
+
+            <div id="header" ng-controller="JournalHeaderCtrl as headerCtrl">
+
                 <div class="header-left">
-                    <div>Add</div>
-                    <div>Edit</div>
+                    <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
+                        <menuadd url="<?php echo $this->Html->url('/notes/element/'); ?>">
+                        </menuadd>
+                        <button ng-click="$root.switchJournalMode($root.JournalMode.View)">View Mode</button>
+                    </div>
+                    <div ng-show="$root.CurrentMode == $root.JournalMode.View">
+                        <button ng-click="$root.switchJournalMode($root.JournalMode.Edit)">Edit Mode</button>
+                    </div>
+                    <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
+                        
+                    </div>
                 </div>
                 <div class="header-middle">
                     <span>Info </span>
                     Gopro +4.65(<span style="color: green">5.77%</span>)
                 </div>
                 <div class="header-right">
-                    
+                    <div>List</div>
                 </div>
             </div>
-            <div id="content">
-                <?php echo $this->Session->flash(); ?>
-
+            <div id="content" ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}">
                 <?php echo $this->fetch('content'); ?>
+            </div>
+            <div id="footer" ng-controller="JournalFooterCtrl as footerCtrl">
                 <footer>
                     <?php
                     echo $this->fetch('footer');
                     ?>
                 </footer>
-            </div>
-            <div id="footer">
                 <?php
                 echo $this->Html->link(
                         $this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')), 'http://www.cakephp.org/', array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')

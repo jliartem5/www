@@ -4,31 +4,28 @@ if (!isset($MODE)) {
 }
 ?>
 <div class="element element_<?php echo strtolower($MODE); ?>" id="<?php echo $ID; ?>">
-
-    <?php
-    if ($MODE == 'edit'):
-
+    <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
+        <?php
         $FRONT['type'] = 'text';
         echo $this->Form->input($ID, $FRONT);
         echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
-    endif;
-    if ($MODE == 'view'):
+        ?>
+    </div>
+    <div ng-show="$root.CurrentMode == $root.JournalMode.View">
+        <?php
         echo $FRONT['label'] . ':</br>';
         echo $FRONT['value'];
-    endif;
-    if ($MODE == 'raw'):
-        $BACK['id'] = $ID;
-        echo json_encode(array_merge($BACK, $FRONT));
-    endif;
-    if ($MODE == 'preview'):
+        ?>
+    </div>
 
-        echo $FRONT['label']. ':</br>';
+    <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
+        <?php
+        echo $FRONT['label'] . ':</br>';
         echo 'Your text here';
         $BACK['id'] = $ID;
         $f = json_encode($FRONT);
         $b = json_encode($BACK);
         $element_config_data = json_encode(array_merge($BACK, $FRONT));
-        
         ?>
         <script>
             (function () {
@@ -36,7 +33,41 @@ if (!isset($MODE)) {
                 $('#<?php echo $ID; ?>').data('elementData', element_data);
             })();
         </script>
-        <?php
-    endif;
+    </div>
+    <!--
+    </div>
+<?php
+if ($MODE == 'edit'):
+
+    $FRONT['type'] = 'text';
+    echo $this->Form->input($ID, $FRONT);
+    echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
+endif;
+if ($MODE == 'view'):
+    echo $FRONT['label'] . ':</br>';
+    echo $FRONT['value'];
+endif;
+if ($MODE == 'raw'):
+    $BACK['id'] = $ID;
+    echo json_encode(array_merge($BACK, $FRONT));
+endif;
+if ($MODE == 'preview'):
+
+    echo $FRONT['label'] . ':</br>';
+    echo 'Your text here';
+    $BACK['id'] = $ID;
+    $f = json_encode($FRONT);
+    $b = json_encode($BACK);
+    $element_config_data = json_encode(array_merge($BACK, $FRONT));
     ?>
+            <script>
+                (function () {
+                    var element_data = JSON.parse('<?php echo $element_config_data; ?>');
+                    $('#<?php echo $ID; ?>').data('elementData', element_data);
+                })();
+            </script>
+    <?php
+endif;
+?>
+    -->
 </div>

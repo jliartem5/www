@@ -5313,3 +5313,156 @@ Stack Trace:
 #10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
 #11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2014-12-26 17:59:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 18:10:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 18:11:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 18:28:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:27 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:00:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:11:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:12:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:12:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:12:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:12:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-26 19:12:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/js/plugins/angular.min.js.map
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

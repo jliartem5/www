@@ -7,7 +7,7 @@ if (!isset($MODE)) {
 
     <?php
     if ($MODE == 'edit'):
-        
+
         echo $this->Form->input($ID, $FRONT);
         echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
         ?>

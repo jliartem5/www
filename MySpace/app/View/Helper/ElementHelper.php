@@ -58,7 +58,10 @@ class ElementHelper extends FormHelper {
     }
 
     public function generateNewElement($type, $mode, $label = '', $value = '') {
-        $elementName = ucfirst($type) . 'Element';
+       $elementName = ucfirst($type);
+        if(preg_match('/Element$/', $type) == false){
+            $elementName .= 'Element';
+        }
 
         $id = AppHelper::encrypeData(uniqid());
         $front = array('label' => $label, 'value' => $value);

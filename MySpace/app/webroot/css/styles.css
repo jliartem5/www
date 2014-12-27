@@ -26,6 +26,24 @@ body.white{
     background-color: #d1d1d1;
 }
 
+.header-left{
+    float: left;
+}
+.header-left div{
+    display: inline;
+}
+
+.header-middle{
+    left:50%;
+    width:300px;
+    margin-left:-150px;
+    position:absolute;
+}
+
+.header-right{
+    float:right;
+}
+
 .controls {
     margin-bottom: 20px;
 }

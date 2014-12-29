@@ -5466,3 +5466,240 @@ Request URL: /MySpace/js/plugins/angular.min.js.map
 Stack Trace:
 #0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-12-28 01:03:02 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /MySpace/notes/index
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(837): HelperCollection->__isset('Auth')
+#2 /Users/jianli/Documents/www/MySpace/app/View/Layouts/default.ctp(43): View->__get('Auth')
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(948): include('/Users/jianli/D...')
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(910): View->_evaluate('/Users/jianli/D...', Array)
+#5 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(542): View->_render('/Users/jianli/D...')
+#6 /Users/jianli/Documents/www/MySpace/lib/Cake/View/View.php(479): View->renderLayout('', 'default')
+#7 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#8 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#10 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-12-28 01:44:51 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 145]
+2014-12-28 01:44:51 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/index
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 145)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:44:52 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 145]
+2014-12-28 01:44:52 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/template
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 145)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:44:52 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 145]
+2014-12-28 01:44:52 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/elements
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 145)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 145, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:46:58 Error: Fatal Error (1): Call to a member function generateNewElement() on null in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 145]
+2014-12-28 01:46:58 Error: [FatalErrorException] Call to a member function generateNewElement() on null
+Request URL: /MySpace/notes/elements
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/jianli/D...', 145)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/jianli/D...', 145, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/jianli/D...', 145, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:47:38 Error: Fatal Error (1): Call to a member function generateNewElement() on null in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 145]
+2014-12-28 01:47:38 Error: [FatalErrorException] Call to a member function generateNewElement() on null
+Request URL: /MySpace/notes/elements
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/jianli/D...', 145)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/jianli/D...', 145, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/jianli/D...', 145, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:51:53 Error: Fatal Error (1): Call to undefined function jsone_encode() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 149]
+2014-12-28 01:51:53 Error: [FatalErrorException] Call to undefined function jsone_encode()
+Request URL: /MySpace/notes/elements
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 149)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 149, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 149, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 01:56:42 Error: [MissingActionException] Action NotesController::template-config() could not be found.
+Exception Attributes: array (
+  'controller' => 'NotesController',
+  'action' => 'template-config',
+)
+Request URL: /MySpace/notes/template-config
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#2 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-12-28 01:59:01 Error: [MissingActionException] Action NotesController::undefinednotes() could not be found.
+Exception Attributes: array (
+  'controller' => 'NotesController',
+  'action' => 'undefinednotes',
+)
+Request URL: /MySpace/notes/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#2 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-12-29 00:53:41 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:53:43 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:53:58 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:54:26 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:54:28 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:54:29 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:54:31 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:54:32 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:55:04 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:56:17 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:56:51 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:58:23 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:59:02 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 00:59:07 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-29 01:49:20 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 173]
+2014-12-29 01:49:20 Error: [FatalErrorException] Cannot use object of type stdClass as array
+Request URL: /MySpace/notes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/Users/jianli/D...', 173)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/Users/jianli/D...', 173, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/Users/jianli/D...', 173, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

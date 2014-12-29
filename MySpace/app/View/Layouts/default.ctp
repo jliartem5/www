@@ -39,15 +39,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->fetch('script');
         ?>
     </head>
-    <body class="white" ng-app="Journal">
+    <body class="white" ng-app="Journal" ng-init="$root.baseURL='<?php echo $this->Html->url('/');?>'">
         <div id="container" ng-controller="JournalCtrl">
-
-
             <div id="header" ng-controller="JournalHeaderCtrl as headerCtrl">
 
                 <div class="header-left">
                     <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
-                        <menuadd url="<?php echo $this->Html->url('/notes/element/'); ?>">
+                        <menuadd url="{{$root.baseURL+'notes/element/'}}">
                         </menuadd>
                         <button ng-click="$root.switchJournalMode($root.JournalMode.View)">View Mode</button>
                     </div>
@@ -66,7 +64,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     <div>List</div>
                 </div>
             </div>
-            <div id="content" ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}">
+            <div id="content">
                 <?php echo $this->fetch('content'); ?>
             </div>
             <div id="footer" ng-controller="JournalFooterCtrl as footerCtrl">

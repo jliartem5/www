@@ -6,6 +6,7 @@
 ?>
 <gridster class="gridster ready" style="width:100%">
         <?php
+        debug($DefaultConfig);
         foreach ($DefaultConfig as $element) {
             $position_array = json_decode($element['position'], true);
             $row = $position_array['data-row'];
@@ -13,7 +14,7 @@
             $sizex = $position_array['data-sizex'];
             $sizey = $position_array['data-sizey'];
             echo "<li data-row='$row' data-col='$col' data-sizex='$sizex' data-sizey='$sizey'>"
-            . $this->Element->generateElement($element, ElementHelper::$MODE_EDIT)
+            . $this->Element->genaerateElement($element, ElementHelper::$MODE_EDIT)
             . '</li>';
         }
         ?>

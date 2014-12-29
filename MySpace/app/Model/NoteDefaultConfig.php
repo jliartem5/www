@@ -69,4 +69,14 @@ class NoteDefaultConfig extends AppModel {
         return $default_config;
     }
 
+    public function afterFind($results, $primary = false) {
+        foreach ($results as $key => $val) {
+            if (isset($val['note_default_config']['id'])) {
+                $results[$key]['note_default_config']['id'] = UtilityComponent::encrypeData($results[$key]['note_default_config']['id']);
+                $results[$key]['note_default_config']['type'] = strtoupper($results[$key]['note_default_config']['type']);
+                
+            }
+        }
+        return $results;
+    }
 }

@@ -3,71 +3,20 @@ if (!isset($MODE)) {
     $MODE = 'show';
 }
 ?>
-<div class="element element_<?php echo strtolower($MODE); ?>" id="<?php echo $ID; ?>">
+<div class="element element_<?php echo strtolower($MODE); ?>" id="{{config.id}}">
     <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
-        <?php
-        $FRONT['type'] = 'text';
-        echo $this->Form->input($ID, $FRONT);
-        echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
-        ?>
+        <label class="element-label" for="{{config.id}}">{{config.label}}</label>
+        <input type="text" value="{{config.value}}" ng-model="config.value" id="{{config.id}}"/>
     </div>
     <div ng-show="$root.CurrentMode == $root.JournalMode.View">
-        <?php
-        echo $FRONT['label'] . ':</br>';
-        echo $FRONT['value'];
-        ?>
+        <label class="element-label" for="{{config.id}}">{{config.label}}:</label>
+        <br>
+        <div>{{config.value}}</div>
     </div>
-
     <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
-        <?php
-        echo $FRONT['label'] . ':</br>';
-        echo 'Your text here';
-        $BACK['id'] = $ID;
-        $f = json_encode($FRONT);
-        $b = json_encode($BACK);
-        $element_config_data = json_encode(array_merge($BACK, $FRONT));
-        ?>
-        <script>
-            (function () {
-                var element_data = JSON.parse('<?php echo $element_config_data; ?>');
-                $('#<?php echo $ID; ?>').data('elementData', element_data);
-            })();
-        </script>
+        
+        <label class="element-label" for="{{config.id}}">{{config.label}}:</label>
+        <br>
+        <div>Your text here</div>
     </div>
-    <!--
-    </div>
-<?php
-if ($MODE == 'edit'):
-
-    $FRONT['type'] = 'text';
-    echo $this->Form->input($ID, $FRONT);
-    echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
-endif;
-if ($MODE == 'view'):
-    echo $FRONT['label'] . ':</br>';
-    echo $FRONT['value'];
-endif;
-if ($MODE == 'raw'):
-    $BACK['id'] = $ID;
-    echo json_encode(array_merge($BACK, $FRONT));
-endif;
-if ($MODE == 'preview'):
-
-    echo $FRONT['label'] . ':</br>';
-    echo 'Your text here';
-    $BACK['id'] = $ID;
-    $f = json_encode($FRONT);
-    $b = json_encode($BACK);
-    $element_config_data = json_encode(array_merge($BACK, $FRONT));
-    ?>
-            <script>
-                (function () {
-                    var element_data = JSON.parse('<?php echo $element_config_data; ?>');
-                    $('#<?php echo $ID; ?>').data('elementData', element_data);
-                })();
-            </script>
-    <?php
-endif;
-?>
-    -->
 </div>

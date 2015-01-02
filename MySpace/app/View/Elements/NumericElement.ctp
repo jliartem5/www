@@ -3,37 +3,23 @@ if (!isset($MODE)) {
     $MODE = 'show';
 }
 ?>
-<div class="element element_<?php echo strtolower($MODE); ?>" id="<?php echo $ID; ?>">
+<div class="element element_<?php echo strtolower($MODE); ?>">
 
-    <?php
-    if ($MODE == 'edit'):
+    <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
+        <label class="element-label" for="{{config.id}}">{{config.label}}</label>
+        <input type="number" value="{{config.value}}" ng-model="config.value" id="{{config.id}}"/>
+        
+    </div>
+    <div ng-show="$root.CurrentMode == $root.JournalMode.View">
+        <label class="element-label" for="{{config.id}}">{{config.label}}:</label>
+        <br>
+        <div>{{config.value}}</div>
+    </div>
+    <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
 
-        $FRONT['type'] = 'number';
-        echo $this->Form->input($ID, $FRONT);
-        echo $this->Form->input('__' . $ID, array('type' => 'hidden', 'value' => $BACK['config']));
-    endif;
-    if ($MODE == 'view'):
-        echo $FRONT['label'] . ':</br>';
-        echo $FRONT['value'];
-    endif;
-    if ($MODE == 'raw'):
-        $BACK['id'] = $ID;
-        echo json_encode(array_merge($BACK, $FRONT));
-    endif;
-    if ($MODE == 'preview'):
-
-        echo $FRONT['label'].':</br>';
-        echo 'number here';
-        $BACK['id'] = $ID;
-        $element_config_data = json_encode(array_merge($BACK, $FRONT));
-        ?>
-        <script>
-            (function () {
-                var element_data = JSON.parse('<?php echo $element_config_data; ?>');
-                $('#<?php echo $ID; ?>').data('elementData', element_data);
-            })();
-        </script>
-        <?php
-    endif;
-    ?>
+        <label class="element-label" for="{{config.id}}">{{config.label}}:</label>
+        <br>
+        <div>A number</div>
+    </div>
+    
 </div>

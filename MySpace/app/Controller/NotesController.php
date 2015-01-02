@@ -136,17 +136,6 @@ class NotesController extends AppController {
         }
     }
 
-    //generer plusieurs elements et retourner les codes html
-    public function elements() {
-        $this->autoRender = false;
-        if ($this->request->is('post')) {
-            $data = $this->request->input('json_decode', true);
-            $result = $this->_elements($data['names'], $data['mode']);
-            return json_encode($result);
-        }
-        return "";
-    }
-
     //recuperer default template + code htmls
     public function templateConfig() {
         $this->autoRender = false;

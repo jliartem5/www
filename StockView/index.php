@@ -17,7 +17,10 @@
         <button>Play</button>
     </div>
     <div id="chart"></div>
-
+    <?php
+        $stockTag = $_GET['s'];
+        $yahooApi = "http://quote.yahoo.com/d/quotes.csv?s=".$stockTag."&f=ghop";
+    ?>
     <script type="text/javascript">
     var candleData = "Date,Open,Close,High,Low\n" +
             "2011-12-06,392.54,390.95,394.63,389.38\n" +

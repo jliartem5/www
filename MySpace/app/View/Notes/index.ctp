@@ -1,8 +1,6 @@
+
 <div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}">
-    <gridster class="gridster ready" style="width:100%">
-        <gridsterelement ng-repeat="config in getTemplateConfig()" config="config">
-            
-        </gridsterelement>
+    <gridster class="gridster ready" style="width:100%" config="config">
     </gridster>
     <?php
     $this->start('script');

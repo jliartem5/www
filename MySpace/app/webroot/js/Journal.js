@@ -8,20 +8,99 @@
     var app = angular.module('Journal', []);
 
 
-    app.factory('NoteDataManagerService', function ($rootScope, $http) {
+    app.factory('NoteTemplateManagerService', function ($rootScope, $http) {
 
-        var noteData = {};
-        //Current note data/status
-        noteData.currentNote = {
-            elements: []
-        };
-        //Default user template data
-        noteData.templateConfig = {};
+        //Default user template data, les données sone en mode prive
+        var templateConfig = {};
 
         //Template array for every element disponible on the page
-        noteData.elementTemplate = {};
+        var elementsTemplate = {};
 
-        return noteData;
+        var noteController = {
+            setTemplateConfig: function (c) {
+                templateConfig = c;
+                //jeter un evenement pour ceux qui l'interesse
+                //(dans le cas de ajax, il aura fallu permettre aux autres controller/directive de 
+                //faire quelque choses quand templateConfig est modifié)
+                console.log('set template config');
+                $rootScope.$broadcast($rootScope.JournalEvents.ServiceSetTemplateConfig, c);
+                this.onTemplateConfig(c);
+            },
+            onTemplateConfig: function (c) {
+            },
+            getTemplateConfig: function () {
+                return templateConfig;
+            },
+            setElementsTemplate: function (t) {
+                $rootScope.$broadcast($rootScope.JournalEvents.ServiceSetElementsTemplate, t);
+                elementsTemplate = t;
+
+            },
+            getElementsTemplate: function () {
+                return elementsTemplate;
+            },
+            addElementTemplate: function (templateName, html) {
+                if (elementsTemplate[templateName] === undefined) {
+                    elementsTemplate[templateName] = html;
+
+                }
+            }
+
+        };
+        return noteController;
+    });
+
+    app.factory('GridsterShareService', function ($rootScope) {
+        var gridster = undefined;
+
+        //Current note data/status in gridster
+        var gridsterNoteData = [];
+        
+        var gridsterObj = {
+        };
+        /*
+        function check(){
+            console.log(gridsterNoteData);
+        }
+        
+        setInterval(check, 3000);
+        */
+        gridsterObj.setGridster = function (gr) {
+            console.log('set gridster');
+            gridster = gr;
+        };
+        gridsterObj.getGridster = function () {
+            return gridster;
+        };
+        gridsterObj.addWidget = function (scope, widget, sizeX, sizeY, x, y) {
+            if(scope.config === undefined){
+                throw "Must set widget config in the scope";
+            }
+            var c = scope.config;
+            gridsterNoteData.push(c);
+            
+            
+            if (gridster !== undefined) {
+                if (typeof (sizeX) !== typeof (0)) {
+                    sizeX = parseInt(sizeX);
+                }
+                if (typeof (sizeY) !== typeof (0)) {
+                    sizeY = parseInt(sizeY);
+                }
+                if (typeof (x) !== typeof (0)) {
+                    x = parseInt(x);
+                }
+                if (typeof (y) !== typeof (0)) {
+                    y = parseInt(y);
+                }
+                gridster.add_widget(widget, sizeX, sizeY, x, y);
+                $rootScope.$broadcast($rootScope.JournalEvents.GridsterAddWidget, widget);
+            } else {
+                console.log('undefined girdster');
+            }
+        };
+
+        return gridsterObj;
     });
 
     //JournalCtrl gerent les choses globaux
@@ -29,8 +108,10 @@
         $rootScope.JournalEvents = {
             Ping: 'Ping',
             SwitchJournalMode: 'switch-journal-mode',
-            AddElement: 'add-element',
-            ReiceiveDefaultTemplate: 'reiceive-defaukt-template'
+            GridsterAddWidget: 'gridster-add-widget',
+            ReiceiveDefaultTemplate: 'reiceive-defaukt-template',
+            ServiceSetTemplateConfig: 'service-set-template-config',
+            ServiceSetElementsTemplate: 'service-set-elements-template'
         };
         $rootScope.JournalMode = {
             View: 'view',
@@ -48,12 +129,7 @@
         };
     });
 
-    app.controller('JournalHeaderCtrl', function ($scope, $rootScope, NoteDataManagerService) {
-        $scope.availableElement = [
-            {label: 'Text Element', type: "TextElement"},
-            {label: 'Numeric Element', type: 'NumericElement'},
-            {label: 'Date Element', type: 'DateElement'}
-        ];
+    app.controller('JournalHeaderCtrl', function ($scope, $rootScope, NoteTemplateManagerService) {
         $scope.$on($rootScope.JournalEvents.SwitchJournalMode, function (e, data) {
             console.log(data);
         });
@@ -61,29 +137,21 @@
 
 
 
-    app.controller('JournalNoteCtrl', function ($scope, $rootScope, $http, NoteDataManagerService) {
+    app.controller('JournalNoteCtrl', function ($scope, $rootScope, $http, NoteTemplateManagerService) {
         $scope.getContentHeight = function () {
             return '450px';
         };
 
-        $scope.$on($rootScope.JournalEvents.AddElement, function (e, data) {
-            $scope.gridster.add_widget('<li>' + data + '</li>');
-        });
-
-        $scope.$on($rootScope.JournalEvents.SwitchJournalMode, function (e, data) {
-
-        });
-
         $scope.getTemplateConfig = function () {
-            return NoteDataManagerService.templateConfig;
+            return NoteTemplateManagerService.templateConfig;
         };
 
 
         //get default template data and fill $scope.template objet
         $http.post($rootScope.baseURL + 'notes/templateConfig', {}).
                 success(function (data, status, headers, config) {
-                    NoteDataManagerService.templateConfig = data['templateConfig'];
-                    NoteDataManagerService.elementTemplate = data['elementTemplate'];
+                    NoteTemplateManagerService.setElementsTemplate(data['elementTemplate']);
+                    NoteTemplateManagerService.setTemplateConfig(data['templateConfig']);
                 }).
                 error(function (data, status, headers, config) {
 
@@ -91,17 +159,73 @@
 
 
     });
+    /**
+     * 
+     * BUG : dans la fonction addWidget() si data-sizey est different pour chaque element alors la page se fige
+     * Solution: depalcer l'ajout des widgets dans directive "·gridster"
+     */
+    /*
+     app.directive('gridsterelement', function ($rootScope, NoteTemplateManagerService, GridsterShareService) {
+     return {
+     restrict: 'E',
+     template: '<li data-row="{{getPositionRow()}}" data-col="{{getPositionColone()}}" data-sizex="{{getPositionWidth()}}" data-sizey="{{getPositionHeight()}}"></li>',
+     replace: true,
+     transclude: true,
+     scope: {
+     config: '='
+     },
+     link: function (scope, element, attr) {
+     scope.$watch(attr.config, function (a) {
+     if (NoteTemplateManagerService.elementTemplate[a.type] !== undefined) {
+     //Make a copy for config data
+     scope.templateConfig = (JSON.parse(JSON.stringify(a)));
+     if (typeof (scope.templateConfig['position']) === typeof ("")) {
+     scope.templateConfig['position'] = JSON.parse(scope.templateConfig['position']);
+     }
+     scope.template = NoteTemplateManagerService.elementTemplate[a.type];
+     $(element).html(scope.template);
+     var positionArr = scope.templateConfig.position;
+     GridsterShareService.addWidget(element,
+     positionArr['data-sizex'],
+     positionArr['data-sizey'],
+     positionArr['data-col'],
+     positionArr['data-row']);
+     }
+     });
+     
+     scope.getPositionRow = function () {
+     if (scope.templateConfig != undefined)//
+     return scope.templateConfig['position']['data-row'];
+     };
+     
+     scope.getPositionColone = function () {
+     if (scope.templateConfig != undefined)
+     return scope.templateConfig.position['data-col'];
+     };
+     scope.getPositionWidth = function () {
+     if (scope.templateConfig != undefined)
+     return scope.templateConfig.position['data-sizex'];
+     };
+     scope.getPositionHeight = function () {
+     if (scope.templateConfig != undefined)
+     return scope.templateConfig.position['data-sizey'];
+     };
+     
+     }
+     };
+     });*/
 
-    app.directive('gridster', function () {
+    app.directive('gridster', function (GridsterShareService, NoteTemplateManagerService, $rootScope, $compile) {
         return {
             restrict: 'E',
             template: '<div ><ul style="float:left" ng-transclude></ul></div>',
             replace: true,
             transclude: true,
+            scope: true,
             link: function (scope, element, attr) {
-                var widthGrideCount = 40;
-                var gridWidth = $(element).width() / widthGrideCount;
 
+                var widthGrideCount = 30;
+                var gridWidth = Math.round($(element).width() / widthGrideCount);
                 var gridster = $(element).find('ul:first').gridster({
                     widget_margins: [5, 5],
                     widget_base_dimensions: [gridWidth, gridWidth],
@@ -114,36 +238,36 @@
                         }
                     }
                 }).data('gridster');
+                GridsterShareService.setGridster(gridster);
 
-                scope.gridster = gridster;//Ajouter l'objet gridster au $scope
-            }
-        };
-
-    });
-
-    app.directive('gridsterelement', function ($rootScope, NoteDataManagerService) {
-        return {
-            restrict: 'E',
-            template: '<li>{{template}}</li>',
-            replace: true,
-            transclude: true,
-            scope: {
-                config: '='
-            },
-            link: function (scope, element, attr) {
-                scope.$watch(attr.config, function (a) {
-                    if (NoteDataManagerService.elementTemplate[a.type] !== undefined) {
-                        console.log('OK for ' + a.type);
-                        //Make a copy
-                        scope.template = (JSON.parse(JSON.stringify(NoteDataManagerService.elementTemplate[a.type])));
-                    }
+                scope.$on($rootScope.JournalEvents.ServiceSetTemplateConfig, function (e, config) {
+                    var defaultConfig = config;
+                    for (var index in defaultConfig) {
+                        var positionArr = JSON.parse(defaultConfig[index].position);
+                        var type = defaultConfig[index].type;
+                        var element = $('<li></li>');
+                        element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
+                        //Il faut compiler l'element pour qu'il réagit comme une page AngularJs
+                        //Sinon tous les directives comme {{name}} ne sera pas compilé
+                        var copyScope = scope.$new(true);
+                        copyScope.config = defaultConfig[index];
+                        $compile(element)(copyScope);
+                        GridsterShareService.addWidget(copyScope,
+                                element,
+                                positionArr['data-sizex'],
+                                positionArr['data-sizey'],
+                                positionArr['data-col'],
+                                positionArr['data-row']);
+                    };
                 });
             }
         };
+
     });
 
 
-    app.directive('menuadd', function ($rootScope) {
+
+    app.directive('menuadd', function ($rootScope, $compile, NoteTemplateManagerService, GridsterShareService) {
         return {
             restrict: 'E',
             template: '<select>' +
@@ -152,20 +276,60 @@
             replace: true,
             transclude: false,
             link: function (scope, element, attr) {
+
+                scope.availableElement = [
+                    {label: 'Text Element', type: "TEXT"},
+                    {label: 'Numeric Element', type: 'NUMERIC'},
+                    {label: 'Date Element', type: 'DATE'}
+                ];
+
                 $(element).change(function (index, value) {
                     var type = $(this).find('option:selected').val();
-                    $.ajax({
-                        url: attr['url'] + type + '/edit',
-                        type: 'get',
-                        success: function (html) {
-                            //on emet une evenement de AddElement pour tous les Controllers qui s'interesse
-                            $rootScope.$broadcast($rootScope.JournalEvents.AddElement, html);
-                        }
-                    });
+                    var templates = NoteTemplateManagerService.getElementsTemplate();
+                    if (templates[type] === undefined) {
+                        $.ajax({
+                            url: attr['url'] + type + '/edit',
+                            type: 'get',
+                            success: function (html) {
+                                //on emet une evenement de AddElement pour tous les Controllers qui l'interesse
+                                NoteTemplateManagerService.addElementTemplate(type, html);
+                                scope.$apply(function () {
+                                    var element = $('<li></li>');
+                                    element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
+
+                                    var copyScope = scope.$new(true);
+                                    copyScope.config = {};
+                                    $compile(element)(copyScope);
+                                    GridsterShareService.addWidget(copyScope,element);
+                                });
+                            }
+                        });
+                    } else {
+                        scope.$apply(function () {
+                            var element = $('<li></li>');
+                            element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
+
+                            var copyScope = scope.$new(true);
+                            copyScope.config = {};
+                            $compile(element)(copyScope);
+                            GridsterShareService.addWidget(copyScope,element);
+
+                        });
+                    }
+                    ;
                 });
             }
         };
 
+    });
+
+    app.directive('dateTimePicker', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                $(element).datetimepicker({});
+            }
+        };
     });
 
     app.controller('JournalFooterCtrl', function ($scope) {

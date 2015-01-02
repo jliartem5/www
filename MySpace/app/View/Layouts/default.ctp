@@ -39,13 +39,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->fetch('script');
         ?>
     </head>
-    <body class="white" ng-app="Journal" ng-init="$root.baseURL='<?php echo $this->Html->url('/');?>'">
+    <body class="white" ng-app="Journal" ng-init="$root.baseURL = '<?php echo $this->Html->url('/'); ?>'">
         <div id="container" ng-controller="JournalCtrl">
             <div id="header" ng-controller="JournalHeaderCtrl as headerCtrl">
 
                 <div class="header-left">
                     <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
-                        <menuadd url="{{$root.baseURL+'notes/element/'}}">
+                        <menuadd url="{{$root.baseURL + 'notes/element/'}}">
                         </menuadd>
                         <button ng-click="$root.switchJournalMode($root.JournalMode.View)">View Mode</button>
                     </div>
@@ -53,12 +53,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button ng-click="$root.switchJournalMode($root.JournalMode.Edit)">Edit Mode</button>
                     </div>
                     <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
-                        
+
                     </div>
                 </div>
                 <div class="header-middle">
-                    <span>Info </span>
-                    Gopro +4.65(<span style="color: green">5.77%</span>)
+                    <a href="http://localhost/StockView?s=GPRO" target="__blank">
+                        <span>Info </span>
+                        Gopro +4.65(<span style="color: green">5.77%</span>)
+                    </a>
                 </div>
                 <div class="header-right">
                     <div>List</div>

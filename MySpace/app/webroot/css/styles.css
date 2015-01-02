@@ -89,3 +89,10 @@ body.white{
     background: red!important;
 }
 
+.element{
+    padding:3px;
+}
+.element-label{
+    display: block;
+    overflow: hidden;
+}

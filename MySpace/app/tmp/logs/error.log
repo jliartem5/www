@@ -6042,3 +6042,25 @@ Request URL: /MySpace/localhost/StockView?s=GPRO
 Stack Trace:
 #0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-01-02 01:50:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/Applications/MAMP/tmp/mysql/mysql.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /MySpace/notes
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(3539): ConnectionManager::getDataSource('default')
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(3566): Model->setSource('notes')
+#5 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(2947): Model->getDataSource()
+#6 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(2919): Model->_readDataSource('threaded', Array)
+#7 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(32): Model->find('threaded', Array)
+#8 [internal function]: NotesController->index()
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(NotesController), Array)
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#12 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

@@ -26,16 +26,16 @@ class NotesController extends AppController {
     }
 
     public function index() {
-        $note_list = $this->Notes->find('threaded', array('conditions' => array(
-                'user_id' => $this->Auth->user()['id']),
-            'fields' => array('id', 'create_date', 'last_modif_date'),
-            'recursive' => 0));
-        $this->set('notes', $note_list);
+        
     }
 
-    public function write() {
-        $completeUser = $this->User->findById($this->Auth->user()['id']);
-        $this->set('DefaultConfig', $completeUser['note_default_config']);
+    public function allNotes() {
+        $this->autoRender = false;
+        $note_list = $this->Notes->find('threaded', array('conditions' => array(
+                'user_id' => $this->Auth->user()['id']),
+            'fields' => array('id', 'create_date', 'last_modif_date', 'symbol'),
+            'recursive' => 0));
+        return json_encode($note_list);
     }
 
     public function save() {
@@ -82,14 +82,6 @@ class NotesController extends AppController {
             $id = $this->request->data['note_id'];
             $result = $this->Notes->delete($id);
         }
-    }
-
-    public function view($key) {
-        $key = UtilityComponent::descriptData($key);
-
-        $note_complete = $this->Notes->findById($key);
-
-        $this->set('note', $note_complete);
     }
 
     public function template_edit() {
@@ -155,9 +147,21 @@ class NotesController extends AppController {
         return json_encode($result);
     }
 
+    //get all elemnts of geven note ID
+    public function noteElements($key) {
+        $this->autoRender = false;
+        $key = UtilityComponent::descriptData($key);
+
+        $note_complete = $this->NoteElement->find('threaded', array(
+            'conditions' => array('note_id' => $key),
+            'fields' => array('id','label', 'type', 'value', 'position', 'create_date'),
+            'recursive' => 0));
+        return json_encode($note_complete);
+    }
+
     public function _elements(array $type, $mode) {
         $helper = new ElementHelper(new View());
-        $result =  array();
+        $result = array();
         foreach ($type as $name) {
             $result[$name] = $helper->generateNewElement($name, $mode);
         }

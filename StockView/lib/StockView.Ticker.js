@@ -123,8 +123,9 @@ var StockView_Ticker = (function(){
             (max - endIndex) + endDate.getTime();
         }
         var chosen = Dygraph.pickDateTickGranularity(zoomedBeginDateTime, zoomedEndDateTime, pixels, opts);
+        
         var step = Dygraph.TICK_PLACEMENT[chosen].step;
-
+        console.log("chosen:"+chosen+"; step:"+step);
 
         var smoothedTickers = [];
         if(acceptedGranularitie(chosen)){

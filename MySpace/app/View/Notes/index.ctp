@@ -1,5 +1,28 @@
 
-<div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}">
+<div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 74%; display: inline-block;">
+    <div style="height:35px;">
+        <div class="header-left">
+            <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
+                <menuadd url="{{$root.baseURL + 'notes/element/'}}">
+                </menuadd>
+                <button ng-click="$root.switchJournalMode($root.JournalMode.View)">View Mode</button>
+            </div>
+            <div ng-show="$root.CurrentMode == $root.JournalMode.View">
+                <button ng-click="$root.switchJournalMode($root.JournalMode.Edit)">Edit Mode</button>
+            </div>
+            <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
+
+            </div>
+        </div>
+        <div class="header-middle">
+            <a href="http://localhost/StockView?s=GPRO" target="__blank">
+                <span>Info </span>
+                Gopro +4.65(<span style="color: green">5.77%</span>)
+            </a>
+        </div>
+        <div class="header-right">
+        </div>
+    </div>
     <gridster class="gridster ready" style="width:100%" config="config">
     </gridster>
     <?php
@@ -17,33 +40,21 @@
     <?php
     $this->start('footer');
     ?>
-    <script type="text/javascript">
-
-        $(function () {
-        $('#save_template').click(function () {
-        var ajax_data = {};
-                $('#template_grid li').each(function (index, item) {
-        var $element_config_data = $(item).find('.element_preview:first').data('elementData');
-                $element_config_data['position'] = {
-        'data-row': $(item).attr('data-rowa'),
-                'data-col': $(item).attr('data-col'),
-                'data-sizex': $(item).attr('data-sizex'),
-                'data-sizey': $(item).attr('data-sizey')
-        };
-                ajax_data[$element_config_data['id']] = $element_config_data;
-        });
-                console.log(ajax_data);
-                $.ajax({
-                url: '<?php echo $this->Html->url('/notes/template_edit'); ?>',
-                        data: ajax_data,
-                        type: 'post',
-                        success: function (ret) {
-                        $('#ajax_result').html(ret);
-                        }
-                });
-        });
-        });    </script>
     <?php
     $this->end();
     ?>
+</div>
+
+<div ng-controller="JournalMenuControl as menuCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 25%; display: inline-block;">
+    
+    <div style="height:35px;">
+        <button ng-click="newClick()">New</button>
+    </div>
+    <div>
+        <ul>
+            <li ng-repeat="note in notes">
+                <a href="#" ng-click="switchNote(note)">{{note.id | limitTo:10}}</a>
+            </li>
+        </ul>
+    </div>
 </div>

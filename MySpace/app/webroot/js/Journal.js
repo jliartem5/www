@@ -50,21 +50,23 @@
         return noteController;
     });
 
-    app.factory('GridsterShareService', function ($rootScope) {
+    app.factory('GridsterShareService', function ($compile, $rootScope, $http, NoteTemplateManagerService) {
         var gridster = undefined;
 
+        //pointer to current note data index in gridsterNotesData
+        var currentNodeDataIndex = undefined;
         //Current note data/status in gridster
-        var gridsterNoteData = [];
-        
+        var gridsterNotesData = [];
+
         var gridsterObj = {
         };
         /*
-        function check(){
-            console.log(gridsterNoteData);
-        }
-        
-        setInterval(check, 3000);
-        */
+         function check(){
+         console.log(gridsterNoteData);
+         }
+         
+         setInterval(check, 3000);
+         */
         gridsterObj.setGridster = function (gr) {
             console.log('set gridster');
             gridster = gr;
@@ -73,13 +75,18 @@
             return gridster;
         };
         gridsterObj.addWidget = function (scope, widget, sizeX, sizeY, x, y) {
-            if(scope.config === undefined){
+            if (scope.config === undefined) {
                 throw "Must set widget config in the scope";
             }
             var c = scope.config;
-            gridsterNoteData.push(c);
+            var unbindWatcher = scope.$watch("config", function (newVal, oldVal) {
+            }, true);
             
-            
+            qqqsdfs
+
+            gridsterNotesData.push(c);
+
+
             if (gridster !== undefined) {
                 if (typeof (sizeX) !== typeof (0)) {
                     sizeX = parseInt(sizeX);
@@ -100,11 +107,45 @@
             }
         };
 
+        gridsterObj.switchNote = function (scope, noteData) {
+            var url = $rootScope.baseURL + "notes/noteElements/" + noteData.id;
+
+            var processFunc = function (data) {
+                gridster.remove_all_widgets();
+                for (var index in data) {
+                    var elementData = data[index]['NoteElement'];
+                    var positionArr = JSON.parse(elementData['position']);
+                    var element = $('<li></li>');
+                    element.html(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
+
+                    var copyScope = scope.$new(true);
+                    copyScope.config = elementData;
+                    $compile(element)(copyScope);
+                    gridsterObj.addWidget(copyScope,
+                            element,
+                            positionArr['data-sizex'],
+                            positionArr['data-sizey'],
+                            positionArr['data-col'],
+                            positionArr['data-row']);
+                }
+            };
+
+            if (gridsterNotesData[noteData.id] === undefined) {
+                $http.post(url, {}).success(function (data, status, headers, config) {
+                    var gridster = gridsterObj.getGridster();
+                    processFunc(data);
+                    console.log(data);
+                });
+            } else {
+                processFunc(gridsterNotesData[noteData.id]);
+            }
+        };
+
         return gridsterObj;
     });
 
     //JournalCtrl gerent les choses globaux
-    app.controller('JournalCtrl', function ($scope, $rootScope, $http) {
+    app.controller('JournalCtrl', function ($scope, $rootScope, $http, $window, GridsterShareService) {
         $rootScope.JournalEvents = {
             Ping: 'Ping',
             SwitchJournalMode: 'switch-journal-mode',
@@ -127,11 +168,15 @@
             $rootScope.CurrentMode = mode;//Change mode
             $rootScope.$broadcast($rootScope.JournalEvents.SwitchJournalMode, data);
         };
+
+        //resize event
+        var w = angular.element($window);
+        w.bind('resize', function (event) {
+        });
     });
 
     app.controller('JournalHeaderCtrl', function ($scope, $rootScope, NoteTemplateManagerService) {
         $scope.$on($rootScope.JournalEvents.SwitchJournalMode, function (e, data) {
-            console.log(data);
         });
     });
 
@@ -156,9 +201,31 @@
                 error(function (data, status, headers, config) {
 
                 });
-
-
     });
+
+    app.controller('JournalMenuControl', function ($scope, $http, $rootScope, GridsterShareService) {
+
+        $scope.notes = [];
+
+        $http.post($rootScope.baseURL + 'notes/allNotes', {}).
+                success(function (data, status, headers, config) {
+                    for (var index in data) {
+                        var note = data[index];
+                        $scope.notes.push(note['Notes']);
+                    }
+                }).
+                error(function (data, status, headers, config) {
+
+                });
+
+        $scope.switchNote = function (noteData) {
+            GridsterShareService.switchNote($scope, noteData);
+        };
+
+        $scope.newClick = function () {
+        };
+    });
+
     /**
      * 
      * BUG : dans la fonction addWidget() si data-sizey est different pour chaque element alors la page se fige
@@ -224,7 +291,7 @@
             scope: true,
             link: function (scope, element, attr) {
 
-                var widthGrideCount = 30;
+                var widthGrideCount = 20;
                 var gridWidth = Math.round($(element).width() / widthGrideCount);
                 var gridster = $(element).find('ul:first').gridster({
                     widget_margins: [5, 5],
@@ -258,7 +325,8 @@
                                 positionArr['data-sizey'],
                                 positionArr['data-col'],
                                 positionArr['data-row']);
-                    };
+                    }
+                    ;
                 });
             }
         };
@@ -300,7 +368,7 @@
                                     var copyScope = scope.$new(true);
                                     copyScope.config = {};
                                     $compile(element)(copyScope);
-                                    GridsterShareService.addWidget(copyScope,element);
+                                    GridsterShareService.addWidget(copyScope, element);
                                 });
                             }
                         });
@@ -312,7 +380,7 @@
                             var copyScope = scope.$new(true);
                             copyScope.config = {};
                             $compile(element)(copyScope);
-                            GridsterShareService.addWidget(copyScope,element);
+                            GridsterShareService.addWidget(copyScope, element);
 
                         });
                     }

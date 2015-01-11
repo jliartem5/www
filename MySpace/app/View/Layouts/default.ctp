@@ -26,14 +26,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </title>
         <?php
         echo $this->Html->meta('icon');
+        // echo $this->Html->css('plugins/bootstrap/bootstrap.css');
+        //echo $this->Html->css('plugins/font-awesome/font-awesome.css');
+        echo $this->Html->css('http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css');
+        echo $this->Html->css('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 
         echo $this->Html->css('styles');
         echo $this->Html->css('cake.generic.css');
         echo $this->Html->script('jquery-1.11.1.min.js');
+        echo $this->Html->script('plugins/bootstrap/bootstrap.js');
         echo $this->Html->script('plugins/angular.js');
-        echo $this->Html->css('plugins/jquery.datetimepicker.css');
-        echo $this->Html->script('Journal.js');
+        echo $this->Html->script('http://localhost:3000/socket.io/socket.io.js');
+
         echo $this->Html->script('plugins/jquery.datetimepicker.js');
+        echo $this->Html->script('plugins/textAngular/textAngular-sanitize.min.js');
+        echo $this->Html->script('plugins/textAngular/textAngular.min.js');
+
+
+        echo $this->Html->script('Journal.js');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -48,6 +58,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <?php echo $this->fetch('content'); ?>
             </div>
             <div id="footer" ng-controller="JournalFooterCtrl as footerCtrl">
+
                 <footer>
                     <?php
                     echo $this->fetch('footer');

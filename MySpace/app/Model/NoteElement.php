@@ -32,20 +32,20 @@ class NoteElement extends AppModel {
         if (!isset($options['user_id']) && !isset($options['note_id'])) {
             throw new Exception('user_id OR note_id must set');
         }
-        
+
         $element_model = 'NoteElement';
         if (isset($options['user_id'])) {
             $element_model = 'NoteDefaultConfig';
         }
         $foreign_field = $element_model == 'NoteElement' ? 'note_id' : 'user_id';
-        
+
         $default_gridster_position = array(
-            'data-row'=>'1',
-            'data-col'=>'1',
-            'data-sizex'=>'1',
-            'data-sizey'=>'1'
+            'data-row' => '1',
+            'data-col' => '1',
+            'data-sizex' => '1',
+            'data-sizey' => '1'
         );
-                
+
         return array(
             $element_model => array(
                 "label" => isset($options['label']) ? $options['label'] . '' : '-',
@@ -80,16 +80,21 @@ class NoteElement extends AppModel {
     public static function createRichtextElement() {
         
     }
-    
+
     public function afterFind($results, $primary = false) {
         foreach ($results as $key => $val) {
             if (isset($val['NoteElement']['id'])) {
                 $results[$key]['NoteElement']['id'] = UtilityComponent::encrypeData($results[$key]['NoteElement']['id']);
                 $results[$key]['NoteElement']['type'] = strtoupper($results[$key]['NoteElement']['type']);
-                
+                $results[$key]['NoteElement']['position'] = json_decode($results[$key]['NoteElement']['position']);
             }
         }
         return $results;
     }
-    
+
+    public function beforeSave($options = array()) {
+        if(is_array($this->data['NoteElement']['position'])){
+            $this->data['NoteElement']['position'] = json_encode($this->data['NoteElement']['position']);
+        }
+    }
 }

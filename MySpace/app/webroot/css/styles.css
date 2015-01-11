@@ -1,5 +1,5 @@
 .ng-scope{
-    border: 1px red solid;
+   // border: 1px red solid;
 }
 /**
     Note page
@@ -95,4 +95,8 @@ body.white{
 .element-label{
     display: block;
     overflow: hidden;
+}
+
+.btn{
+    padding: 1px 2px;
 }

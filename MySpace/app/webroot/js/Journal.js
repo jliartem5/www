@@ -5,9 +5,27 @@
  */
 
 (function () {
-    var app = angular.module('Journal', []);
-
-
+    var app = angular.module('Journal', ['textAngular']);
+    app.filter('get', function () {
+        return function (input, index) {
+            return input[index];
+        };
+    });
+    
+    app.factory('AutoSaveService', function(){
+        var url = "http://localhost:3000";
+        var socket = io.connect(url);
+        socket.on('connect', function(){
+            socket.emit('identify',{type:'cache', user:{}});
+            console.log('connected to '+url);
+        });
+        socket.on('identify-resp', function(){
+            console.log('Identify ok');
+        });
+        return {
+        };
+    });
+    
     app.factory('UtilsService', function () {
         return {
             uniqueId: function () {
@@ -37,8 +55,8 @@
                 // Handle Array
                 if (obj instanceof Array) {
                     var itemArray = [];
-                    
-                    for(var index in obj){
+
+                    for (var index in obj) {
                         itemArray.push(this.clone(obj[index]));
                     }
                     return itemArray;
@@ -99,11 +117,11 @@
         return noteController;
     });
 
-    app.factory('GridsterShareService', function ($compile, $rootScope, $http, NoteTemplateManagerService, UtilsService) {
+    app.factory('GridsterShareService', function ($compile, $rootScope, $http, NoteTemplateManagerService, UtilsService, AutoSaveService) {
         var gridster = undefined;
 
         //pointer to current note data index in gridsterNotesData
-        var currentNodeDataIndex = undefined;
+        var currentNodeDataID = null;
 
         //Current note data/status in gridster
         var gridsterNotesData = [];
@@ -144,6 +162,35 @@
         gridsterObj.setGridster = function (gr) {
             console.log('set gridster');
             gridster = gr;
+            gridster.options.draggable.stop = function (event, ui) {
+                //Mise à jour de tableau position, on update ici puisqu'il n'est pas possible de rattacher ng-model 
+                //les attributs et evenement Gridster sans modifier code source de ce dernier
+                var context = $(ui.$helper.context);
+                var col = context.attr('data-col');
+                var row = context.attr('data-row');
+                var id = context.attr('id');
+                var elementsData = gridsterNotesData[currentNodeDataID].elements;
+                for (var index in elementsData) {
+                    if (elementsData[index].id == id) {
+                        elementsData[index].position['data-col'] = col;
+                        elementsData[index].position['data-row'] = row;
+                    }
+                }
+
+            };
+            gridster.options.resize.stop = function (event, ui, widget) {
+                var sizex = $(widget).attr('data-sizex');
+                var sizey = $(widget).attr('data-sizey');
+                var id = $(widget).attr('id');
+                var elementsData = gridsterNotesData[currentNodeDataID].elements;
+
+                for (var index in elementsData) {
+                    if (elementsData[index].id == id) {
+                        elementsData[index].position['data-sizex'] = sizex;
+                        elementsData[index].position['data-sizey'] = sizey;
+                    }
+                }
+            };
         };
         gridsterObj.getGridster = function () {
             return gridster;
@@ -156,7 +203,6 @@
          * @returns {undefined}
          */
         gridsterObj.switchNote = function (scope, noteData) {
-            console.log(noteData);
             var exists = true;
             var noteID = noteData.id;
 
@@ -165,22 +211,25 @@
             }
 
             //work...
-            var processFunc = function (data) {
-                gridster.remove_all_widgets();
-                for (var index in data) {
+            var processFunc = function (data, isFirstTime) {
+                for (var index = 0; index < data.length; ++index) {
+
                     var elementData = data[index]['NoteElement'] === undefined ? data[index] : data[index]['NoteElement'];
-                    var positionArr = JSON.parse(elementData['position']);
-                    var elementHTML = $('<li></li>');
-                    elementHTML.html(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
-                    var copyScope = null;
-                    //save scope in data
-                    if (data[index].angular === undefined) {
-                        copyScope = scope.$new(true);
-                        data[index].angular = {scope: copyScope};
-                    } else {
-                        copyScope = data[index].angular.scope;
+                    if (isFirstTime) {
+                        gridsterNotesData[noteID].elements.push(elementData);
                     }
 
+                    var positionArr = elementData['position'];
+                    //connect 
+                    var elementHTML = $('<li id={{config.id}}><handler>|||</handler></li>');
+                    elementHTML.append(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
+                    var copyScope = null;
+                    if (isFirstTime) {
+                        copyScope = scope.$new(true);
+                        gridsterNotesData[noteID].scope[elementData.id] = copyScope;
+                    } else {
+                        copyScope = gridsterNotesData[noteID].scope[elementData.id];
+                    }
                     copyScope.config = elementData;
                     $compile(elementHTML)(copyScope);
                     _addWidget(copyScope,
@@ -190,30 +239,40 @@
                             positionArr['data-col'],
                             positionArr['data-row']);
                 }
-
             };
 
             if (exists === false) {
                 var url = $rootScope.baseURL + "notes/noteElements/" + noteID;
                 $http.post(url, {}).success(function (elementsData, status, headers, config) {
-                    gridsterNotesData[noteID] = {note: noteData, elements: elementsData};
-                    processFunc(elementsData);
+                    gridsterNotesData[noteID] = {note: noteData, elements: [], scope: []};
+                    gridster.remove_all_widgets();
+                    processFunc(elementsData, true);
                 });
 
             } else {
-                processFunc(gridsterNotesData[noteID].elements);
+                gridster.remove_all_widgets();
+                processFunc(gridsterNotesData[noteID].elements, false);
             }
+            currentNodeDataID = noteID;
         };
 
         gridsterObj.newNote = function (scope) {
+            //prepare
             gridster.remove_all_widgets();
             var defaultConfig = UtilsService.clone(NoteTemplateManagerService.getTemplateConfig());
+            var newID = UtilsService.uniqueId();
+
+            gridsterNotesData[newID] = {note: defaultConfig, elements: defaultConfig, scope: []};
+            currentNodeDataID = newID;
+            //work
             console.log(defaultConfig);
             for (var index in defaultConfig) {
-                var positionArr = JSON.parse(defaultConfig[index].position);
+                defaultConfig[index].id = UtilsService.uniqueId();
+                var positionArr = defaultConfig[index].position;
                 var type = defaultConfig[index].type;
-                var element = $('<li></li>');
-                element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
+                var element = $('<li id="{{config.id}}"><handler>|||</handler></li>');
+
+                element.append(NoteTemplateManagerService.getElementsTemplate()[type]);
                 //Il faut compiler l'element pour qu'il réagit comme une page AngularJs
                 //Sinon tous les directives comme {{name}} ne sera pas compilé
                 var copyScope = scope.$new(true);
@@ -226,7 +285,12 @@
                         positionArr['data-sizey'],
                         positionArr['data-col'],
                         positionArr['data-row']);
-            };
+            }
+            ;
+        };
+
+        gridsterObj.addWidget = function (widget) {
+
         };
 
         return gridsterObj;
@@ -283,6 +347,7 @@
         //get default template data and fill $scope.template objet
         $http.post($rootScope.baseURL + 'notes/templateConfig', {}).
                 success(function (data, status, headers, config) {
+                    console.log(data['templateConfig']);
                     NoteTemplateManagerService.setElementsTemplate(data['elementTemplate']);
                     NoteTemplateManagerService.setTemplateConfig(data['templateConfig']);
                 }).
@@ -391,7 +456,8 @@
                     draggable: {
                         start: function () {
                             return false;
-                        }
+                        },
+                        handle: 'handler'
                     }
                 }).data('gridster');
                 GridsterShareService.setGridster(gridster);
@@ -466,13 +532,15 @@
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
-                $(element).datetimepicker({});
+
             }
         };
     });
+
 
     app.controller('JournalFooterCtrl', function ($scope) {
 
 
     });
+
 })();

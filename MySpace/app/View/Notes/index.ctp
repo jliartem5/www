@@ -1,5 +1,6 @@
 
 <div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 74%; display: inline-block;">
+
     <div style="height:35px;">
         <div class="header-left">
             <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
@@ -23,11 +24,12 @@
         <div class="header-right">
         </div>
     </div>
+
     <gridster class="gridster ready" style="width:100%" config="config">
     </gridster>
     <?php
     $this->start('script');
-    echo $this->Html->script('jquery.gridster.min.js');
+    echo $this->Html->script('jquery.gridster.js');
     $this->end();
     ?>
     <?php
@@ -46,14 +48,14 @@
 </div>
 
 <div ng-controller="JournalMenuControl as menuCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 25%; display: inline-block;">
-    
+
     <div style="height:35px;">
         <button ng-click="newClick()">New</button>
     </div>
     <div>
         <ul>
             <li ng-repeat="note in notes">
-                <a href="#" ng-click="switchNote(note)">{{note.id | limitTo:10}}</a>
+                <a href="#" ng-click="switchNote(note)">{{note.id| limitTo:10}}</a>
             </li>
         </ul>
     </div>

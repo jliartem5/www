@@ -74,9 +74,15 @@ class NoteDefaultConfig extends AppModel {
             if (isset($val['note_default_config']['id'])) {
                 $results[$key]['note_default_config']['id'] = UtilityComponent::encrypeData($results[$key]['note_default_config']['id']);
                 $results[$key]['note_default_config']['type'] = strtoupper($results[$key]['note_default_config']['type']);
-                
+                $results[$key]['note_default_config']['position'] = json_decode($results[$key]['note_default_config']['position']);
             }
         }
         return $results;
+    }
+    
+    public function beforeSave($options = array()) {
+        if(is_array($this->data['note_default_config']['position'])){
+            $this->data['note_default_config']['position'] = json_encode($this->data['note_default_config']['position']);
+        }
     }
 }

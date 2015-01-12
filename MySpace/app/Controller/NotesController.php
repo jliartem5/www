@@ -38,35 +38,35 @@ class NotesController extends AppController {
         return json_encode($note_list);
     }
 
+    /**
+     * Note data to save:
+     * {
+     * Note:{},
+     * NoteElements:[{},...]
+     * }
+     * 
+     * */
     public function save() {
         if ($this->request->is('post')) {
             $this->Notes->create();
             $note_data = array(
-                'Note' => array('user_id' => $this->Auth->user()['id'])
+                'Note' => $this->request->data['Note']
             );
-            $ds = $this->Notes->getdatasource();
+            $note_data['Note']['user_id'] = $this->Auth->user()['id'];
+            
             $note_saved = $this->Notes->save($note_data['Note']);
             if ($note_saved) {
-                $front_data = array();
-                $back_data = array();
-                $merged_data = array();
                 //construire les élements à inserer dans la base de donnée
-                foreach ($this->request->data['notes'] as $decriptedID => $value) {
-                    if (substr($decriptedID, 0, 2) == '__') {//si c'est les données cachés pour les configurations d'element
-                        $decriptedID = substr($decriptedID, 2);
-                        $back_data[$decriptedID] = json_decode(ElementHelper::descriptData($value), true);
-                    } else {
-                        $front_data[$decriptedID] = $value;
+                $insertID = $this->Notes->getInsertID();
+                foreach ($this->request->data['noteElements'] as  $element) {
+                    $isNewElement = UtilityComponent::isGUID($element['id']);
+                    $element['note_id'] = $insertID;
+                    if($isNewElement){
+                        unset($element['id']);
+                    }else{
+                        $element['id'] = UtilityComponent::descriptData($element['id']);
                     }
                 }
-                //fusionner les données front et back pour inserer dans la bdd
-                $insertID = $this->Notes->getInsertID();
-                foreach ($front_data as $id => $val) {
-                    $back_data[$id]['value'] = $val;
-                    $back_data[$id]['note_id'] = $insertID;
-                    $merged_data[] = $back_data[$id];
-                }
-
                 $element_saved = $this->NoteElement->saveMany($merged_data);
                 if ($element_saved) {
                     $this->Session->setFlash('Note saved');
@@ -154,7 +154,7 @@ class NotesController extends AppController {
 
         $note_complete = $this->NoteElement->find('threaded', array(
             'conditions' => array('note_id' => $key),
-            'fields' => array('id','label', 'type', 'value', 'position', 'create_date'),
+            'fields' => array('id', 'label', 'type', 'value', 'position', 'create_date'),
             'recursive' => 0));
         return json_encode($note_complete);
     }

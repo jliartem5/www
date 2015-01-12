@@ -49,8 +49,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->fetch('script');
         ?>
     </head>
-    <body class="white" ng-app="Journal" ng-init="$root.baseURL = '<?php echo $this->Html->url('/'); ?>'">
-        <div id="container" ng-controller="JournalCtrl">
+    <body class="white" ng-app="Journal" ng-init="$root.baseURL = '<?php echo $this->Html->url('/'); ?>'; $root.security_key = '<?php echo $Auth->user()['security_key']; ?>'">
+        <div saveValueChanged></div>
+        <div saveFocusout></div>
+        <div dateTimePicker></div>
+        <div id="container" ng-controller="JournalCtrl" >
             <div id="header" ng-controller="JournalHeaderCtrl as headerCtrl">
 
             </div>

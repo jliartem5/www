@@ -6991,3 +6991,249 @@ Request URL: /MySpace/js/plugins/bootstrap/bootstrap.js
 Stack Trace:
 #0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-01-11 23:27:44 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-11 23:27:44 Error: [MissingControllerException] Controller class UndefinednotesController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinednotesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/undefinednotes/allNotes
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-12 00:12:11 Error: Fatal Error (1): Call to a member function user() on null in [/Users/jianli/Documents/www/MySpace/app/Controller/UsersController.php, line 36]
+2015-01-12 00:12:11 Error: [FatalErrorException] Call to a member function user() on null
+Request URL: /MySpace/users/login
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/jianli/D...', 36)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/jianli/D...', 36, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/jianli/D...', 36, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-12 00:40:55 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/user/userBySecurityKey
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-12 00:42:14 Error: [MissingActionException] Action UsersController::userBySecurityKey&security_key=sdfsdf() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'userBySecurityKey&security_key=sdfsdf',
+)
+Request URL: /MySpace/users/userBySecurityKey&security_key=sdfsdf
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-12 23:59:27 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:06:22 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:15:30 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:16:28 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:17:24 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:19:23 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:19:28 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:22:07 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:22:14 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:23:37 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:24:46 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:25:28 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:25:56 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:26:22 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:26:50 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:27:26 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:27:50 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:28:11 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:28:18 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:28:44 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:29:12 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 00:29:23 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

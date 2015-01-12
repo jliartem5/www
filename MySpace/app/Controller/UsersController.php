@@ -16,11 +16,31 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 class UsersController extends AppController {
 
     var $uses = array('NoteDefaultConfig', 'User', 'UserConfig');
+    var $components = array('Utility');
 
     public function beforeFilter() {
         parent::beforeFilter();
         // Permet aux utilisateurs de s'enregistrer et de se déconnecter
-        $this->Auth->allow('register', 'login');
+        $this->Auth->allow('register', 'login', 'userBySecurityKey');
+    }
+
+    public function userBySecurityKey() {
+        $this->autoRender = false;
+        $user = null;
+        $security_key = "";
+        if (isset($this->request->data['security_key'])) {
+
+            $security_key = $this->request->data['security_key'];
+            $user = $this->User->find('threaded', array(
+                'conditions' => array('security_key' => $security_key),
+                'recursive' => 0));
+        }
+        if ($user && count($user)>0) {
+            return json_encode($user[0]);
+        }
+        $error = array();
+        $error['error'] = "Cannot find user by " + $security_key;
+        return json_encode($error);
     }
 
     public function login() {
@@ -29,7 +49,10 @@ class UsersController extends AppController {
                 $user = $this->Auth->user();
                 $user['last_connect_date'] = $this->Utility->DateTimeNow();
                 $user['last_connect_ip'] = $_SERVER['REMOTE_ADDR'];
+                $user['security_key'] = UtilityComponent::GUID();
+
                 if ($this->User->save($user)) {
+                    $this->Auth->login(); //reprendre tous les informations
                     return $this->redirect($this->Auth->redirectUrl());
                 }
             } else {
@@ -56,7 +79,7 @@ class UsersController extends AppController {
                 if ($this->User->save($this->request->data)) {
                     $user_id = $this->User->getInsertID();
 
-                    
+
                     $default_config = $this->NoteDefaultConfig->genereSimpleNoteConfig($user_id);
                     if ($this->UserConfig->save($this->UserConfig->genereSimpleUserConfig($user_id)) &&
                             $this->NoteDefaultConfig->saveMany($default_config)) {
@@ -81,5 +104,5 @@ class UsersController extends AppController {
     public function profil() {
         
     }
-    
+
 }

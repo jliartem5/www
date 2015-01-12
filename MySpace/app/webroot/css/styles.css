@@ -14,7 +14,9 @@ ul {
   list-style-type: none;
 }
 
-
+html{
+    font-size: 80%;
+}
 body {
     font-size: 16px;
     font-family: 'Helvetica Neue', Arial, sans-serif;

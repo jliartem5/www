@@ -7237,3 +7237,245 @@ Request URL: /MySpace/nodes/save
 Stack Trace:
 #0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-01-13 22:54:20 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:02:55 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:03:08 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:03:27 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:06:42 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:07:12 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:09:18 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:50:02 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:50:57 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:51:19 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-13 23:58:08 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-14 00:04:12 Error: [MissingControllerException] Controller class NodesController could not be found.
+Exception Attributes: array (
+  'class' => 'NodesController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/nodes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-14 00:26:26 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:26:26 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:28:39 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:28:39 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:34:15 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:34:15 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:35:28 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:35:28 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:36:26 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:36:26 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:36:44 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 103]
+2015-01-14 00:36:44 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 103)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 103, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:38:08 Error: Fatal Error (1): Call to undefined function getMessage() in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 104]
+2015-01-14 00:38:08 Error: [FatalErrorException] Call to undefined function getMessage()
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/jianli/D...', 104)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/jianli/D...', 104, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/jianli/D...', 104, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-14 00:46:18 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findUserBySecurityKey' at line 1
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('findUserBySecur...', Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('findUserBySecur...', Array, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('findUserBySecur...', Array, Array)
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(808): DboSource->query('findUserBySecur...', Array, Object(User))
+#5 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): Model->__call('findUserBySecur...', Array)
+#6 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): User->findUserBySecurityKey(NULL)
+#7 [internal function]: NotesController->save()
+#8 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(NotesController), Array)
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-01-14 00:46:56 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findUserBySecurityKey' at line 1
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('findUserBySecur...', Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('findUserBySecur...', Array, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('findUserBySecur...', Array, Array)
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(808): DboSource->query('findUserBySecur...', Array, Object(User))
+#5 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): Model->__call('findUserBySecur...', Array)
+#6 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): User->findUserBySecurityKey(NULL)
+#7 [internal function]: NotesController->save()
+#8 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(NotesController), Array)
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-01-14 00:47:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findUserBySecurityKey' at line 1
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('findUserBySecur...', Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('findUserBySecur...', Array, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('findUserBySecur...', Array, Array)
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(808): DboSource->query('findUserBySecur...', Array, Object(User))
+#5 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): Model->__call('findUserBySecur...', Array)
+#6 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): User->findUserBySecurityKey(NULL)
+#7 [internal function]: NotesController->save()
+#8 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(NotesController), Array)
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-01-14 00:47:34 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findUserBySecurityKey' at line 1
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('findUserBySecur...', Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('findUserBySecur...', Array, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('findUserBySecur...', Array, Array)
+#4 /Users/jianli/Documents/www/MySpace/lib/Cake/Model/Model.php(808): DboSource->query('findUserBySecur...', Array, Object(User))
+#5 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): Model->__call('findUserBySecur...', Array)
+#6 /Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php(60): User->findUserBySecurityKey(NULL)
+#7 [internal function]: NotesController->save()
+#8 /Users/jianli/Documents/www/MySpace/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(NotesController), Array)
+#9 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
+#11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

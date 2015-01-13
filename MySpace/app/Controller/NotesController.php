@@ -20,9 +20,11 @@ class NotesController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        if ($this->Auth->loggedIn() == false) {
+        
+        $this->Auth->allow('save', 'allNotes');
+        /*if ($this->Auth->loggedIn() == false) {
             return $this->redirect('/pages/index');
-        }
+        }*/
     }
 
     public function index() {
@@ -47,34 +49,65 @@ class NotesController extends AppController {
      * 
      * */
     public function save() {
+        $this->autoRender = false;
+        $result = array();
+        
         if ($this->request->is('post')) {
             $this->Notes->create();
             $note_data = array(
-                'Note' => $this->request->data['Note']
+                'Note' => $this->request->data['data']['Note']
             );
-            $note_data['Note']['user_id'] = $this->Auth->user()['id'];
+            $note_data['Note']['user_id'] = $this->request->data['user']['User']['id'];
             
-            $note_saved = $this->Notes->save($note_data['Note']);
-            if ($note_saved) {
-                //construire les élements à inserer dans la base de donnée
-                $insertID = $this->Notes->getInsertID();
-                foreach ($this->request->data['noteElements'] as  $element) {
-                    $isNewElement = UtilityComponent::isGUID($element['id']);
-                    $element['note_id'] = $insertID;
-                    if($isNewElement){
-                        unset($element['id']);
-                    }else{
-                        $element['id'] = UtilityComponent::descriptData($element['id']);
-                    }
-                }
-                $element_saved = $this->NoteElement->saveMany($merged_data);
-                if ($element_saved) {
-                    $this->Session->setFlash('Note saved');
-                }
-            } else {
-                $this->Session->setFlash('Note not saved');
+            $isNewNote = UtilityComponent::isGUID($note_data['Note']['id']);
+            if($isNewNote){
+                unset($note_data['Note']['id']);
+            }else{
+                $note_data['Note']['id'] = UtilityComponent::descriptData($note_data['Note']['id']);
             }
+            
+            $dataSource = $this->Notes->getDataSource();
+            
+            try{
+                $dataSource->begin();
+                $note_saved = $this->Notes->save($note_data['Note']);
+                if ($note_saved) {
+                    
+                    //construire les élements à inserer dans la base de donnée
+                    $insertID = $this->Notes->getInsertID();
+                    $result['sync'] = array();
+                    
+                    if($isNewNote){
+                        $result['sync']['Note'] = array("from"=>$note_data['Note']['id'], 'to'=>$insertID);
+                    }
+                    $result['sync']['NoteElements'] = array();
+                    foreach ($this->request->data['data']['NoteElements'] as  $element) {
+                        $isNewElement = UtilityComponent::isGUID($element['id']);
+                        $element['note_id'] = $insertID;
+                        if($isNewElement){
+                            $result['sync']['NoteElements'][] = array('from'=>$element['id'], 'to'=>"");
+                            unset($element['id']);
+                        }else{
+                            $element['id'] = UtilityComponent::descriptData($element['id']);
+                        }
+                        $element_saved = $this->NoteElement->save($element);
+                        if($element_saved == false){
+                            throw new Exception('Canoot save note element');
+                        }
+                    }
+                    $result['result'] = "success";
+                    
+                } else {
+                    throw new Exception('Cannot save note');
+                }
+            }catch(Exception $e){
+                $dataSource->rollback();
+                return json_encode(array('result'=>'failed', 'error'=>$e->getMessage()));
+            }
+        }else{
+            $result['result'] = 'failed';
         }
+        return json_encode($result);
     }
 
     public function delete() {

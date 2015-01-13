@@ -14,6 +14,7 @@
             <div ng-show="$root.CurrentMode == $root.JournalMode.Preview">
 
             </div>
+            <button ng-click="$root.save()">Save</button>
         </div>
         <div class="header-middle">
             <a href="http://localhost/StockView?s=GPRO" target="__blank">

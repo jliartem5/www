@@ -42,11 +42,14 @@ var Cache = (function () {
          * 
          * {
          Note:{},
-         NoteElements:[{},...]
+         NoteElements:{elementData, elementData, ...}
          }
          * 
          * */
-        var _cacheData = {};
+        var _cacheData = {
+            Note: {},
+            NoteElements: []
+        };
 
         _socket.on('disconnect', function () {
             _$this.save(function () {
@@ -60,8 +63,6 @@ var Cache = (function () {
 
         //update note element
         _socket.on('update', function (data) {
-            console.log('Update note data:');
-            console.log(data);
             if (data.id === undefined || data.id === null) {
                 _socket.emit('update-rest', 'KO')
             }
@@ -74,39 +75,43 @@ var Cache = (function () {
         //save all
         _socket.on('save', function (new_note_data) {
             console.log('Save note data:');
-            console.log(new_note_data);
-            if (_cacheData.length > 0) { //Check if no cache data, for the first time new note for example
-                _$this.save(function (data) {
-                    last_save_date = new Date();
-                    _socket.emit('save-resp', "OK");
-                    if (data.sync != undefined) {
-                        /**
-                         * Synchronise id after save new element/note
-                         * Sync structure:
-                         *   {
-                         *    Note:{from:id, to:id},
-                         *    NoteElements:[{from:id, to:id},...] //elements to sync
-                         *   }
-                         *
-                         * */
-                        _socket.emit('sync', data.sync);
-                        _cacheData['Note'].id = data.sync.Note.to;
+            try {
+                //if (_cacheData.length > 0) { //Check if no cache data, for the first time new note for example
+                    _$this.save(function (data) {
+                        last_save_date = new Date();
+                        _socket.emit('save-resp', "OK");
+                        if (data.sync != undefined) {
+                            /**
+                             * Synchronise id after save new element/note
+                             * Sync structure:
+                             *   {
+                             *    Note:{from:id, to:id},
+                             *    NoteElements:[{from:id, to:id},...] //elements to sync
+                             *   }
+                             *
+                             * */
+                            _socket.emit('sync', data.sync);
+                            _cacheData['Note'].id = data.sync.Note.to;
 
-                        if (data.sync.NoteElements !== undefined) {
-                            for (var i in _cacheData['NoteElements']) {
-                                for (var j in data.sync.NoteElements) {
-                                    if (data.sync.NoteElements[j].from == _cacheData['NoteElements'].id) {
-                                        _cacheData['NoteElements'].id = data.sync.NoteElements[j].to;
-                                        break;
+                            if (data.sync.NoteElements !== undefined) {
+                                for (var i in _cacheData['NoteElements']) {
+                                    for (var j in data.sync.NoteElements) {
+                                        if (data.sync.NoteElements[j].from == _cacheData['NoteElements'][i].id) {
+                                            _cacheData['NoteElements'][i].id = data.sync.NoteElements[j].to;
+                                            break;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                }, function (data) {
-                    _socket.emit('save-resp', "KO");
-                });
+                    }, function (data) {
+                        console.log(data);
+                        _socket.emit('save-resp', "KO");
+                    });
+               // }
+            } catch (e) {
+                _socket.emit('save-resp', "KO");
             }
             _cacheData['Note'] = new_note_data;
         });
@@ -129,25 +134,28 @@ var Cache = (function () {
         };
 
         this.save = function (onSaveSuccess, onSaveFailed) {
+            console.log(_cacheData);
             request.post({
-                url: appConfig.phpServerURL + "nodes/save",
+                url: appConfig.phpServerURL + "notes/save",
                 form: {
                     data: _cacheData,
                     user: _user
                 },
                 json: true
             }, function (err, httpResponse, body) {
+                
                 var success = false;
                 if (!err) {
-                    if (body.result == "success") {
+                   /* if (body.result == "success") {
                         success = true;
-                        _cacheData = {};
+                        _$this.clear();
                         if (onSaveSuccess !== undefined) {
 
                             onSaveSuccess(body);
                         }
-                    }
-                }else{
+                    }*/
+                } else {
+                    console.log('save error:');
                     console.log(err);
                 }
                 if (success === false) {
@@ -157,7 +165,10 @@ var Cache = (function () {
         };
 
         this.clear = function () {
-            _cacheData = {};
+            _cacheData = {
+                Note: {},
+                NoteElements: []
+            };
         };
     };
 

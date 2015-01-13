@@ -53,7 +53,7 @@
                             if (data[i].note.id == noteIdToSync['Note'].from) {
                                 data[i].note.id = noteIdToSync['Note'].to;
 
-                                if (noteIdToSync['NoteElements'] !== undefined) {//Sync element id
+                                if (noteIdToSync['NoteElements'] !== undefined) { //Sync element id
 
                                     for (var i in data[i]['elements']) {
                                         for (var j in noteIdToSync['NoteElements'])
@@ -96,6 +96,7 @@
              * new_Note_Data: New note to handler after save current note, can be null
              * */
             save: function (new_Note_Data) {
+                console.log('save note');
                 _init();
                 socket.emit('save', {
                     new_note_data: new_Note_Data
@@ -333,7 +334,7 @@
 
                     var positionArr = elementData['position'];
                     //connect 
-                    var elementHTML = $('<li id={{config.id}} save-valueChanged save_interval="2"><handler>|||</handler></li>');
+                    var elementHTML = $('<li id={{config.id}} save-valuechange save_interval="2"><handler>|||</handler></li>');
                     elementHTML.append(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
                     var copyScope = null;
                     if (isFirstTime) {
@@ -396,14 +397,14 @@
                 var positionArr = defaultConfig[index].position;
                 var type = defaultConfig[index].type;
 
-                var element = $('<li id="{{config.id}}" save-valueChanged save_interval="2"><handler>|||</handler></li>');
+                var element = $('<li id="{{config.id}}" save-valuechange save_interval="2"><handler>|||</handler></li>');
 
                 element.append(NoteTemplateManagerService.getElementsTemplate()[type]);
                 //Il faut compiler l'element pour qu'il réagit comme une page AngularJs
                 //Sinon tous les directives comme {{name}} ne sera pas compilé
                 var copyScope = scope.$new(true);
                 copyScope.config = defaultConfig[index];
-
+                console.log(copyScope);
                 $compile(element)(copyScope);
                 _addWidget(copyScope,
                         element,
@@ -411,7 +412,8 @@
                         positionArr['data-sizey'],
                         positionArr['data-col'],
                         positionArr['data-row']);
-            };
+            }
+            ;
         };
 
 
@@ -425,7 +427,7 @@
     });
 
     //JournalCtrl gerent les choses globaux
-    app.controller('JournalCtrl', function ($scope, $rootScope, $http, $window, GridsterShareService) {
+    app.controller('JournalCtrl', function ($scope, $rootScope, $http, $window, GridsterShareService, RemoteSaveService) {
         $rootScope.JournalEvents = {
             Ping: 'Ping',
             SwitchJournalMode: 'switch-journal-mode',
@@ -451,6 +453,9 @@
             $rootScope.CurrentMode = mode; //Change mode
             $rootScope.$broadcast($rootScope.JournalEvents.SwitchJournalMode, data);
         };
+        $rootScope.save = function(){
+            RemoteSaveService.save(null);
+        };
 
         //resize event
         var w = angular.element($window);
@@ -467,8 +472,6 @@
         $scope.$on($rootScope.JournalEvents.SwitchJournalMode, function (e, data) {
         });
     });
-
-
 
     app.controller('JournalNoteCtrl', function ($scope, $rootScope, $http, NoteTemplateManagerService) {
         $scope.getContentHeight = function () {
@@ -580,7 +583,6 @@
             transclude: true,
             scope: true,
             link: function (scope, element, attr) {
-
                 var widthGrideCount = 20;
                 var gridWidth = Math.round($(element).width() / widthGrideCount);
                 var gridster = $(element).find('ul:first').gridster({
@@ -596,6 +598,7 @@
                         handle: 'handler'
                     }
                 }).data('gridster');
+
                 GridsterShareService.setGridster(gridster);
 
                 scope.$on($rootScope.JournalEvents.ServiceSetTemplateConfig, function (e, config) {
@@ -617,7 +620,7 @@
             replace: true,
             transclude: false,
             link: function (scope, element, attr) {
-                
+
                 scope.availableElement = [{
                         label: 'Text Element',
                         type: "TEXT"
@@ -692,7 +695,7 @@
         }
     });
 
-    app.directive('saveValueChanged', function (RemoteSaveService, $timeout) {
+    app.directive('saveValuechange', function (RemoteSaveService, $timeout) {
         var saveTimeout = null;
 
         return {
@@ -702,25 +705,26 @@
 
             },
             link: function (scope, element, attr) {
-                console.log('w');
+                var scope = scope.$parent;
                 if (scope.config == undefined || scope.config == null) {
                     throw "Must set 'config' attribute as watch data in scope for save-valueChanged";
                 }
 
-                var unbindWatcher = scope.$watch("config", function (newVal, oldVal) {  
-                    console.log(newVal);
-                    if (scope.save_interval == undefined) {
-                        RemoteSaveService.update(scope.config);
-                        console.log("Save update");
-                    }
-                    else {
-                        var interval = parseInt(scope.save_interval);
-                        if (saveTimeout === null) {
-                            saveTimeout = $timeout(function () {
-                                RemoteSaveService.update(scope.config);
-                                saveTimeout = null;
-                                console.log("Timeout save update");
-                            }, interval);
+                var unbindWatcher = scope.$watch("config", function (newVal, oldVal) {
+                    if (newVal != oldVal) {
+                        if (scope.save_interval == undefined) {
+                            RemoteSaveService.update(scope.config);
+                            console.log("Save update");
+                        }
+                        else {
+                            var interval = parseInt(scope.save_interval);
+                            if (saveTimeout === null) {
+                                saveTimeout = $timeout(function () {
+                                    RemoteSaveService.update(scope.config);
+                                    saveTimeout = null;
+                                    console.log("Timeout save update");
+                                }, interval);
+                            }
                         }
                     }
                 }, true);
@@ -729,7 +733,7 @@
     });
 
 
-    app.directive('dateTimePicker', function () {
+    app.directive('pickerDatetime', function () {
         return {
             restrict: 'A',
             link: function (scope, element, attr) {

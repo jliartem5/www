@@ -7479,3 +7479,22 @@ Stack Trace:
 #10 /Users/jianli/Documents/www/MySpace/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(NotesController), Object(CakeRequest))
 #11 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2015-01-14 23:22:54 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /MySpace/index
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-15 00:43:57 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 61]
+2015-01-15 00:43:57 Error: [FatalErrorException] Cannot use object of type stdClass as array
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/Users/jianli/D...', 61)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/Users/jianli/D...', 61, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/Users/jianli/D...', 61, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

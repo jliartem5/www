@@ -116,6 +116,10 @@
             restore: function (dataToRestore) {
                 _init();
                 socket.emit('restore', dataToRestore);
+            },
+            new: function(dataToNew){
+                _init();
+                socket.emit('new', dataToNew);
             }
         };
     });
@@ -381,12 +385,13 @@
             gridster.remove_all_widgets();
             var defaultConfig = UtilsService.clone(NoteTemplateManagerService.getTemplateConfig());
             var newID = UtilsService.uniqueId();
-
+            
             gridsterNotesData[newID] = {
-                note: defaultConfig,
+                note: {id:newID},
                 elements: defaultConfig,
                 scope: []
             };
+            
             currentNodeDataID = newID;
             RemoteSaveService.save(defaultConfig); //Sauvegarde d'abord tous les modifications, et donne le nouveau noteData
 
@@ -412,8 +417,8 @@
                         positionArr['data-sizey'],
                         positionArr['data-col'],
                         positionArr['data-row']);
-            }
-            ;
+            };
+            RemoteSaveService.new(gridsterNotesData[newID].note);
         };
 
 

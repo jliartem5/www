@@ -20,11 +20,11 @@ class NotesController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        
+
         $this->Auth->allow('save', 'allNotes');
-        /*if ($this->Auth->loggedIn() == false) {
-            return $this->redirect('/pages/index');
-        }*/
+        /* if ($this->Auth->loggedIn() == false) {
+          return $this->redirect('/pages/index');
+          } */
     }
 
     public function index() {
@@ -48,71 +48,80 @@ class NotesController extends AppController {
      * }
      * 
      * */
+    //{"data":{ "Note": {"id":"c083f241-57ea-4eb1-6b57-5f41e57ace0d", "symbol":"LC"}, "NoteElements": [] }, "user":{"User":{"id":"6"}}}
     public function save() {
         $this->autoRender = false;
         $result = array();
-        
+        $data = json_decode($this->request->data, true);
+        debug($data);
         if ($this->request->is('post')) {
-            $this->Notes->create();
-            $note_data = array(
-                'Note' => $this->request->data['data']['Note']
-            );
-            $note_data['Note']['user_id'] = $this->request->data['user']['User']['id'];
-            
-            $isNewNote = UtilityComponent::isGUID($note_data['Note']['id']);
-            if($isNewNote){
-                unset($note_data['Note']['id']);
-            }else{
-                $note_data['Note']['id'] = UtilityComponent::descriptData($note_data['Note']['id']);
-            }
-            
-            $dataSource = $this->Notes->getDataSource();
-            
-            try{
+            try {
+                $this->Notes->create();
+                $note_data = array(
+                    'Note' => $data['data']['Note']
+                );
+                $note_data['Note']['user_id'] = $data['user']['User']['id'];
+
+                $isNewNote = UtilityComponent::isGUID($note_data['Note']['id']);
+                $nodeID = $note_data['Note']['id'];
+                if ($isNewNote) {
+                    unset($note_data['Note']['id']);
+                } else {
+                    $note_data['Note']['id'] = UtilityComponent::descriptData($note_data['Note']['id']);
+                }
+
+                $dataSource = $this->Notes->getDataSource();
+
                 $dataSource->begin();
                 $note_saved = $this->Notes->save($note_data['Note']);
                 if ($note_saved) {
-                    
+
                     //construire les élements à inserer dans la base de donnée
                     $insertID = $this->Notes->getInsertID();
                     $result['sync'] = array();
-                    
-                    if($isNewNote){
-                        $result['sync']['Note'] = array("from"=>$note_data['Note']['id'], 'to'=>$insertID);
+
+                    if ($isNewNote) {
+                        $result['sync']['Note'] = array("from" => $nodeID, 'to' => $insertID);
                     }
                     $result['sync']['NoteElements'] = array();
-                    foreach ($this->request->data['data']['NoteElements'] as  $element) {
+                    foreach ($data['data']['NoteElements'] as $element) {
                         $isNewElement = UtilityComponent::isGUID($element['id']);
                         $element['note_id'] = $insertID;
-                        if($isNewElement){
-                            $result['sync']['NoteElements'][] = array('from'=>$element['id'], 'to'=>"");
+                        $savedElementID = $element['id'];
+                        if ($isNewElement) {
                             unset($element['id']);
-                        }else{
+                        } else {
                             $element['id'] = UtilityComponent::descriptData($element['id']);
                         }
+
                         $element_saved = $this->NoteElement->save($element);
-                        if($element_saved == false){
+
+                        if ($isNewElement) {
+
+                            $result['sync']['NoteElements'][] = array('from' => $savedElementID, 'to' => $this->NoteElement->getInsertID());
+                        }
+                        if ($element_saved == false) {
                             throw new Exception('Canoot save note element');
                         }
                     }
                     $result['result'] = "success";
-                    
                 } else {
                     throw new Exception('Cannot save note');
                 }
-            }catch(Exception $e){
+            } catch (Exception $e) {
                 $dataSource->rollback();
-                return json_encode(array('result'=>'failed', 'error'=>$e->getMessage()));
+                return json_encode(array('result' => 'failed', 'error' => $e->getMessage()));
             }
-        }else{
+        } else {
             $result['result'] = 'failed';
         }
+        $dataSource->commit();
         return json_encode($result);
     }
 
     public function delete() {
         if ($this->request->is('post')) {
-            $id = $this->request->data['note_id'];
+            $id = $data['note_id'];
             $result = $this->Notes->delete($id);
         }
     }
@@ -126,7 +135,7 @@ class NotesController extends AppController {
 
             if ($clear) {
                 $template_configs = array();
-                foreach ($this->request->data as $id => $element_data) {
+                foreach ($data as $id => $element_data) {
                     unset($element_data['id']);
                     $config = json_decode(ElementHelper::descriptData($element_data['config']), true);
                     $config['position'] = json_encode($element_data['position'], true);

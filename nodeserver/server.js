@@ -71,6 +71,15 @@ var Cache = (function () {
             last_update_date = new Date();
             _socket.emit("update-resp", "OK");
         });
+        
+        _socket.on('new', function(data){
+            _$this.clear();
+            console.log('new note:');
+            console.log(data);  
+            if(data != null){
+                _cacheData['Note'] = data;
+            }
+        });
 
         //save all
         _socket.on('save', function (new_note_data) {
@@ -103,6 +112,9 @@ var Cache = (function () {
                                     }
                                 }
                             }
+                            if(new_note_data != null && new_note_data != undefined){
+                                _cacheData['Note'] = new_note_data;
+                            }
                         }
 
                     }, function (data) {
@@ -113,7 +125,6 @@ var Cache = (function () {
             } catch (e) {
                 _socket.emit('save-resp', "KO");
             }
-            _cacheData['Note'] = new_note_data;
         });
 
         _socket.on('clear', function () {

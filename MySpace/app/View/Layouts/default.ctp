@@ -33,6 +33,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
         echo $this->Html->css('styles');
         echo $this->Html->css('cake.generic.css');
+        echo $this->Html->css('plugins/jquery.datetimepicker.css');
         echo $this->Html->script('jquery-1.11.1.min.js');
         echo $this->Html->script('plugins/bootstrap/bootstrap.js');
         echo $this->Html->script('plugins/angular.js');

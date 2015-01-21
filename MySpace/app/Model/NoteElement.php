@@ -93,7 +93,7 @@ class NoteElement extends AppModel {
     }
 
     public function beforeSave($options = array()) {
-        if(is_array($this->data['NoteElement']['position'])){
+        if(isset($this->data['NoteElement']['position']) && is_array($this->data['NoteElement']['position'])){
             $this->data['NoteElement']['position'] = json_encode($this->data['NoteElement']['position']);
         }
     }

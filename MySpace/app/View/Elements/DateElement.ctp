@@ -7,7 +7,7 @@ if (!isset($MODE)) {
 
     <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
         <label class="element-label" for="{{config.id}}">{{config.label}}</label>
-        <input date-time-picker type="text" value="{{config.value}}" ng-model="config.value" id="{{config.id}}"/>
+        <input picker-datetime type="text" value="{{config.value}}" ng-model="config.value" id="{{config.id}}"/>
         
     </div>
     <div ng-show="$root.CurrentMode == $root.JournalMode.View">

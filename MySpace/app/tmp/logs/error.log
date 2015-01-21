@@ -7498,3 +7498,33 @@ Stack Trace:
 #3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-01-15 23:18:03 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 60]
+2015-01-15 23:18:03 Error: [FatalErrorException] Cannot use object of type stdClass as array
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/Users/jianli/D...', 60)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/Users/jianli/D...', 60, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/Users/jianli/D...', 60, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-15 23:18:11 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 60]
+2015-01-15 23:18:11 Error: [FatalErrorException] Cannot use object of type stdClass as array
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/Users/jianli/D...', 60)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/Users/jianli/D...', 60, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/Users/jianli/D...', 60, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-17 01:02:45 Error: Fatal Error (1): Call to a member function create() on null in [/Users/jianli/Documents/www/MySpace/app/Controller/NotesController.php, line 94]
+2015-01-17 01:02:45 Error: [FatalErrorException] Call to a member function create() on null
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/jianli/D...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/jianli/D...', 94, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/jianli/D...', 94, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

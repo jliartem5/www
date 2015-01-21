@@ -26,7 +26,7 @@
         <?php
         $stockTag = $_GET['s'];
         
-        $yahooApi = "http://ichart.yahoo.com/table.csv?s=" . $stockTag . "&a=0&b=1&c=2014&d=11&e=31&f=2014&g=d";
+        $yahooApi = "http://ichart.yahoo.com/table.csv?s=" . $stockTag . "&a=0&b=1&c=2014&d=11&e=31&f=2015&g=d";
         $data = "";
 
         $ch = curl_init();

@@ -48,17 +48,18 @@ class NotesController extends AppController {
      * }
      * 
      * */
-    //{"data":{ "Note": {"id":"c083f241-57ea-4eb1-6b57-5f41e57ace0d", "symbol":"LC"}, "NoteElements": [] }, "user":{"User":{"id":"6"}}}
+    //{"data":{ "Note": {"id":"c083f241-57ea-4eb1-6b57-5f41e57ace0d", "symbol":"LC"}, 
+    //"NoteElements": [{"id":"a183f241-57ea-4eb1-6b57-5f41e57ace0d", "position":"{'data-row':'2','data-col':'7','data-sizex':'2','data-sizey':'1'}"}] }, 
+    //"user":{"User":{"id":"6"}}}
     public function save() {
         $this->autoRender = false;
         $result = array();
         $data = json_decode($this->request->data, true);
-        debug($data);
         if ($this->request->is('post')) {
             try {
                 $this->Notes->create();
                 $note_data = array(
-                    'Note' => $data['data']['Note']
+                    'Note' => $data['note']['Note']
                 );
                 $note_data['Note']['user_id'] = $data['user']['User']['id'];
 
@@ -73,36 +74,45 @@ class NotesController extends AppController {
                 $dataSource = $this->Notes->getDataSource();
 
                 $dataSource->begin();
+                $this->Notes->create(); //clear
                 $note_saved = $this->Notes->save($note_data['Note']);
                 if ($note_saved) {
-
                     //construire les élements à inserer dans la base de donnée
-                    $insertID = $this->Notes->getInsertID();
                     $result['sync'] = array();
-
+                    
                     if ($isNewNote) {
-                        $result['sync']['Note'] = array("from" => $nodeID, 'to' => $insertID);
+                        $insertID = $this->Notes->getInsertID();
+                        $result['sync']['Note'][$nodeID] = UtilityComponent::encrypeData($insertID);
                     }
                     $result['sync']['NoteElements'] = array();
-                    foreach ($data['data']['NoteElements'] as $element) {
+                    foreach ($data['note']['NoteElements'] as $element) {
                         $isNewElement = UtilityComponent::isGUID($element['id']);
-                        $element['note_id'] = $insertID;
+                        if ($isNewNote == false) {
+                            $element['note_id'] = $note_data['Note']['id'];//get descripted note id
+                        }else{
+                            $element['note_id'] = $this->Notes->getInsertID(); //get inserted note id
+                        }
+                        
                         $savedElementID = $element['id'];
                         if ($isNewElement) {
                             unset($element['id']);
                         } else {
                             $element['id'] = UtilityComponent::descriptData($element['id']);
                         }
-
+                        $this->NoteElement->create();
                         $element_saved = $this->NoteElement->save($element);
-
-                        if ($isNewElement) {
-
-                            $result['sync']['NoteElements'][] = array('from' => $savedElementID, 'to' => $this->NoteElement->getInsertID());
-                        }
-                        if ($element_saved == false) {
+                        if ($element_saved) {
+                            if ($isNewElement) {
+                                $result['sync']['NoteElements'][$savedElementID] = UtilityComponent::encrypeData($this->NoteElement->getInsertID());
+                            } else {
+                                //Not new element, do not sync id
+                            }
+                        } else {
                             throw new Exception('Canoot save note element');
                         }
+                    }
+                    if(count($result['sync']['NoteElements']) == 0){
+                        unset($result['sync']['NoteElements']); //pas besoin d'envoyer un array vide
                     }
                     $result['result'] = "success";
                 } else {

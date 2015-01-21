@@ -58,70 +58,128 @@ var Cache = (function () {
                 _socket.emit('save-resp', "KO");
             });
             _cacheManager.remove(_$this);
+            console.log('------------------------');
             console.log("Disconnect");
         });
 
         //update note element
         _socket.on('update', function (data) {
+            console.log('------------------------');
+            console.log('update:');
+            console.log(data);
             if (data.id === undefined || data.id === null) {
-                _socket.emit('update-rest', 'KO')
+                _socket.emit('update-rest', 'KO:Identify miss')
             }
-
-            _cacheData['NoteElements'][data.id] = data;
-            last_update_date = new Date();
-            _socket.emit("update-resp", "OK");
+            for (var i in _cacheData['NoteElements']) {
+                if (_cacheData['NoteElements'][i].id == data.id) {
+                    _cacheData['NoteElements'][i] = data;
+                    _socket.emit("update-resp", "OK");
+                    last_update_date = new Date();
+                    return;
+                }
+            }
+            console.log('update failed, cannot find element');
+            _socket.emit("update-resp", "KO:Unknow element");
         });
-        
-        _socket.on('new', function(data){
+        //switch with out save
+        _socket.on('new', function (data) {
             _$this.clear();
+            console.log('------------------------');
             console.log('new note:');
-            console.log(data);  
-            if(data != null){
-                _cacheData['Note'] = data;
+            console.log(data);
+            if (data != null) {
+                _cacheData = data;
             }
         });
 
-        //save all
+        _socket.on('newElement', function (data) {
+            console.log('------------------------');
+            console.log('add new element:');
+            console.log(data);
+            _cacheData['NoteElements'].push(data);
+            _socket.emit('newElement-resp', "OK");
+        });
+
+        //switch with save all
         _socket.on('save', function (new_note_data) {
-            console.log('Save note data:');
             try {
                 //if (_cacheData.length > 0) { //Check if no cache data, for the first time new note for example
-                    _$this.save(function (data) {
-                        last_save_date = new Date();
-                        _socket.emit('save-resp', "OK");
-                        if (data.sync != undefined) {
-                            /**
-                             * Synchronise id after save new element/note
-                             * Sync structure:
-                             *   {
-                             *    Note:{from:id, to:id},
-                             *    NoteElements:[{from:id, to:id},...] //elements to sync
-                             *   }
-                             *
-                             * */
-                            _socket.emit('sync', data.sync);
-                            _cacheData['Note'].id = data.sync.Note.to;
-
+                _$this.save(function (data) {
+                    console.log('------------------------');
+                    console.log('save success');
+                    last_save_date = new Date();
+                    _socket.emit('save-resp', "OK");
+                    if (data.sync != undefined) {
+                        /**
+                         * Synchronise id after save new element/note
+                         * Sync structure:
+                         *   {
+                         *    Note:{id},
+                         *    NoteElements:[{id},...] //elements to sync
+                         *   }
+                         *
+                         * */
+                        if (data.sync.Note !== undefined || data.sync.NoteElements !== undefined) {
+                            var noteID = _cacheData['Note'].id;
+                            //sync note id
+                            if (data.sync.Note !== undefined) {
+                                console.log('------------------------');
+                                console.log('Sync ID for ' + noteID);
+                                if (data.sync.Note[noteID] != undefined) {
+                                    _cacheData['Note'].id = data.sync.Note[noteID];
+                                    console.log('Sync note id');
+                                }
+                            }
+                            //sync elements ID
                             if (data.sync.NoteElements !== undefined) {
                                 for (var i in _cacheData['NoteElements']) {
                                     for (var j in data.sync.NoteElements) {
-                                        if (data.sync.NoteElements[j].from == _cacheData['NoteElements'][i].id) {
-                                            _cacheData['NoteElements'][i].id = data.sync.NoteElements[j].to;
+                                        if (j == _cacheData['NoteElements'][i].id) {
+                                            _cacheData['NoteElements'][i].id = data.sync.NoteElements[j];
+                                            console.log('Sync element ID');
                                             break;
                                         }
                                     }
                                 }
                             }
-                            if(new_note_data != null && new_note_data != undefined){
-                                _cacheData['Note'] = new_note_data;
+                            //on remplie note pour que le coté client reconnais l'id de note à manipuler
+                            if (data.sync.Note == undefined) {
+                                console.log('add note id for client side identify');
+                                data.sync.Note = {};
+                                data.sync.Note[noteID] = noteID;
                             }
+                            _socket.emit('sync', data.sync);
                         }
 
-                    }, function (data) {
-                        console.log(data);
-                        _socket.emit('save-resp', "KO");
-                    });
-               // }
+
+                        //replace all data if new note data
+                        if (new_note_data != null && new_note_data != undefined) {
+                            _cacheData = new_note_data;
+                            console.log('------------------------');
+                            console.log('Next note data:');
+                            console.log(new_note_data);
+                        }else{
+                            console.log('------------------------');
+                            console.log('No new Note data, will stay on the current data');
+                        }
+                    }
+
+                }, function (data) {
+                    console.log('------------------------');
+                    console.log('save failed');
+                    console.log('--------------------------');
+                    console.log('And http response:');
+                    console.log(data);
+                    //replace all data if new note data
+                    if (new_note_data != null && new_note_data != undefined) {
+                        _cacheData = new_note_data;
+                        console.log('------------------------');
+                        console.log('Next note data:');
+                        console.log(new_note_data);
+                    }
+                    _socket.emit('save-resp', "KO");
+                });
+                // }
             } catch (e) {
                 _socket.emit('save-resp', "KO");
             }
@@ -145,32 +203,47 @@ var Cache = (function () {
         };
 
         this.save = function (onSaveSuccess, onSaveFailed) {
-            console.log(_cacheData);
+            if (_cacheData['Note'].id == undefined) {
+                console.log('------------------------');
+                console.log('Note id not set, will not save');
+                onSaveFailed('Unsaved');
+                return;
+            }
+            console.log('------------------------');
+            console.log('Save note data:');
+            var postData = JSON.stringify({
+                note: _cacheData,
+                user: _user
+            });
+            console.log(postData);
             request.post({
                 url: appConfig.phpServerURL + "notes/save",
                 form: {
-                    data: _cacheData,
-                    user: _user
+                    data: postData
                 },
                 json: true
             }, function (err, httpResponse, body) {
-                
+
+                console.log('------------------------');
+                console.log('------------------------');
+                console.log('Html return:');
+                console.log(body);
+                console.log('------------------------');
                 var success = false;
                 if (!err) {
-                   /* if (body.result == "success") {
+                    if (body.result == "success") {
                         success = true;
-                        _$this.clear();
                         if (onSaveSuccess !== undefined) {
 
                             onSaveSuccess(body);
+                            return;
                         }
-                    }*/
-                } else {
-                    console.log('save error:');
-                    console.log(err);
+                    }
                 }
                 if (success === false) {
+
                     onSaveFailed(body);
+                    return;
                 }
             });
         };
@@ -450,7 +523,9 @@ var cm = new CacheManager();
 var rosterManager = new ChatManager();
 
 io.on('connection', function (socket) {
+    console.log('New connect, waiting for identify...');
     socket.on('identify', function (data) {
+        console.log('Identify OK, set user in '+data.type+" mode");
         request.post({
             url: appConfig.phpServerURL + 'users/userBySecurityKey',
             form: {
@@ -491,3 +566,4 @@ server.listen(3000, 'localhost' || "0.0.0.0", function () {
     var addr = server.address();
     console.log("Chat server listening at", addr.address + ":" + addr.port);
 });
+

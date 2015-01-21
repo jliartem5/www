@@ -16,7 +16,7 @@
         var url = "http://localhost:3000";
         var socket = null;
 
-        function _init() {
+        function _init(onAvailable) {
             if (socket == null) {
                 socket = io.connect(url);
 
@@ -28,10 +28,18 @@
                     });
                     console.log('connected to ' + url);
                 });
+                socket.on('disconnect', function () {
+                    socket = null;
+                });
+                socket.on('newElement-resp', function (data) {
+                    console.log('new element ok');
+                });
 
                 socket.on('identify-resp', function (data) {
-
                     console.log('Identify ok');
+                    if (onAvailable !== undefined) {
+                        onAvailable(data);
+                    }
                 });
 
                 socket.on('save-resp', function (resp) {
@@ -41,24 +49,43 @@
                  * Synchronise id after save new element/note
                  * Sync structure:
                  *   {
-                 *    Note:{from:id, to:id},
-                 *    NoteElements:[{from:id, to:id},...] //elements to sync
+                 *    Note[from]:to,
+                 *    NoteElements:{fromID:toID, fromID:toID, ...} //elements to sync
                  *   }
                  *
+                 * PS: Sync sera faite après changement de note dans save au cas de  switchNote 
                  * */
                 socket.on('sync', function (noteIdToSync) {
+                    console.log('Sync ID:');
+                    console.log(noteIdToSync);
                     var data = NoteDataService.getNoteData();
+                    //Pour tous les sync il faut un Note pour identifier quel note à mettre à jour
                     if (noteIdToSync['Note'] != undefined) {
-                        for (var i in data) {
-                            if (data[i].note.id == noteIdToSync['Note'].from) {
-                                data[i].note.id = noteIdToSync['Note'].to;
 
+                        for (var i in data) {
+                            var noteID = data[i].note.id;
+                            if (noteIdToSync['Note'][noteID] != undefined) {
+                                //Sync note id et la clé dans le tableau de Note
+                                data[i].note.id = noteIdToSync['Note'][noteID];
+
+                                //sync elements id
                                 if (noteIdToSync['NoteElements'] !== undefined) { //Sync element id
 
-                                    for (var i in data[i]['elements']) {
+                                    for (var k in data[i]['elements']) {
                                         for (var j in noteIdToSync['NoteElements'])
-                                            if (data[i]['elements'].id == noteIdToSync['NoteElements'][j].from) {
-                                                data[i]['elements'].id = noteIdToSync['NoteElements'][j].to;
+                                            if (data[i]['elements'][k].id == j) {
+                                                console.log('sync id ' + j);
+                                                var cryptedID = noteIdToSync['NoteElements'][j];
+                                                var oldID = data[i]['elements'][k].id;
+                                                //modif ID
+                                                data[i]['elements'][k].id = cryptedID;
+                                                //puis modif la clé de scope
+                                                //ce cle sera util dans switchNote pour retrouver Scope
+                                                data[i]['scope'][cryptedID] = data[i]['scope'][oldID];
+                                                delete data[i]['scope'][oldID];
+
+                                                // console.log(data[i]['elements'][cryptedID]);
+                                                break;
                                             }
                                     }
                                 }
@@ -89,6 +116,10 @@
                 socket.on('clear-resp', function (resp) {
                     console.log('clear ' + resp);
                 });
+            } else {
+                if (onAvailable != undefined) {
+                    onAvailable();
+                }
             }
         }
         return {
@@ -96,11 +127,9 @@
              * new_Note_Data: New note to handler after save current note, can be null
              * */
             save: function (new_Note_Data) {
-                console.log('save note');
+                console.log('save note, next note data');
                 _init();
-                socket.emit('save', {
-                    new_note_data: new_Note_Data
-                });
+                socket.emit('save', new_Note_Data);
             },
             //update an element data
             update: function (dataToUpdate) {
@@ -117,9 +146,15 @@
                 _init();
                 socket.emit('restore', dataToRestore);
             },
-            new: function(dataToNew){
-                _init();
-                socket.emit('new', dataToNew);
+            new : function (dataToNew) {
+                _init(function () {
+                    socket.emit('new', dataToNew);
+                });
+            },
+            emit: function (code, data) {
+                _init(function () {
+                    socket.emit(code, data);
+                });
             }
         };
     });
@@ -222,9 +257,10 @@
         /**
          *  [{
          note:{},
-         elements:[],
-         scope:[]
-         }, ...]
+         elements:[0:Object, 1:Object],
+         scope:[id:Scope, id:Scope]
+         }, 
+         {note:{}, elements:[], scope:[]}, ...]
          * 
          * 
          * */
@@ -232,6 +268,18 @@
         return {
             getNoteData: function () {
                 return notesData;
+            },
+            getNoteDataById: function (id) {
+                console.log(notesData);
+                for (var i in notesData) {
+                    if (notesData[i].note.id == id) {
+                        return notesData[i];
+                    }
+                }
+                return null;
+            },
+            insertNoteData: function (data) {
+                notesData.push(data);
             }
         };
     });
@@ -239,9 +287,8 @@
     app.factory('GridsterShareService', function ($compile, $rootScope, $http, NoteTemplateManagerService, UtilsService, RemoteSaveService, NoteDataService) {
         var gridster = undefined;
 
-        //pointer to current note data index in gridsterNotesData
+        //pointer to current note data index 
         var currentNodeDataID = null;
-        var gridsterNotesData = NoteDataService.getNoteData();
 
         function _addWidget(scope, widget, sizeX, sizeY, x, y) {
             if (scope.config === undefined) {
@@ -279,36 +326,71 @@
             gridster.options.draggable.stop = function (event, ui) {
                 //Mise à jour de tableau position, on update ici puisqu'il n'est pas possible de rattacher ng-model 
                 //les attributs et evenement Gridster sans modifier code source de ce dernier
-                var context = $(ui.$helper.context);
-                var col = context.attr('data-col');
-                var row = context.attr('data-row');
-                var id = context.attr('id');
-                var elementsData = gridsterNotesData[currentNodeDataID].elements;
+                var noteData = NoteDataService.getNoteDataById(currentNodeDataID);
+                var elementsData = noteData.elements;// gridsterNotesData[currentNodeDataID].elements;
+
                 for (var index in elementsData) {
-                    if (elementsData[index].id == id) {
-                        elementsData[index].position['data-col'] = col;
-                        elementsData[index].position['data-row'] = row;
+                    var oldPosition = elementsData[index].position;
+                    var elemID = elementsData[index].id;
+                    var newElem = $('#' + elementsData[index].id);
+                    var newCol = newElem.attr('data-col');
+                    var newRow = newElem.attr('data-row');
+                    var newSizeX = newElem.attr('data-sizex');
+                    var newSizeY = newElem.attr('data-sizey');
+
+                    //Update sur la position pour tous les elements modifiés
+                    if (oldPosition['data-col'] != newCol
+                            || oldPosition['data-row'] != newRow
+                            || oldPosition['data-sizex'] != newSizeX
+                            || oldPosition['data-sizey'] != newSizeY) {
+                        oldPosition['data-col'] = newCol;
+                        oldPosition['data-row'] = newRow;
+                        oldPosition['data-sizex'] = newSizeX;
+                        oldPosition['data-sizey'] = newSizeY;
+                        noteData.scope[elemID].$apply();
+
                     }
                 }
+
             };
 
             gridster.options.resize.stop = function (event, ui, widget) {
-                var sizex = $(widget).attr('data-sizex');
-                var sizey = $(widget).attr('data-sizey');
-                var id = $(widget).attr('id');
-                var elementsData = gridsterNotesData[currentNodeDataID].elements;
+
+                var noteData = NoteDataService.getNoteDataById(currentNodeDataID);
+                var elementsData = noteData.elements;// gridsterNotesData[currentNodeDataID].elements;
 
                 for (var index in elementsData) {
-                    if (elementsData[index].id == id) {
-                        elementsData[index].position['data-sizex'] = sizex;
-                        elementsData[index].position['data-sizey'] = sizey;
+                    var oldPosition = elementsData[index].position;
+                    var elemID = elementsData[index].id;
+                    var newElem = $('#' + elementsData[index].id);
+                    var newCol = newElem.attr('data-col');
+                    var newRow = newElem.attr('data-row');
+                    var newSizeX = newElem.attr('data-sizex');
+                    var newSizeY = newElem.attr('data-sizey');
+
+                    //Update sur la position pour tous les elements modifiés
+                    if (oldPosition['data-col'] != newCol
+                            || oldPosition['data-row'] != newRow
+                            || oldPosition['data-sizex'] != newSizeX
+                            || oldPosition['data-sizey'] != newSizeY) {
+                        oldPosition['data-col'] = newCol;
+                        oldPosition['data-row'] = newRow;
+                        oldPosition['data-sizex'] = newSizeX;
+                        oldPosition['data-sizey'] = newSizeY;
+                        noteData.scope[elemID].$apply();
+
                     }
                 }
+
             };
         };
 
         gridsterObj.getGridster = function () {
             return gridster;
+        };
+
+        gridsterObj.getCurrentNoteID = function () {
+            return currentNodeDataID;
         };
 
         /**
@@ -318,22 +400,23 @@
          * @returns {undefined}
          */
         gridsterObj.switchNote = function (scope, noteData) {
-            RemoteSaveService.save(noteData); //save note and give newest noteData
-
+            var nextNoteData = {Note: noteData, NoteElements: []};
+            console.log("noteDatsdfsdf  a");
+            console.log(noteData);
             var exists = true;
             var noteID = noteData.id;
-
-            if (gridsterNotesData[noteID] == undefined || gridsterNotesData[noteID] == null) {
+            var completeNoteData = NoteDataService.getNoteDataById(noteID);
+            if (completeNoteData == undefined || completeNoteData == null) {
                 exists = false;
             }
 
             //work...
-            var processFunc = function (data, isFirstTime) {
-                for (var index = 0; index < data.length; ++index) {
+            var processFunc = function (elements, completeNote, isFirstTime) {
 
-                    var elementData = data[index]['NoteElement'] === undefined ? data[index] : data[index]['NoteElement'];
+                for (var index = 0; index < elements.length; ++index) {
+                    var elementData = elements[index]['NoteElement'] === undefined ? elements[index] : elements[index]['NoteElement'];
                     if (isFirstTime) {
-                        gridsterNotesData[noteID].elements.push(elementData);
+                        completeNote.elements.push(elementData);
                     }
 
                     var positionArr = elementData['position'];
@@ -343,10 +426,13 @@
                     var copyScope = null;
                     if (isFirstTime) {
                         copyScope = scope.$new(true);
-                        gridsterNotesData[noteID].scope[elementData.id] = copyScope;
+                        completeNote.scope[elementData.id] = copyScope;
                     }
                     else {
-                        copyScope = gridsterNotesData[noteID].scope[elementData.id];
+                        copyScope = completeNote.scope[elementData.id];
+                    }
+                    if (copyScope == undefined) {
+                        console.log('Scope not exists for ' + elementData.id);
                     }
                     copyScope.config = elementData;
                     $compile(elementHTML)(copyScope);
@@ -356,49 +442,55 @@
                             positionArr['data-sizey'],
                             positionArr['data-col'],
                             positionArr['data-row']);
+                    nextNoteData.NoteElements.push({id: elementData.id});
                 }
             };
 
+            //Si les doonée cache n'exists pas encore, trouve tous les noteelements et remplir 
             if (exists === false) {
+                console.log('Unknow Note elements data, go find from PHP server...');
                 var url = $rootScope.baseURL + "notes/noteElements/" + noteID;
-                $http.post(url, {}).success(function (elementsData, status, headers, config) {
-                    gridsterNotesData[noteID] = {
+                $http.post(url, {}).success(function (elementsData, status, headers, config) { 
+                    
+                    var newNoteData = {
                         note: noteData,
                         elements: [],
                         scope: []
                     };
+                    NoteDataService.insertNoteData(newNoteData);
                     gridster.remove_all_widgets();
-                    processFunc(elementsData, true);
+                    processFunc(elementsData, newNoteData, true);
+                    RemoteSaveService.save(nextNoteData); //save note and give newest noteData
                 });
 
             }
             else {
+                console.log('Already know elements data, charge by cache');
                 gridster.remove_all_widgets();
-                processFunc(gridsterNotesData[noteID].elements, false);
+                processFunc(completeNoteData.elements, completeNoteData, false);
+                RemoteSaveService.save(nextNoteData); //save note and give newest noteData
             }
             currentNodeDataID = noteID;
         };
 
         gridsterObj.newNote = function (scope) {
-
             //prepare
             gridster.remove_all_widgets();
             var defaultConfig = UtilsService.clone(NoteTemplateManagerService.getTemplateConfig());
             var newID = UtilsService.uniqueId();
-            
-            gridsterNotesData[newID] = {
-                note: {id:newID},
+
+            var newNoteData = {
+                note: {id: newID},
                 elements: defaultConfig,
                 scope: []
             };
-            
+
             currentNodeDataID = newID;
-            RemoteSaveService.save(defaultConfig); //Sauvegarde d'abord tous les modifications, et donne le nouveau noteData
 
             //work
-            console.log(defaultConfig);
             for (var index in defaultConfig) {
-                defaultConfig[index].id = UtilsService.uniqueId();
+                var newElementID = UtilsService.uniqueId();
+                defaultConfig[index].id = newElementID;
                 var positionArr = defaultConfig[index].position;
                 var type = defaultConfig[index].type;
 
@@ -409,7 +501,7 @@
                 //Sinon tous les directives comme {{name}} ne sera pas compilé
                 var copyScope = scope.$new(true);
                 copyScope.config = defaultConfig[index];
-                console.log(copyScope);
+                newNoteData.scope[defaultConfig[index].id] = copyScope;
                 $compile(element)(copyScope);
                 _addWidget(copyScope,
                         element,
@@ -417,14 +509,33 @@
                         positionArr['data-sizey'],
                         positionArr['data-col'],
                         positionArr['data-row']);
-            };
-            RemoteSaveService.new(gridsterNotesData[newID].note);
+            }
+            ;
+            NoteDataService.insertNoteData(newNoteData);
+            console.log('Remote new note data:');
+            console.log({Note: newNoteData.note, NoteElements: newNoteData.elements});
+            RemoteSaveService.new({Note: newNoteData.note, NoteElements: newNoteData.elements}); //Sauvegarde d'abord tous les modifications, et donne le nouveau noteData
+            $rootScope.$broadcast($rootScope.JournalEvents.AddNewNote, newNoteData.note);
         };
 
 
-        gridsterObj.addWidget = function (widget) {
-            //  _addWidget();
-            // RemoteSaveService.update();
+        gridsterObj.addNewWidget = function (scope, widget) {
+            _addWidget(
+                    scope,
+                    widget);
+            //save position data
+            var element = $('#' + scope.config.id);
+            var col = element.attr('data-col');
+            var row = element.attr('data-row');
+            var sizex = element.attr('data-sizex');
+            var sizey = element.attr('data-sizey');
+            scope.config.position = {
+                'data-col': col,
+                'data-row': row,
+                'data-sizex': sizex,
+                'data-sizey': sizey
+            };
+
         };
 
 
@@ -439,7 +550,8 @@
             GridsterAddWidget: 'gridster-add-widget',
             ReiceiveDefaultTemplate: 'reiceive-defaukt-template',
             ServiceSetTemplateConfig: 'service-set-template-config',
-            ServiceSetElementsTemplate: 'service-set-elements-template'
+            ServiceSetElementsTemplate: 'service-set-elements-template',
+            AddNewNote: 'add-new-note'
         };
         $rootScope.JournalMode = {
             View: 'view',
@@ -458,7 +570,7 @@
             $rootScope.CurrentMode = mode; //Change mode
             $rootScope.$broadcast($rootScope.JournalEvents.SwitchJournalMode, data);
         };
-        $rootScope.save = function(){
+        $rootScope.save = function () {
             RemoteSaveService.save(null);
         };
 
@@ -491,7 +603,6 @@
         //get default template data and fill $scope.template objet
         $http.post($rootScope.baseURL + 'notes/templateConfig', {}).
                 success(function (data, status, headers, config) {
-                    console.log(data['templateConfig']);
                     NoteTemplateManagerService.setElementsTemplate(data['elementTemplate']);
                     NoteTemplateManagerService.setTemplateConfig(data['templateConfig']);
                 }).
@@ -500,7 +611,7 @@
                 });
     });
 
-    app.controller('JournalMenuControl', function ($scope, $http, $rootScope, GridsterShareService) {
+    app.controller('JournalMenuControl', function ($scope, $http, $rootScope, GridsterShareService, RemoteSaveService, NoteDataService) {
 
         $scope.notes = [];
 
@@ -516,70 +627,37 @@
                 });
 
         $scope.switchNote = function (noteData) {
-            GridsterShareService.switchNote($scope, noteData);
+            console.log('Switch note with data:');
+            console.log(noteData);
+            var currentSelectedID = GridsterShareService.getCurrentNoteID();
+            //Ici on vérifier si on clique sur le même note, c'est pour éviter de recharger la note,
+            //Mais aussi pour une autre raison d'éviter un BUG; ce BUG se produit si on fait:
+            //1=> Créer une nouvelle Note
+            //2=> Clique sur la nouvelle Note crée (Charge->Send new Note(GUID)->Save->Sync ID), donc coté server il prendra toujours les anciens GUID, et du coup Server PHP va créer un nouveau Note
+            //3=> Reclique sur la nouvelle Note (Charge->Send new Note(Crypted ID)->Save->Sync ID)
+            //Et puis il sauvegarde 2 note...
+            if (noteData.id == currentSelectedID) {
+                console.log("Same Note, not need to recharge, will simply save note");
+            } else {
+
+                GridsterShareService.switchNote($scope, noteData);
+            }
         };
 
         $scope.newClick = function () {
             GridsterShareService.newNote($scope);
         };
+
+        $scope.$on($rootScope.JournalEvents.AddNewNote, function (e, data) {
+            console.log("AddNewNote event :" + data);
+
+            $scope.notes.push(data);
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+        });
+
     });
-
-    /**
-     *
-     * BUG : dans la fonction addWidget() si data-sizey est different pour chaque element alors la page se fige
-     * Solution: depalcer l'ajout des widgets dans directive "·gridster"
-     */
-    /*
-     app.directive('gridsterelement', function ($rootScope, NoteTemplateManagerService, GridsterShareService) {
-     return {
-     restrict: 'E',
-     template: '<li data-row="{{getPositionRow()}}" data-col="{{getPositionColone()}}" data-sizex="{{getPositionWidth()}}" data-sizey="{{getPositionHeight()}}"></li>',
-     replace: true,
-     transclude: true,
-     scope: {
-     config: '='
-     },
-     link: function (scope, element, attr) {
-     scope.$watch(attr.config, function (a) {
-     if (NoteTemplateManagerService.elementTemplate[a.type] !== undefined) {
-     //Make a copy for config data
-     scope.templateConfig = (JSON.parse(JSON.stringify(a)));
-     if (typeof (scope.templateConfig['position']) === typeof ("")) {
-     scope.templateConfig['position'] = JSON.parse(scope.templateConfig['position']);
-     }
-     scope.template = NoteTemplateManagerService.elementTemplate[a.type];
-     $(element).html(scope.template);
-     var positionArr = scope.templateConfig.position;
-     GridsterShareService.addWidget(element,
-     positionArr['data-sizex'],
-     positionArr['data-sizey'],
-     positionArr['data-col'],
-     positionArr['data-row']);
-     }
-     });
-     
-     scope.getPositionRow = function () {
-     if (scope.templateConfig != undefined)//
-     return scope.templateConfig['position']['data-row'];
-     };
-     
-     scope.getPositionColone = function () {
-     if (scope.templateConfig != undefined)
-     return scope.templateConfig.position['data-col'];
-     };
-     scope.getPositionWidth = function () {
-     if (scope.templateConfig != undefined)
-     return scope.templateConfig.position['data-sizex'];
-     };
-     scope.getPositionHeight = function () {
-     if (scope.templateConfig != undefined)
-     return scope.templateConfig.position['data-sizey'];
-     };
-     
-     }
-     };
-     });*/
-
     app.directive('gridster', function (GridsterShareService, NoteTemplateManagerService, $rootScope, $compile) {
         return {
             restrict: 'E',
@@ -607,7 +685,7 @@
                 GridsterShareService.setGridster(gridster);
 
                 scope.$on($rootScope.JournalEvents.ServiceSetTemplateConfig, function (e, config) {
-                    GridsterShareService.newNote(scope); //new note
+                    // GridsterShareService.newNote(scope); //new note
                 });
             }
         };
@@ -616,7 +694,7 @@
 
 
 
-    app.directive('menuadd', function ($rootScope, $compile, NoteTemplateManagerService, GridsterShareService, UtilsService) {
+    app.directive('menuadd', function ($rootScope, $compile, NoteTemplateManagerService, GridsterShareService, NoteDataService, UtilsService, RemoteSaveService) {
         return {
             restrict: 'E',
             template: '<select>' +
@@ -640,6 +718,32 @@
                 $(element).change(function (index, value) {
                     var type = $(this).find('option:selected').val();
                     var templates = NoteTemplateManagerService.getElementsTemplate();
+                    var currentSelectNoteID = GridsterShareService.getCurrentNoteID();
+                    var currentNoteData = NoteDataService.getNoteDataById(currentSelectNoteID);
+
+                    //Add widget func
+                    var func = function () {
+                        scope.$apply(function () {
+                            var element = $('<li id="{{config.id}}" save-valuechange save_interval="2"><handler>|||</handler></li>');
+                            element.append(NoteTemplateManagerService.getElementsTemplate()[type]);
+
+                            var copyScope = scope.$new(true);
+                            copyScope.config = {
+                                id: UtilsService.uniqueId(),
+                                label: "",
+                                type: type,
+                                value: '',
+                                position: '',
+                                create_date: new Date()
+                            };
+                            currentNoteData.elements.push(copyScope.config);
+                            currentNoteData.scope[copyScope.config.id] = copyScope;
+                            $compile(element)(copyScope);
+                            GridsterShareService.addNewWidget(copyScope, element);
+                            RemoteSaveService.emit('newElement', copyScope.config);
+                        });
+                    };
+
                     if (templates[type] === undefined) {
                         $.ajax({
                             url: attr['url'] + type + '/edit',
@@ -647,33 +751,12 @@
                             success: function (html) {
                                 //on emet une evenement de AddElement pour tous les Controllers qui l'interesse
                                 NoteTemplateManagerService.addElementTemplate(type, html);
-                                scope.$apply(function () {
-                                    var element = $('<li></li>');
-                                    element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
-
-                                    var copyScope = scope.$new(true);
-                                    copyScope.config = {
-                                        id: UtilsService.uniqueId()
-                                    };
-                                    $compile(element)(copyScope);
-                                    GridsterShareService.addWidget(copyScope, element);
-                                });
+                                func();
                             }
                         });
                     }
                     else {
-                        scope.$apply(function () {
-                            var element = $('<li></li>');
-                            element.html(NoteTemplateManagerService.getElementsTemplate()[type]);
-
-                            var copyScope = scope.$new(true);
-                            copyScope.config = {
-                                id: UtilsService.uniqueId()
-                            };
-                            $compile(element)(copyScope);
-                            GridsterShareService.addWidget(copyScope, element);
-
-                        });
+                        func();
                     }
                     ;
                 });
@@ -718,6 +801,7 @@
                 var unbindWatcher = scope.$watch("config", function (newVal, oldVal) {
                     if (newVal != oldVal) {
                         if (scope.save_interval == undefined) {
+
                             RemoteSaveService.update(scope.config);
                             console.log("Save update");
                         }
@@ -742,7 +826,7 @@
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
-                console.log('dd');
+                $(element).datetimepicker();
             }
         };
     });

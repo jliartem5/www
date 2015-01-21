@@ -16,7 +16,7 @@ App::import('Model', 'NoteElement');
 class NoteDefaultConfig extends AppModel {
 
     public $name = 'NoteDefaultConfig';
-
+    public $components = array('Utility');
     /**
      * Generer la configuration par default pour le nouveau utilisateur
      */
@@ -72,7 +72,7 @@ class NoteDefaultConfig extends AppModel {
     public function afterFind($results, $primary = false) {
         foreach ($results as $key => $val) {
             if (isset($val['note_default_config']['id'])) {
-                $results[$key]['note_default_config']['id'] = UtilityComponent::encrypeData($results[$key]['note_default_config']['id']);
+                $results[$key]['note_default_config']['id'] = UtilityComponent::GUID();//Pour des nouveau elements on donne un GUID
                 $results[$key]['note_default_config']['type'] = strtoupper($results[$key]['note_default_config']['type']);
                 $results[$key]['note_default_config']['position'] = json_decode($results[$key]['note_default_config']['position']);
             }

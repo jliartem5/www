@@ -797,6 +797,7 @@ DygraphLayout.prototype.computePlotArea = function() {
 };
 
 DygraphLayout.prototype.setAnnotations = function(ann) {
+    
   // The Dygraph object's annotations aren't parsed. We parse them here and
   // save a copy. If there is no parser, then the user must be using raw format.
   this.annotations = [];

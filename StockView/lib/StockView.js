@@ -1,13 +1,15 @@
 /**
  * Created by jian on 07/12/2014.
+ * 
  */
 var StockView = (function(){
     var SV =  function(element){
         this.root = element;
         this.plotter = new StockView_Plotter();
+        this.chart_ticker = null; 
     };
 
-    SV.prototype.start = function(csvData){
+    SV.prototype.start = function(csvData, onReady){
         var $this = this;
         this.chart_ticker = new StockView_Ticker(csvData);
         this.dygraphs = new Dygraph(
@@ -39,10 +41,21 @@ var StockView = (function(){
                     }
                 }
                 });
+        if(onReady != undefined){
+            this.dygraphs.ready(onReady);
+        }
+    };
+    
+    SV.prototype.setAnnotations = function(annotations){
+        for(var i in annotations){
+            annotations[i].x = this.chart_ticker.getMappedIndexFromVal(annotations[i].x);
+        }
+        this.dygraphs.setAnnotations(annotations);
     };
 
     SV.prototype.reset = function(){
 
-    }
+    };
+    
     return SV;
 })();

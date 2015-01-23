@@ -20,7 +20,6 @@
             if (socket == null) {
                 socket = io.connect(url);
 
-
                 socket.on('connect', function () {
                     socket.emit('identify', {
                         type: 'cache',
@@ -128,8 +127,9 @@
              * */
             save: function (new_Note_Data) {
                 console.log('save note, next note data');
-                _init();
-                socket.emit('save', new_Note_Data);
+                _init(function () {
+                    socket.emit('save', new_Note_Data);
+                });
             },
             //update an element data
             update: function (dataToUpdate) {
@@ -138,8 +138,10 @@
             },
             //Delete an element data
             delete: function (dataToDelete) {
-                _init();
-                socket.emit('delete', dataToDelete);
+                _init(function () {
+                    socket.emit('delete', dataToDelete);
+
+                });
             },
             //restore deleted data ?
             restore: function (dataToRestore) {
@@ -423,14 +425,11 @@
                     //connect 
                     var elementHTML = $('<li id={{config.id}} save-valuechange save_interval="2"><handler>|||</handler></li>');
                     elementHTML.append(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
-                    var copyScope = null;
-                    if (isFirstTime) {
-                        copyScope = scope.$new(true);
-                        completeNote.scope[elementData.id] = copyScope;
+                    var copyScope = scope.$new(true);
+                    if (!isFirstTime) {
+                        completeNote.scope[elementData.id].$destroy();
                     }
-                    else {
-                        copyScope = completeNote.scope[elementData.id];
-                    }
+                    completeNote.scope[elementData.id] = copyScope;
                     if (copyScope == undefined) {
                         console.log('Scope not exists for ' + elementData.id);
                     }
@@ -450,8 +449,8 @@
             if (exists === false) {
                 console.log('Unknow Note elements data, go find from PHP server...');
                 var url = $rootScope.baseURL + "notes/noteElements/" + noteID;
-                $http.post(url, {}).success(function (elementsData, status, headers, config) { 
-                    
+                $http.post(url, {}).success(function (elementsData, status, headers, config) {
+
                     var newNoteData = {
                         note: noteData,
                         elements: [],
@@ -713,7 +712,9 @@
                     }, {
                         label: 'Date Element',
                         type: 'DATE'
-                    }];
+                    },
+                    {label:"RichText Element",
+                    type:"RICHTEXT"}];
 
                 $(element).change(function (index, value) {
                     var type = $(this).find('option:selected').val();
@@ -801,7 +802,6 @@
                 var unbindWatcher = scope.$watch("config", function (newVal, oldVal) {
                     if (newVal != oldVal) {
                         if (scope.save_interval == undefined) {
-
                             RemoteSaveService.update(scope.config);
                             console.log("Save update");
                         }

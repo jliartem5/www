@@ -6,7 +6,7 @@ if (!isset($MODE)) {
 <div  class="element element_<?php echo strtolower($MODE); ?>">
     <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
         <label class="element-label" for="_{{config.id}}">{{config.label}}</label>
-        <div text-angular="text-angular" ng-model="config.value"></div>
+        <input type="text"  ng-model="config.value"/>
     </div>
     <div ng-show="$root.CurrentMode == $root.JournalMode.View">
         <label class="element-label">{{config.label}}:</label>

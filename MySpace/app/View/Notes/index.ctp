@@ -1,5 +1,5 @@
 
-<div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 74%; display: inline-block;">
+<div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 79%; display: inline-block;">
 
     <div style="height:35px;">
         <div class="header-left">
@@ -48,7 +48,7 @@
     ?>
 </div>
 
-<div ng-controller="JournalMenuControl as menuCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 25%; display: inline-block;">
+<div ng-controller="JournalMenuControl as menuCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 20%; display: inline-block;">
 
     <div style="height:35px;">
         <button ng-click="newClick()">New</button>

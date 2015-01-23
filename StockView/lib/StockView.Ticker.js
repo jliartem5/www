@@ -53,7 +53,7 @@ var StockView_Ticker = (function(){
     function calculDateMapping(SVT){
         SVT.mapping = [];
         SVT.formatedCSV = '';
-        for(line in SVT.arrayData){
+        for(var line in SVT.arrayData){
             var data = SVT.arrayData[line];
             if(line == 0){//header
                 SVT.formatedCSV += data.join()+'\n';
@@ -81,6 +81,22 @@ var StockView_Ticker = (function(){
             calculDateMapping(this);
         }
     };
+    
+    SVT.prototype.getMappedIndexFromVal = function(val){
+        for(var i in $this.mapping){
+            if($this.mapping[i] == val){
+                return i;
+            }
+        }
+        return null;
+    };
+    
+    SVT.prototype.getMappedValFromIndex = function(index){
+        if($this.mapping[index] != undefined){
+            return $this.mapping[index];
+        }
+        return null;
+    };
 
     SVT.prototype.setCSVData = function(csvData){
         if(csvData != undefined){
@@ -89,13 +105,14 @@ var StockView_Ticker = (function(){
         }else{
             throw 'CSV data parameter is required';
         }
-    }
+    };
+    
     SVT.prototype.getFormattedCSVData = function(){
         if(this.mapping == undefined || this.arrayData == undefined || this.formatedCSV == undefined){
             throw 'CSV data must be setted';
         }
         return this.formatedCSV;
-    }
+    };
 
     SVT.prototype.DiscontinuousDateTicker = function(min, max, pixels, opts, dygraph, vals){
 
@@ -125,7 +142,9 @@ var StockView_Ticker = (function(){
         var chosen = Dygraph.pickDateTickGranularity(zoomedBeginDateTime, zoomedEndDateTime, pixels, opts);
         
         var step = Dygraph.TICK_PLACEMENT[chosen].step;
-        console.log("chosen:"+chosen+"; step:"+step);
+        var daysCount = Math.floor(Dygraph.TICK_PLACEMENT[chosen].spacing / Dygraph.TICK_PLACEMENT[Dygraph.DAILY].spacing);
+        
+        console.log("chosen:"+chosen+"; step:"+step+"; days:"+daysCount);
 
         var smoothedTickers = [];
         if(acceptedGranularitie(chosen)){
@@ -134,7 +153,7 @@ var StockView_Ticker = (function(){
 
             while(anchorDayOffset <= endIndex){
                 if(anchorDayOffset < beginIndex){
-                    anchorDayOffset += step;
+                    anchorDayOffset += daysCount;
                     continue;
                 }
                 var index = anchorDayOffset;
@@ -144,7 +163,7 @@ var StockView_Ticker = (function(){
                     v: index,
                     label: date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
                 });
-                anchorDayOffset += step;
+                anchorDayOffset += daysCount;
             }
         }
         return smoothedTickers;

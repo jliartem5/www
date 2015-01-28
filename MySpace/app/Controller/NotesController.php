@@ -79,7 +79,7 @@ class NotesController extends AppController {
                 if ($note_saved) {
                     //construire les élements à inserer dans la base de donnée
                     $result['sync'] = array();
-                    
+
                     if ($isNewNote) {
                         $insertID = $this->Notes->getInsertID();
                         $result['sync']['Note'][$nodeID] = UtilityComponent::encrypeData($insertID);
@@ -88,11 +88,11 @@ class NotesController extends AppController {
                     foreach ($data['note']['NoteElements'] as $element) {
                         $isNewElement = UtilityComponent::isGUID($element['id']);
                         if ($isNewNote == false) {
-                            $element['note_id'] = $note_data['Note']['id'];//get descripted note id
-                        }else{
+                            $element['note_id'] = $note_data['Note']['id']; //get descripted note id
+                        } else {
                             $element['note_id'] = $this->Notes->getInsertID(); //get inserted note id
                         }
-                        
+
                         $savedElementID = $element['id'];
                         if ($isNewElement) {
                             unset($element['id']);
@@ -111,7 +111,7 @@ class NotesController extends AppController {
                             throw new Exception('Canoot save note element');
                         }
                     }
-                    if(count($result['sync']['NoteElements']) == 0){
+                    if (count($result['sync']['NoteElements']) == 0) {
                         unset($result['sync']['NoteElements']); //pas besoin d'envoyer un array vide
                     }
                     $result['result'] = "success";
@@ -178,6 +178,19 @@ class NotesController extends AppController {
             $helper = new ElementHelper(new View());
             return $helper->generateNewElement($type, $mode);
         }
+    }
+
+    public function manyElement() {
+        $this->autoRender = false;
+        $return = array();
+        if ($this->request->is('post')) {
+            $types = $this->request->data['types'];
+            $helper = new ElementHelper(new View());
+            foreach ($types as $type) {
+                $return[$type] = $helper->generateNewElement($type, $this->request->data['mode']);
+            }
+        }
+        return json_encode($return);
     }
 
     //recuperer default template + code htmls

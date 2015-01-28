@@ -7528,3 +7528,63 @@ Stack Trace:
 #3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-01-26 10:31:54 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:31:54 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/save
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-26 10:31:54 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:31:54 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-26 10:31:55 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:31:55 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/noteElements/59376d217f6c2406e4c262f555d84b000c090c2a83ba9d31839c76a5381ae2382424de2150f6c59c48ece16caabab1cb1d7dad1936bcf7548cdb93ee12ffaf943ff6
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-26 10:32:03 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:32:03 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/noteElements/dafcfd89a2c61c8147ae5d41c999ded343058742f77d36ccf97a2fc7f6925151242450c42ce8efc499142ac2265bf82ffaa82a556387709330bd093f5e9242cf2f26
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-26 10:32:04 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:32:04 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/templateConfig
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-26 10:32:05 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/jianli/Documents/www/MySpace/app/Model/NoteElement.php, line 82]
+2015-01-26 10:32:05 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /MySpace/notes/noteElements/87d38b8b3b5a90abc700f161cf1ef2eadb2c86f3c0851161eff3a2a5a96967fa24247347635d9d6a96b3153ef4dc4c6713113236bd49dfb3d4fb596dde130f406874
+Stack Trace:
+#0 /Users/jianli/Documents/www/MySpace/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/jianli/D...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#2 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/jianli/D...', 82, Array)
+#3 /Users/jianli/Documents/www/MySpace/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

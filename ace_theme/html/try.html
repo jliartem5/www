@@ -1,456 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>File Upload Example</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>File Upload Example</title>
 
-		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
-		<link rel="stylesheet" href="../assets/css/font-awesome.css" />
-		
-		<!-- fonts -->
-		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
-		
-		
-		<link rel="stylesheet" href="../assets/css/ace.css" />
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
-		<![endif]-->
-		
-		<style>
-			.my-pulsating-icon {
-                  /* pulsating duration repetition timing_function delay */
-						 -moz-animation: pulsating 2s 2 linear 1s;
-					  -webkit-animation: pulsating 2s 2 linear 1s;
-						   -o-animation: pulsating 2s 2 linear 1s;
-						  -ms-animation: pulsating 2s 2 linear 1s;
-							  animation: pulsating 2s 2 linear 1s;
-			}
-		</style>
-	</head>
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+        <link rel="stylesheet" href="../assets/css/font-awesome.css" />
 
-	<body>
-	 <div class="main-container">
-	   <div class="page-content">
-	   <div class="row">
-		<div id="defined elements">
-			<div id="buttons">
-			
-				<button type="button" class="btn btn-sm btn-purple">
-				   <i class="ace-icon fa fa-check"></i>
-				   Click
-				</button>
-					
-				 <a href="#" class="btn btn-sm btn-light">
-				   <i class="ace-icon fa fa-check"></i>
-				   Click
-				 </a>
-				 
-				 <button type="button" class="btn btn-sm btn-purple no-border">
-				   No Border!
-				 </button>
-				 <button type="button" class="btn btn-sm btn-purple no-hover">
-				   No Hover Effect!
-				 </button>
-				 <button type="button" class="btn btn-sm btn-purple">
-				   <i class="icon-on-right ace-icon fa fa-check"></i>
-				 </button>
-				 
-				 <button type="button" class="btn btn-sm btn-danger btn-round">
-				   <i class="ace-icon fa fa-trash-o"></i>
-				   rounder
-				 </button>
-				 <button type="button" class="btn btn-sm btn-danger btn-round btn-white">
-				   <i class="ace-icon fa fa-trash-o"></i>
-				   white + rounder
-				 </button>
-				 <button class="btn btn-app btn-grey btn-sm radius-4">
-				   <i class="ace-icon fa fa-floppy-o bigger-160"></i>
-				   Save
-				 </button>
-				 <a class="btn btn-app btn-primary width-auto" href="#">
-				   <i class="ace-icon fa fa-pencil-square-o fa-2x"></i>
-					 Longggggg textttttttt add "width-auto" 
-				 </a>
-				<div class="btn-group btn-overlap btn-corner" data-toggle="buttons">
-					  <label class="btn btn-sm btn-white btn-info">
-						<input type="checkbox" value="1" />
-						<i class="ace-icon fa fa-bold icon-only bigger-110"></i>
-					  </label>
-					  <label class="btn btn-sm btn-white btn-info">
-						<input type="checkbox" value="1" />
-						<i class="ace-icon fa fa-italic icon-only bigger-110"></i>
-					  </label>
-					  <label class="btn btn-sm btn-white btn-info">
-						<input type="checkbox" value="1" />
-						<i class="ace-icon fa fa-bold icon-only bigger-110"></i>
-					  </label>
-				</div>
-				
-			 </div>
-			<div id="labels">
-				<span class="label label-sm label-purple arrowed-right">label-sm</span>
-				<span class="label label-lg label-purple arrowed-right">label-lg</span>
-				<span class="label label-xlg label-purple arrowed-right">label-xlg</span>
-				 <span class="label label-info arrowed-in arrowed-in-right">Arrowed !</span>
-				 <span class="label label-info label-white">White label!</span>
-			</div>			
-			<div id="badge">
-				<span class="badge badge-primary">Badge primary</span>
-				<span class="badge badge-info">Badge info</span>
-				<span class="badge badge-success">Badge(4 news)</span>
-				<span class="badge badge-danger">Badge(4 news)</span>
-				<span class="badge badge-warning">Badge(4 news)</span>
-			</div>
-			<div id="icons">
-				<ul class="nav nav-list">
-				   <li>
-					 <a href="#">
-					   <i class="menu-icon fa fa-leaf"></i>
-					   <span class="menu-text">Dashboard</span>
-					 </a>
-				   </li>
-				</ul>
-				<i class="fa fa-star my-pulsating-icon"></i> ==>Animated icon, see my-pulsating-icon
-			</div>
-			<div id="forms">
-				 <form class="form-horizontal" role="form">
-				   <div class="form-group">
-					  <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Label</label>
-					  <div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Username" id="form-field-1" />
-					  </div>
-				   </div>
-				   <span class="input-icon">
-					  <input type="text" id="form-field-icon-1" />
-					  <i class="ace-icon fa fa-check blue"></i>
-					</span>
-					<span class="input-icon input-icon-right">
-					  <input type="text" id="form-field-icon-1" />
-					  <i class="ace-icon fa fa-leaf green"></i>
-					</span>
-					
-					<div class="form-group has-warning">
-					   <label class="col-xs-12 col-sm-3 control-label no-padding-right" for="inputWarning">Input with warning</label>
-					   <div class="col-xs-12 col-sm-5">
-						  <span class="block input-icon input-icon-right">
-							 <input type="text" class="width-100" id="inputWarning" />
-							 <i class="ace-icon fa fa-leaf"></i>
-						  </span>
-					   </div>
-					   <div class="help-block col-xs-12 col-sm-reset inline">
-						  Warning tip help!
-					   </div>
-					</div>
-				</form>
-			</div>
-			<div id="tabs">
-				<div class="tabbable">
-
-				 <ul id="myTab" class="nav nav-tabs">
-				   <li class="active">
-					  <a href="#home" data-toggle="tab">Home</a>
-				   </li>
-				   <li>
-					  <a href="#profile" data-toggle="tab">Messages</a>
-				   </li>
-				 </ul>
-
-				 <div class="tab-content">
-				   <div class="tab-pane in active" id="home">
-					 home tab content
-				   </div>
-				   <div class="tab-pane" id="profile">
-					 profile tab content
-				   </div>
-				 </div>
-
-				</div>
-			</div>
-			<div id="accordions">
-				<div class="accordion-style1 panel-group" id="accordion">
-					 <div class="panel panel-default">
-						  <div class="panel-heading">
-						   <h4 class="panel-title">
-							 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-							   <i data-icon-show="ace-icon fa fa-plus" data-icon-hide="ace-icon fa fa-minus" class="ace-icon fa fa-plus"></i>
-							   Group Item #1
-							 </a>
-						   </h4>
-						  </div>
-						  <div id="collapseOne" class="panel-collapse collapse">
-							<div class="panel-body">
-							  Panel Body
-							</div>
-						  </div>
-					 </div>
-				</div>
-			</div>
-			<div id="tooltip">
-				 <a href="#" title="message" class="my-tooltip-link tooltip-error">
-				  Show Tooltip
-				 </a>
-			</div>
-			<div id="dropdown">
-				 <ul class="dropdown-menu dropdown-danger inline pos-rel no-float">
-				   <li><a tabindex="-1" href="#">Action</a></li>
-				   <li><a tabindex="-1" href="#">Another action</a></li>
-				   <li><a tabindex="-1" href="#">Something else here</a></li>
-				 </ul>
-			</div>
-			<div id="progressbar">
-			<div class="progress progress-mini progress-striped active">
-			   <div style="width: 40%;" class="progress-bar progress-bar-purple"></div>
-			 </div>
-			</div>
-		</div>
-		<div id="custom elements">
-			 <div class="widget-box widget-color-blue ">
-			   <div class="widget-header">
-					<h4 class="widget-title smaller">title!</h4>
-					<div class="widget-toolbar"></div>
-			   </div>
-			   <div class="widget-body">
-			    <div class="widget-toolbox">
-					<div class="btn-toolbar">
-					  ...
-					 </div>
-					</div>
-
-					<div class="widget-main">
-					 ...
-					</div>
-
-					<div class="widget-toolbox padding-8 clearfix">
-					   <button class="btn btn-xs btn-danger pull-left">
-						  <i class="ace-icon fa fa-times"></i>
-						  I don't accept
-					   </button>
-					   <button class="btn btn-xs btn-success pull-right">
-						  I accept
-						  <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-					   </button>
-					</div>
-			   </div>
-			 </div>
-		</div>
-	  </div>
-	  </div>
-	 </div>
-
-		<!-- basic scripts -->
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-		 window.jQuery || document.write("<script src='../assets/js/jquery.js'>"+"<"+"/script>");
-		</script>
-		<!-- <![endif]-->
-		<!--[if IE]>
-		<script type="text/javascript">
-		 window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
-		</script>
-		<![endif]-->
-		
-		<!-- ace scripts -->
-		<script src="../assets/js/bootstrap.js"></script>
-		<script src="../assets/js/ace-elements.js"></script>
-		<script src="../assets/js/ace.js"></script>
-				
-		<script type="text/javascript">
-			$('.my-tooltip-link').tooltip();
-			
-			
-			jQuery(function($) {
-				var $form = $('#myform');
-				//you can have multiple files, or a file input with "multiple" attribute
-				var file_input = $form.find('input[type=file]');
-				var upload_in_progress = false;
-
-				file_input.ace_file_input({
-					style : 'well',
-					btn_choose : 'Select or drop files here',
-					btn_change: null,
-					droppable: true,
-					thumbnail: 'large',
-					
-					maxSize: 110000,//bytes
-					allowExt: ["jpeg", "jpg", "png", "gif"],
-					allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
-
-					before_remove: function() {
-						if(upload_in_progress)
-							return false;//if we are in the middle of uploading a file, don't allow resetting file input
-						return true;
-					},
-
-					preview_error: function(filename , code) {
-						//code = 1 means file load error
-						//code = 2 image load error (possibly file is not an image)
-						//code = 3 preview failed
-					}
-				})
-				file_input.on('file.error.ace', function(ev, info) {
-					if(info.error_count['ext'] || info.error_count['mime']) alert('Invalid file type! Please select an image!');
-					if(info.error_count['size']) alert('Invalid file size! Maximum 100KB');
-					
-					//you can reset previous selection on error
-					//ev.preventDefault();
-					//file_input.ace_file_input('reset_input');
-				});
-				
-				
-				var ie_timeout = null;//a time for old browsers uploading via iframe
-				
-				$form.on('submit', function(e) {
-					e.preventDefault();
-				
-					var files = file_input.data('ace_input_files');
-					if( !files || files.length == 0 ) return false;//no files selected
-										
-					var deferred ;
-					if( "FormData" in window ) {
-						//for modern browsers that support FormData and uploading files via ajax
-						//we can do >>> var formData_object = new FormData($form[0]);
-						//but IE10 has a problem with that and throws an exception
-						//and also browser adds and uploads all selected files, not the filtered ones.
-						//and drag&dropped files won't be uploaded as well
-						
-						//so we change it to the following to upload only our filtered files
-						//and to bypass IE10's error
-						//and to include drag&dropped files as well
-						formData_object = new FormData();//create empty FormData object
-						
-						//serialize our form (which excludes file inputs)
-						$.each($form.serializeArray(), function(i, item) {
-							//add them one by one to our FormData 
-							formData_object.append(item.name, item.value);							
-						});
-						//and then add files
-						$form.find('input[type=file]').each(function(){
-							var field_name = $(this).attr('name');
-							//for fields with "multiple" file support, field name should be something like `myfile[]`
-
-							var files = $(this).data('ace_input_files');
-							if(files && files.length > 0) {
-								for(var f = 0; f < files.length; f++) {
-									formData_object.append(field_name, files[f]);
-								}
-							}
-						});
-	
-
-						upload_in_progress = true;
-						file_input.ace_file_input('loading', true);
-						
-						deferred = $.ajax({
-							        url: $form.attr('action'),
-							       type: $form.attr('method'),
-							processData: false,//important
-							contentType: false,//important
-							   dataType: 'json',
-							       data: formData_object
-							/**
-							,
-							xhr: function() {
-								var req = $.ajaxSettings.xhr();
-								if (req && req.upload) {
-									req.upload.addEventListener('progress', function(e) {
-										if(e.lengthComputable) {	
-											var done = e.loaded || e.position, total = e.total || e.totalSize;
-											var percent = parseInt((done/total)*100) + '%';
-											//percentage of uploaded file
-										}
-									}, false);
-								}
-								return req;
-							},
-							beforeSend : function() {
-							},
-							success : function() {
-							}*/
-						})
-
-					}
-					else {
-						//for older browsers that don't support FormData and uploading files via ajax
-						//we use an iframe to upload the form(file) without leaving the page
-
-						deferred = new $.Deferred //create a custom deferred object
-						
-						var temporary_iframe_id = 'temporary-iframe-'+(new Date()).getTime()+'-'+(parseInt(Math.random()*1000));
-						var temp_iframe = 
-								$('<iframe id="'+temporary_iframe_id+'" name="'+temporary_iframe_id+'" \
-								frameborder="0" width="0" height="0" src="about:blank"\
-								style="position:absolute; z-index:-1; visibility: hidden;"></iframe>')
-								.insertAfter($form)
-
-						$form.append('<input type="hidden" name="temporary-iframe-id" value="'+temporary_iframe_id+'" />');
-						
-						temp_iframe.data('deferrer' , deferred);
-						//we save the deferred object to the iframe and in our server side response
-						//we use "temporary-iframe-id" to access iframe and its deferred object
-						
-						$form.attr({
-									  method: 'POST',
-									 enctype: 'multipart/form-data',
-									  target: temporary_iframe_id //important
-									});
-
-						upload_in_progress = true;
-						file_input.ace_file_input('loading', true);//display an overlay with loading icon
-						$form.get(0).submit();
-						
-						
-						//if we don't receive a response after 30 seconds, let's declare it as failed!
-						ie_timeout = setTimeout(function(){
-							ie_timeout = null;
-							temp_iframe.attr('src', 'about:blank').remove();
-							deferred.reject({'status':'fail', 'message':'Timeout!'});
-						} , 30000);
-					}
+        <!-- fonts -->
+        <link rel="stylesheet" href="../assets/css/ace-fonts.css" />
 
 
-					////////////////////////////
-					//deferred callbacks, triggered by both ajax and iframe solution
-					deferred
-					.done(function(result) {//success
-						//format of `result` is optional and sent by server
-						//in this example, it's an array of multiple results for multiple uploaded files
-						var message = '';
-						for(var i = 0; i < result.length; i++) {
-							if(result[i].status == 'OK') {
-								message += "File successfully saved. Thumbnail is: " + result[i].url
-							}
-							else {
-								message += "File not saved. " + result.message;
-							}
-							message += "\n";
-						}
-						alert(message);
-					})
-					.fail(function(result) {//failure
-						alert("There was an error");
-					})
-					.always(function() {//called on both success and failure
-						if(ie_timeout) clearTimeout(ie_timeout)
-						ie_timeout = null;
-						upload_in_progress = false;
-						file_input.ace_file_input('loading', false);
-					});
+        <link rel="stylesheet" href="../assets/css/ace.css" />
+        <!--[if lte IE 9]>
+          <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+        <![endif]-->
 
-					deferred.promise();
-				});
+        <style>
+            .my-pulsating-icon {
+                /* pulsating duration repetition timing_function delay */
+                -moz-animation: pulsating 2s 2 linear 1s;
+                -webkit-animation: pulsating 2s 2 linear 1s;
+                -o-animation: pulsating 2s 2 linear 1s;
+                -ms-animation: pulsating 2s 2 linear 1s;
+                animation: pulsating 2s 2 linear 1s;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <div class="page-content">
+                <div class="row">
+                    <div id="definedelements">
+                        <div id="buttons">
+
+                            <button type="button" class="btn btn-sm btn-purple">
+                                <i class="ace-icon fa fa-check"></i>
+                                Click
+                            </button>
+
+                            <a href="#" class="btn btn-sm btn-light">
+                                <i class="ace-icon fa fa-check"></i>
+                                Click
+                            </a>
+
+                            <button type="button" class="btn btn-sm btn-purple no-border">
+                                No Border!
+                            </button>
+                            <button type="button" class="btn btn-sm btn-purple no-hover">
+                                No Hover Effect!
+                            </button>
+                            <button type="button" class="btn btn-sm btn-purple">
+                                <i class="icon-on-right ace-icon fa fa-check"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-danger btn-round">
+                                <i class="ace-icon fa fa-trash-o"></i>
+                                rounder
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger btn-round btn-white">
+                                <i class="ace-icon fa fa-trash-o"></i>
+                                white + rounder
+                            </button>
+                            <button class="btn btn-app btn-grey btn-sm radius-4">
+                                <i class="ace-icon fa fa-floppy-o bigger-160"></i>
+                                Save
+                            </button>
+                            <a class="btn btn-app btn-primary width-auto" href="#">
+                                <i class="ace-icon fa fa-pencil-square-o fa-2x"></i>
+                                Longggggg textttttttt add "width-auto" 
+                            </a>
+                            <div class="btn-group btn-overlap btn-corner" data-toggle="buttons">
+                                <label class="btn btn-sm btn-white btn-info">
+                                    <input type="checkbox" value="1" />
+                                    <i class="ace-icon fa fa-bold icon-only bigger-110"></i>
+                                </label>
+                                <label class="btn btn-sm btn-white btn-info">
+                                    <input type="checkbox" value="1" />
+                                    <i class="ace-icon fa fa-italic icon-only bigger-110"></i>
+                                </label>
+                                <label class="btn btn-sm btn-white btn-info">
+                                    <input type="checkbox" value="1" />
+                                    <i class="ace-icon fa fa-bold icon-only bigger-110"></i>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div id="labels">
+                            <span class="label label-sm label-purple arrowed-right">label-sm</span>
+                            <span class="label label-lg label-purple arrowed-right">label-lg</span>
+                            <span class="label label-xlg label-purple arrowed-right">label-xlg</span>
+                            <span class="label label-info arrowed-in arrowed-in-right">Arrowed !</span>
+                            <span class="label label-info label-white">White label!</span>
+                        </div>			
+                        <div id="badge">
+                            <span class="badge badge-primary">Badge primary</span>
+                            <span class="badge badge-info">Badge info</span>
+                            <span class="badge badge-success">Badge(4 news)</span>
+                            <span class="badge badge-danger">Badge(4 news)</span>
+                            <span class="badge badge-warning">Badge(4 news)</span>
+                        </div>
+                        <div id="icons">
+                            <ul class="nav nav-list">
+                                <li>
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-leaf"></i>
+                                        <span class="menu-text">Dashboard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <i class="fa fa-star my-pulsating-icon"></i> ==>Animated icon, see my-pulsating-icon
+                        </div>
+                        <div id="forms">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Label</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Username" id="form-field-1" />
+                                    </div>
+                                </div>
+                                <span class="input-icon">
+                                    <input type="text" id="form-field-icon-1" />
+                                    <i class="ace-icon fa fa-check blue"></i>
+                                </span>
+                                <span class="input-icon input-icon-right">
+                                    <input type="text" id="form-field-icon-1" />
+                                    <i class="ace-icon fa fa-leaf green"></i>
+                                </span>
+
+                                <div class="form-group has-warning">
+                                    <label class="col-xs-12 col-sm-3 control-label no-padding-right" for="inputWarning">Input with warning</label>
+                                    <div class="col-xs-12 col-sm-5">
+                                        <span class="block input-icon input-icon-right">
+                                            <input type="text" class="width-100" id="inputWarning" />
+                                            <i class="ace-icon fa fa-leaf"></i>
+                                        </span>
+                                    </div>
+                                    <div class="help-block col-xs-12 col-sm-reset inline">
+                                        Warning tip help!
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="tabs">
+                            <div class="tabbable">
+
+                                <ul id="myTab" class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#home" data-toggle="tab">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#profile" data-toggle="tab">Messages</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane in active" id="home">
+                                        home tab content
+                                    </div>
+                                    <div class="tab-pane" id="profile">
+                                        profile tab content
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="accordions">
+                            <div class="accordion-style1 panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                <i data-icon-show="ace-icon fa fa-plus" data-icon-hide="ace-icon fa fa-minus" class="ace-icon fa fa-plus"></i>
+                                                Group Item #1
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            Panel Body
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tooltip">
+                            <a href="#" title="message" class="my-tooltip-link tooltip-error">
+                                Show Tooltip
+                            </a>
+                        </div>
+                        <div id="dropdown">
+                            <ul class="dropdown-menu dropdown-danger inline pos-rel no-float">
+                                <li><a tabindex="-1" href="#">Action</a></li>
+                                <li><a tabindex="-1" href="#">Another action</a></li>
+                                <li><a tabindex="-1" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div id="progressbar">
+                            <div class="progress progress-mini progress-striped active">
+                                <div style="width: 40%;" class="progress-bar progress-bar-purple"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="customelements">
+                        <div class="widget-box widget-color-blue ">
+                            <div class="widget-header">
+                                <h4 class="widget-title smaller">title!</h4>
+                                <div class="widget-toolbar"></div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-toolbox">
+                                    <div class="btn-toolbar">
+                                        ...
+                                    </div>
+                                </div>
+
+                                <div class="widget-main">
+                                    ...
+                                </div>
+
+                                <div class="widget-toolbox padding-8 clearfix">
+                                    <button class="btn btn-xs btn-danger pull-left">
+                                        <i class="ace-icon fa fa-times"></i>
+                                        I don't accept
+                                    </button>
+                                    <button class="btn btn-xs btn-success pull-right">
+                                        I accept
+                                        <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" name="myfile" id="my-file-input" />
+                        <fieldset>
+
+                            <div style="overflow-y: scroll; overflow-x: hidden; height: 60px;">
+                                <div>
+                                    <label class="pos-rel">
+                                        <input type="checkbox" name="myoption1" class="ace ace-switch ace-switch-4 btn-flat" />
+                                        <span class="lbl"></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="pos-rel">
+                                        <input type="checkbox" name="myoption2" class="ace ace-switch ace-switch-4 btn-flat" />
+                                        <span class="lbl"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <select name="mycolor" id="mycolor">
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                            <option value="black">black</option>
+                            <option value="green">green</option>
+                            <option value="purple">purple</option>
+                        </select>
+                        <div class="modal aside"  >
+                            Content slide: <a href="http://localhost/ace_theme/html/content-slider.html">Content slide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- basic scripts -->
+            <!--[if !IE]> -->
+            <script type="text/javascript">
+                window.jQuery || document.write("<script src='../assets/js/jquery.js'>" + "<" + "/script>");
+            </script>
+            <!-- <![endif]-->
+            <!--[if IE]>
+            <script type="text/javascript">
+             window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+            </script>
+            <![endif]-->
+
+            <!-- ace scripts -->
+            <script src="../assets/js/bootstrap.js"></script>
+            <script src="../assets/js/ace-elements.js"></script>
+            <script src="../assets/js/ace.js"></script>
+
+            <script type="text/javascript">
+                $('.my-tooltip-link').tooltip();
+                $('#my-file-input').ace_file_input({
+                    style: 'well',
+                    no_file: 'Click to choose or drag & drop',
+                    droppable: true, //html5 browsers only
+                    thumbnail: 'small', //html5 browsers only
+
+                    maxSize: 100000, //~100 KB
+                    allowExt: ['jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp'],
+                    allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'image/tif', 'image/tiff', 'image/bmp'] //html5 browsers only
+                });
+                $('#mycolor').ace_colorpicker()
+                        .on('change', function () {
+                            alert(this.value);
+                        });
 
 
-				//when "reset" button of form is hit, file field will be reset, but the custom UI won't
-				//so you should reset the ui on your own
-				$form.on('reset', function() {
-					$(this).find('input[type=file]').ace_file_input('reset_input_ui');
-				});
+//---------------------------------------------------------------------------------
+                jQuery(function ($) {
+                    var $form = $('#myform');
+                    //you can have multiple files, or a file input with "multiple" attribute
+                    var file_input = $form.find('input[type=file]');
+                    var upload_in_progress = false;
+
+                    file_input.ace_file_input({
+                        style: 'well',
+                        btn_choose: 'Select or drop files here',
+                        btn_change: null,
+                        droppable: true,
+                        thumbnail: 'large',
+                        maxSize: 110000, //bytes
+                        allowExt: ["jpeg", "jpg", "png", "gif"],
+                        allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+                        before_remove: function () {
+                            if (upload_in_progress)
+                                return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                            return true;
+                        },
+                        preview_error: function (filename, code) {
+                            //code = 1 means file load error
+                            //code = 2 image load error (possibly file is not an image)
+                            //code = 3 preview failed
+                        }
+                    })
+                    file_input.on('file.error.ace', function (ev, info) {
+                        if (info.error_count['ext'] || info.error_count['mime'])
+                            alert('Invalid file type! Please select an image!');
+                        if (info.error_count['size'])
+                            alert('Invalid file size! Maximum 100KB');
+
+                        //you can reset previous selection on error
+                        //ev.preventDefault();
+                        //file_input.ace_file_input('reset_input');
+                    });
 
 
-				if(location.protocol == 'file:') alert("For uploading to server, you should access this page using 'http' protocal, i.e. via a webserver.");
+                    var ie_timeout = null;//a time for old browsers uploading via iframe
 
-			});
-		</script>
+                    $form.on('submit', function (e) {
+                        e.preventDefault();
 
-	</body>
+                        var files = file_input.data('ace_input_files');
+                        if (!files || files.length == 0)
+                            return false;//no files selected
+
+                        var deferred;
+                        if ("FormData" in window) {
+                            //for modern browsers that support FormData and uploading files via ajax
+                            //we can do >>> var formData_object = new FormData($form[0]);
+                            //but IE10 has a problem with that and throws an exception
+                            //and also browser adds and uploads all selected files, not the filtered ones.
+                            //and drag&dropped files won't be uploaded as well
+
+                            //so we change it to the following to upload only our filtered files
+                            //and to bypass IE10's error
+                            //and to include drag&dropped files as well
+                            formData_object = new FormData();//create empty FormData object
+
+                            //serialize our form (which excludes file inputs)
+                            $.each($form.serializeArray(), function (i, item) {
+                                //add them one by one to our FormData 
+                                formData_object.append(item.name, item.value);
+                            });
+                            //and then add files
+                            $form.find('input[type=file]').each(function () {
+                                var field_name = $(this).attr('name');
+                                //for fields with "multiple" file support, field name should be something like `myfile[]`
+
+                                var files = $(this).data('ace_input_files');
+                                if (files && files.length > 0) {
+                                    for (var f = 0; f < files.length; f++) {
+                                        formData_object.append(field_name, files[f]);
+                                    }
+                                }
+                            });
+
+
+                            upload_in_progress = true;
+                            file_input.ace_file_input('loading', true);
+
+                            deferred = $.ajax({
+                                url: $form.attr('action'),
+                                type: $form.attr('method'),
+                                processData: false, //important
+                                contentType: false, //important
+                                dataType: 'json',
+                                data: formData_object
+                                        /**
+                                         ,
+                                         xhr: function() {
+                                         var req = $.ajaxSettings.xhr();
+                                         if (req && req.upload) {
+                                         req.upload.addEventListener('progress', function(e) {
+                                         if(e.lengthComputable) {	
+                                         var done = e.loaded || e.position, total = e.total || e.totalSize;
+                                         var percent = parseInt((done/total)*100) + '%';
+                                         //percentage of uploaded file
+                                         }
+                                         }, false);
+                                         }
+                                         return req;
+                                         },
+                                         beforeSend : function() {
+                                         },
+                                         success : function() {
+                                         }*/
+                            })
+
+                        }
+                        else {
+                            //for older browsers that don't support FormData and uploading files via ajax
+                            //we use an iframe to upload the form(file) without leaving the page
+
+                            deferred = new $.Deferred //create a custom deferred object
+
+                            var temporary_iframe_id = 'temporary-iframe-' + (new Date()).getTime() + '-' + (parseInt(Math.random() * 1000));
+                            var temp_iframe =
+                                    $('<iframe id="' + temporary_iframe_id + '" name="' + temporary_iframe_id + '" \
+                                                            frameborder="0" width="0" height="0" src="about:blank"\
+                                                            style="position:absolute; z-index:-1; visibility: hidden;"></iframe>')
+                                    .insertAfter($form)
+
+                            $form.append('<input type="hidden" name="temporary-iframe-id" value="' + temporary_iframe_id + '" />');
+
+                            temp_iframe.data('deferrer', deferred);
+                            //we save the deferred object to the iframe and in our server side response
+                            //we use "temporary-iframe-id" to access iframe and its deferred object
+
+                            $form.attr({
+                                method: 'POST',
+                                enctype: 'multipart/form-data',
+                                target: temporary_iframe_id //important
+                            });
+
+                            upload_in_progress = true;
+                            file_input.ace_file_input('loading', true);//display an overlay with loading icon
+                            $form.get(0).submit();
+
+
+                            //if we don't receive a response after 30 seconds, let's declare it as failed!
+                            ie_timeout = setTimeout(function () {
+                                ie_timeout = null;
+                                temp_iframe.attr('src', 'about:blank').remove();
+                                deferred.reject({'status': 'fail', 'message': 'Timeout!'});
+                            }, 30000);
+                        }
+
+
+                        ////////////////////////////
+                        //deferred callbacks, triggered by both ajax and iframe solution
+                        deferred
+                                .done(function (result) {//success
+                                    //format of `result` is optional and sent by server
+                                    //in this example, it's an array of multiple results for multiple uploaded files
+                                    var message = '';
+                                    for (var i = 0; i < result.length; i++) {
+                                        if (result[i].status == 'OK') {
+                                            message += "File successfully saved. Thumbnail is: " + result[i].url
+                                        }
+                                        else {
+                                            message += "File not saved. " + result.message;
+                                        }
+                                        message += "\n";
+                                    }
+                                    alert(message);
+                                })
+                                .fail(function (result) {//failure
+                                    alert("There was an error");
+                                })
+                                .always(function () {//called on both success and failure
+                                    if (ie_timeout)
+                                        clearTimeout(ie_timeout)
+                                    ie_timeout = null;
+                                    upload_in_progress = false;
+                                    file_input.ace_file_input('loading', false);
+                                });
+
+                        deferred.promise();
+                    });
+
+
+                    //when "reset" button of form is hit, file field will be reset, but the custom UI won't
+                    //so you should reset the ui on your own
+                    $form.on('reset', function () {
+                        $(this).find('input[type=file]').ace_file_input('reset_input_ui');
+                    });
+
+
+                    if (location.protocol == 'file:')
+                        alert("For uploading to server, you should access this page using 'http' protocal, i.e. via a webserver.");
+
+                });
+            </script>
+
+    </body>
 </html>

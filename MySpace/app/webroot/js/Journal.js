@@ -213,7 +213,7 @@
     });
     app.factory('NoteTemplateManagerService', function ($rootScope, $http) {
 
-        //Default user template data, les données sone en mode prive
+        //Default user template config data, les données sont en mode prive
         var templateConfig = {};
 
         //Template array for every element on the page
@@ -247,7 +247,6 @@
 
                 }
             }
-
         };
         return noteController;
     });
@@ -414,35 +413,73 @@
 
             //work...
             var processFunc = function (elements, completeNote, isFirstTime) {
-
+                //d'abord on vérifie et add nouvelles templates
+                var templates = NoteTemplateManagerService.getElementsTemplate();
+                var templatesToGet = [];
                 for (var index = 0; index < elements.length; ++index) {
                     var elementData = elements[index]['NoteElement'] === undefined ? elements[index] : elements[index]['NoteElement'];
-                    if (isFirstTime) {
-                        completeNote.elements.push(elementData);
-                    }
 
-                    var positionArr = elementData['position'];
-                    //connect 
-                    var elementHTML = $('<li id={{config.id}} save-valuechange save_interval="2"><handler>|||</handler></li>');
-                    elementHTML.append(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
-                    var copyScope = scope.$new(true);
-                    if (!isFirstTime) {
-                        completeNote.scope[elementData.id].$destroy();
+                    if (templates[elementData.type] == undefined && $.inArray(elementData.type, templatesToGet) == -1) {
+                        templatesToGet.push(elementData.type);
                     }
-                    completeNote.scope[elementData.id] = copyScope;
-                    if (copyScope == undefined) {
-                        console.log('Scope not exists for ' + elementData.id);
-                    }
-                    copyScope.config = elementData;
-                    $compile(elementHTML)(copyScope);
-                    _addWidget(copyScope,
-                            elementHTML,
-                            positionArr['data-sizex'],
-                            positionArr['data-sizey'],
-                            positionArr['data-col'],
-                            positionArr['data-row']);
-                    nextNoteData.NoteElements.push({id: elementData.id});
                 }
+                var workFunc = function () {
+
+                    for (var index = 0; index < elements.length; ++index) {
+                        var elementData = elements[index]['NoteElement'] === undefined ? elements[index] : elements[index]['NoteElement'];
+                        if (isFirstTime) {
+                            completeNote.elements.push(elementData);
+                        }
+
+                        var positionArr = elementData['position'];
+                        //connect 
+                        var elementHTML = $('<li id={{config.id}} save-valuechange save_interval="2"><handler>|||</handler></li>');
+                        if (NoteTemplateManagerService.getElementsTemplate()[elementData.type] == undefined) {
+                            console.log("No template for type " + elementData.type);
+                        }
+                        elementHTML.append(NoteTemplateManagerService.getElementsTemplate()[elementData.type]);
+                        var copyScope = scope.$new(true);
+                        if (!isFirstTime) {
+                            completeNote.scope[elementData.id].$destroy();
+                        }
+                        completeNote.scope[elementData.id] = copyScope;
+                        if (copyScope == undefined) {
+                            console.log('Scope not exists for ' + elementData.id);
+                        }
+                        copyScope.config = elementData;
+                        $compile(elementHTML)(copyScope);
+                        _addWidget(copyScope,
+                                elementHTML,
+                                positionArr['data-sizex'],
+                                positionArr['data-sizey'],
+                                positionArr['data-col'],
+                                positionArr['data-row']);
+                        nextNoteData.NoteElements.push({id: elementData.id});
+                    }
+                };
+
+                if (templatesToGet.length > 0) {
+                    console.log('Get template for');
+                    console.log(templatesToGet);
+                    var urlDest = $rootScope.baseURL + 'notes/manyElement';
+
+                    $.ajax({
+                        url: urlDest,
+                        type: 'post',
+                        dataType: "json",
+                        data: {types: templatesToGet, mode: "edit"},
+                        success: function (templates) {
+                            for (var name in templates) {
+                                NoteTemplateManagerService.addElementTemplate(name, templates[name]);
+                            }
+                            workFunc();
+                        }
+                    });
+                } else {
+                    workFunc();
+                }
+
+
             };
 
             //Si les doonée cache n'exists pas encore, trouve tous les noteelements et remplir 
@@ -597,6 +634,9 @@
         $scope.getTemplateConfig = function () {
             return NoteTemplateManagerService.templateConfig;
         };
+        $scope.addFollow = function(){
+            
+        };
 
 
         //get default template data and fill $scope.template objet
@@ -713,8 +753,8 @@
                         label: 'Date Element',
                         type: 'DATE'
                     },
-                    {label:"RichText Element",
-                    type:"RICHTEXT"}];
+                    {label: "RichText Element",
+                        type: "RICHTEXT"}];
 
                 $(element).change(function (index, value) {
                     var type = $(this).find('option:selected').val();

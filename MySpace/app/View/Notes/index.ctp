@@ -1,6 +1,5 @@
 
 <div ng-controller="JournalNoteCtrl as noteCtrl" ng-style="{height:getContentHeight()}" style="vertical-align: top; width: 79%; display: inline-block;">
-
     <div style="height:35px;">
         <div class="header-left">
             <div ng-show="$root.CurrentMode == $root.JournalMode.Edit">
@@ -15,6 +14,9 @@
 
             </div>
             <button ng-click="$root.save()">Save</button>
+            <div>
+                <button ng-click="addFollow()">Add Follow</button>
+            </div>
         </div>
         <div class="header-middle">
             <a href="http://localhost/StockView?s=GPRO" target="__blank">

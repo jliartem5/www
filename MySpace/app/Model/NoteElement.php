@@ -77,8 +77,8 @@ class NoteElement extends AppModel {
         
     }
 
-    public static function createRichtextElement() {
-        
+    public static function createRichtextElement($options = array()) {
+        return NoteElement::createCommunElement("RICHTEXT", $options);
     }
 
     public function afterFind($results, $primary = false) {
@@ -93,8 +93,9 @@ class NoteElement extends AppModel {
     }
 
     public function beforeSave($options = array()) {
-        if(isset($this->data['NoteElement']['position']) && is_array($this->data['NoteElement']['position'])){
+        if (isset($this->data['NoteElement']['position']) && is_array($this->data['NoteElement']['position'])) {
             $this->data['NoteElement']['position'] = json_encode($this->data['NoteElement']['position']);
         }
     }
+
 }

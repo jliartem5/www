@@ -57,7 +57,7 @@ class ElementHelper extends FormHelper {
                     'MODE' => $mode));
     }
 
-    public function generateNewElement($type, $mode, $label = '', $value = '') {
+    public function generateNewElement($type, $mode, $label = '', $value = '') {    
        $elementName = ucfirst($type);
         if(preg_match('/Element$/', $type) == false){
             $elementName .= 'Element';
